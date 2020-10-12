@@ -1,0 +1,12 @@
+{
+    "name": "vassagnez/catalogue",
+    "authors": [
+        {
+            "name": "Sébastien AGNEZ",
+            "email": "sebastien.agnez@orange.fr"
+        }
+    ],
+    "require": {
+        "twig/twig": "^3.0"
+    }
+}
