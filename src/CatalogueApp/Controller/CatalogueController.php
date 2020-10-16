@@ -21,7 +21,7 @@ class CatalogueController
         //création du menu
         $menu = array("Accueil" => '.',
                       "Liste fichiers" => '?objet=catalogue&amp;action=show&amp;id=01',
-                      "Page technique" => '?objet=catalogue&amp;action=show&amp;id=02',);
+                      "Page technique" => '?objet=catalogue&amp;action=contenuTechnique&amp;id=02',);
         
         $this->view->setPart('menu', $menu);
     }
@@ -69,6 +69,29 @@ class CatalogueController
         } else {
             $this->unknownPoem();
         }*/
+        $content = "Je suis la page test1 liste fichiers";
+
+        $this->view->setPart('content', $content);
+    }
+
+    public function contenuTechnique()
+    {
+        $content = "<div>
+                        <h2>Page technique du projet</h2>
+                        <p>Ce projet a été réalisé par Sébastien AGNEZ et Sylvain VASSEUR.</p>
+                        <h3>Détails techniques de l'implémentation</h3>
+                        <h4>Fonctionnement du site web</h4>
+                        <p></p>
+                        <h4>Détails authentification</h4>    
+                        <p>Le site possède une partie avec un accès restreint, il est possible de s'y connecter
+                        avec les deux comptes suivants : <br>
+                        - Le compte de Mr Lecarpentier, login : jml et mdp : toto <br>
+                        - Le compte de Mr Niveau, login : alex et mdp : toto</p>             
+                        
+                    </div>";
+
+
+        $this->view->setPart('content', $content);
     }
 
     public function unknownPoem()

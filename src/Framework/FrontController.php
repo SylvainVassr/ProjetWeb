@@ -3,7 +3,6 @@
 
 namespace Vassagnez\Framework;
 
-
 abstract class FrontController
 {
     protected $request;

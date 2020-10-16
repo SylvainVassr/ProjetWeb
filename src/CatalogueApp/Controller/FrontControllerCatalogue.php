@@ -26,7 +26,6 @@ class FrontControllerCatalogue extends FrontController
             $this->auth->checkAuthentification();
             $controller = new $className($this->request, $this->response, $view);
             $controller->execute($action);
-
         } catch (Exception $e) {
             $view->setPart('title', 'Erreur');
             $view->setPart('content', "Une erreur d'exécution s'est produite");
