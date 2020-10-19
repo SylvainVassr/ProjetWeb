@@ -37,7 +37,7 @@
     ?>
     <main>
         <h1 class="titre_accueil"><?php echo $title; ?></h1>
-        <?php echo $content; ?>
+        <?php echo $content;?>
     </main>
 </body>
 </html>

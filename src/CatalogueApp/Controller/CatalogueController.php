@@ -44,6 +44,8 @@ class CatalogueController
     {
         $title = "Catalogue de fichiers PDF";
         $content = "";
+        //exiftool -json -g1 FichierTest.pdf
+        //$this->pdf_to_jpg('/Model/pdf/all-meta/all-document1.pdf');
         
         $this->view->setPart('title', $title);
         $this->view->setPart('content', $content);
@@ -76,22 +78,34 @@ class CatalogueController
 
     public function contenuTechnique()
     {
-        $content = "<div>
+        $content = "<div class='contenu_technique'>
                         <h2>Page technique du projet</h2>
-                        <p>Ce projet a été réalisé par Sébastien AGNEZ et Sylvain VASSEUR.</p>
+                        <p>Ce projet a été réalisé par Sébastien AGNEZ et Sylvain VASSEUR. L'objectif était de
+                        réaliser un catalogue de fichiers PDF.</p>
                         <h3>Détails techniques de l'implémentation</h3>
                         <h4>Fonctionnement du site web</h4>
                         <p></p>
                         <h4>Détails authentification</h4>    
-                        <p>Le site possède une partie avec un accès restreint, il est possible de s'y connecter
+                        <p>Le site possède une partie accessible par authentification, il est possible de s'y connecter
                         avec les deux comptes suivants : <br>
-                        - Le compte de Mr Lecarpentier, login : jml et mdp : toto <br>
-                        - Le compte de Mr Niveau, login : alex et mdp : toto</p>             
+                        - Le compte de Mr Lecarpentier, <b>login : jml</b> et <b>mdp : toto</b> <br>
+                        - Le compte de Mr Niveau, <b>login : alex</b> et <b>mdp : toto</b></p>             
                         
                     </div>";
 
 
         $this->view->setPart('content', $content);
+    }
+
+    public function pdf_to_jpg($filename/*,$destination*/) {
+        try {
+            $imagick = new \Imagick($filename);
+        } catch (\ImagickException $e) {
+        }
+        $imagick->setIteratorIndex(0);
+        $imagick->setImageFormat('jpg');
+        echo $imagick;
+        //return $imagick->writeImage($destination);
     }
 
     public function unknownPoem()
