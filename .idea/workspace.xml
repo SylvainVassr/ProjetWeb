@@ -19,12 +19,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5d77a55a-ed9f-4098-9747-9849512c074f" name="Default Changelist" comment="Petites modifs + début page technique">
+    <list default="true" id="5d77a55a-ed9f-4098-9747-9849512c074f" name="Default Changelist" comment="Ajout fonction pour convertir 1 pdf en image">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/skin/catalogue.css" beforeDir="false" afterPath="$PROJECT_DIR$/skin/catalogue.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CatalogueApp/Controller/CatalogueController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/CatalogueApp/Controller/CatalogueController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CatalogueApp/View/Templates/fichier.twig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CatalogueApp/View/Templates/home.twig" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CatalogueApp/View/template.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/CatalogueApp/View/template.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -100,7 +96,8 @@
       <workItem from="1602852131649" duration="129000" />
       <workItem from="1602852298819" duration="4188000" />
       <workItem from="1602924019060" duration="2279000" />
-      <workItem from="1603097301647" duration="3647000" />
+      <workItem from="1603097301647" duration="3751000" />
+      <workItem from="1603102808900" duration="234000" />
     </task>
     <task id="LOCAL-00001" summary="Petites modifs + début page technique">
       <created>1602857812886</created>
@@ -109,7 +106,14 @@
       <option name="project" value="LOCAL" />
       <updated>1602857812886</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Ajout fonction pour convertir 1 pdf en image">
+      <created>1603101172396</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1603101172396</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -129,7 +133,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Petites modifs + début page technique" />
-    <option name="LAST_COMMIT_MESSAGE" value="Petites modifs + début page technique" />
+    <MESSAGE value="Ajout fonction pour convertir 1 pdf en image" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ajout fonction pour convertir 1 pdf en image" />
   </component>
   <component name="WindowStateProjectService">
     <state x="533" y="209" width="528" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1602595153738">
@@ -148,9 +153,9 @@
       <screen x="0" y="0" width="1600" height="900" />
     </state>
     <state x="617" y="376" width="359" height="149" key="NewPhpFileDialog/0.0.1600.900@0.0.1600.900" timestamp="1602595129499" />
-    <state x="395" y="168" width="804" height="528" key="Vcs.Push.Dialog.v2" timestamp="1602857834490">
+    <state x="395" y="168" width="804" height="528" key="Vcs.Push.Dialog.v2" timestamp="1603101185849">
       <screen x="0" y="0" width="1600" height="863" />
     </state>
-    <state x="395" y="168" width="804" height="528" key="Vcs.Push.Dialog.v2/0.0.1600.863@0.0.1600.863" timestamp="1602857834490" />
+    <state x="395" y="168" width="804" height="528" key="Vcs.Push.Dialog.v2/0.0.1600.863@0.0.1600.863" timestamp="1603101185849" />
   </component>
 </project>
