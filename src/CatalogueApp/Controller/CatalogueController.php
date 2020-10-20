@@ -43,7 +43,25 @@ class CatalogueController
     public function makeHomePage()
     {
         $title = "Catalogue de fichiers PDF";
-        $content = "";
+        $content = "<div class='img-container'>
+                        <a href='#'>
+                        <img src='src/CatalogueApp/Model/img/all-document1.jpeg'>
+                        <div class='title'>Consequat</div>
+                        </a>
+                     </div>
+                     <div class='img-container'>
+                        <a href='#'>
+                        <img src='src/CatalogueApp/Model/img/all-document2.jpeg'>                       
+                        <div class='title'>Congue</div>
+                        </a>
+                    </div>
+                    <div class='img-container'>
+                        <a href='#'>
+                        <img src='src/CatalogueApp/Model/img/all-document3.jpeg'>                       
+                        <div class='title'>Mollis est</div>
+                        </a>
+                    </div>";
+
         //exiftool -json -g1 FichierTest.pdf
         //$this->pdf_to_jpg('/Model/pdf/all-meta/all-document1.pdf');
         

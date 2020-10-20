@@ -19,9 +19,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5d77a55a-ed9f-4098-9747-9849512c074f" name="Default Changelist" comment="Ajout fonction pour convertir 1 pdf en image">
+    <list default="true" id="5d77a55a-ed9f-4098-9747-9849512c074f" name="Default Changelist" comment="Ajout dossier pdf">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CatalogueApp/View/template.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/CatalogueApp/View/template.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/skin/catalogue.css" beforeDir="false" afterPath="$PROJECT_DIR$/skin/catalogue.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CatalogueApp/Controller/CatalogueController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/CatalogueApp/Controller/CatalogueController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CatalogueApp/Model/pdf/all-meta/output.jpeg" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,13 +72,15 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -98,6 +102,8 @@
       <workItem from="1602924019060" duration="2279000" />
       <workItem from="1603097301647" duration="3751000" />
       <workItem from="1603102808900" duration="234000" />
+      <workItem from="1603126265312" duration="343000" />
+      <workItem from="1603182444323" duration="2088000" />
     </task>
     <task id="LOCAL-00001" summary="Petites modifs + début page technique">
       <created>1602857812886</created>
@@ -113,7 +119,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603101172396</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Ajout dossier pdf">
+      <created>1603126352591</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1603126352591</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -134,7 +147,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Petites modifs + début page technique" />
     <MESSAGE value="Ajout fonction pour convertir 1 pdf en image" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ajout fonction pour convertir 1 pdf en image" />
+    <MESSAGE value="Ajout dossier pdf" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ajout dossier pdf" />
   </component>
   <component name="WindowStateProjectService">
     <state x="533" y="209" width="528" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1602595153738">
@@ -153,9 +167,9 @@
       <screen x="0" y="0" width="1600" height="900" />
     </state>
     <state x="617" y="376" width="359" height="149" key="NewPhpFileDialog/0.0.1600.900@0.0.1600.900" timestamp="1602595129499" />
-    <state x="395" y="168" width="804" height="528" key="Vcs.Push.Dialog.v2" timestamp="1603101185849">
+    <state x="395" y="168" width="804" height="528" key="Vcs.Push.Dialog.v2" timestamp="1603126359828">
       <screen x="0" y="0" width="1600" height="863" />
     </state>
-    <state x="395" y="168" width="804" height="528" key="Vcs.Push.Dialog.v2/0.0.1600.863@0.0.1600.863" timestamp="1603101185849" />
+    <state x="395" y="168" width="804" height="528" key="Vcs.Push.Dialog.v2/0.0.1600.863@0.0.1600.863" timestamp="1603126359828" />
   </component>
 </project>

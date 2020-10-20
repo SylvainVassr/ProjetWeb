@@ -29,8 +29,49 @@ figure {
 .titre_accueil {
     text-align: center;
     padding-top: 5%;
+    padding-bottom: 5%;
 }
 
 .contenu_technique {
     text-align: center;
+}
+
+/*img {*/
+/*    border: 1px solid black;*/
+/*}*/
+
+/*.thumb a {*/
+/*    display:block;*/
+/*}*/
+
+/*.thumb a img {*/
+/*    margin:0;*/
+/*    padding:0;*/
+/*    width:250px;*/
+/*    height:370px;*/
+/*}*/
+
+.img-container {
+    display: inline-block;
+    position: relative;
+}
+
+.img-container img {
+    width: 250px;
+    height: 370px;
+}
+
+.img-container .title {
+    left: 0;
+    top:0;
+    display: flex;
+    position: absolute;
+    width: 250px;
+    height: 370px;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0,0,0,.5);
+    font-size: 20pt;
+    font-weight: bolder;
+    color: white;
 }
