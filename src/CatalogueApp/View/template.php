@@ -27,7 +27,7 @@
         echo "<form method='post' action=''>
                     <ul class='auth'>
                         <li><label>Bonjour, " . $_SESSION['user']["prenom"] . " " . $_SESSION['user']["nom"] . "</li>
-                        <li><a href='?objet=catalogue&amp;action=show&amp;id=03'>Upload fichier</a></li>
+                        <li><a href='?objet=catalogue&amp;action=contenuUpload&amp;id=03'>Upload fichier</a></li>
                         <li><input name='deconnexion' type='submit' value='Deconnexion'></form></li>
                     </ul>";
         if (key_exists("deconnexion", $_POST)) {

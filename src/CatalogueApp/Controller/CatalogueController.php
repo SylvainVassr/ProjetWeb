@@ -21,7 +21,7 @@ class CatalogueController
         //création du menu
         $menu = array("Accueil" => '.',
                       "Liste fichiers" => '?objet=catalogue&amp;action=show&amp;id=01',
-                      "Page technique" => '?objet=catalogue&amp;action=contenuTechnique&amp;id=02',);
+                      "Page technique" => '?objet=catalogue&amp;action=contenuTechnique&amp;id=02');
         
         $this->view->setPart('menu', $menu);
     }
@@ -43,28 +43,64 @@ class CatalogueController
     public function makeHomePage()
     {
         $title = "Catalogue de fichiers PDF";
-        $content = "<div class='img-container'>
-                        <a href='#'>
-                        <img src='src/CatalogueApp/Model/img/all-document1.jpeg'>
-                        <div class='title'>Consequat</div>
-                        </a>
-                     </div>
-                     <div class='img-container'>
-                        <a href='#'>
-                        <img src='src/CatalogueApp/Model/img/all-document2.jpeg'>                       
-                        <div class='title'>Congue</div>
-                        </a>
-                    </div>
-                    <div class='img-container'>
-                        <a href='#'>
-                        <img src='src/CatalogueApp/Model/img/all-document3.jpeg'>                       
-                        <div class='title'>Mollis est</div>
-                        </a>
+        $content = "<div style='text-align: center'>
+                        <div class='img-container'>
+                            <a href='#'>
+                            <img src='src/CatalogueApp/Model/img/all-document1.jpeg'>
+                            <div class='title'>Consequat</div>
+                            </a>
+                        </div>
+                        <div class='img-container'>
+                            <a href='#'>
+                            <img src='src/CatalogueApp/Model/img/all-document2.jpeg'>                       
+                            <div class='title'>Congue</div>
+                            </a>
+                        </div>
+                        <div class='img-container'>
+                            <a href='#'>
+                            <img src='src/CatalogueApp/Model/img/all-document3.jpeg'>                       
+                            <div class='title'>Mollis est</div>
+                            </a>
+                        </div>
+                        <div class='img-container'>
+                            <a href='#'>
+                            <img src='src/CatalogueApp/Model/img/all-document4.jpeg'>                       
+                            <div class='title'></div>
+                            </a>
+                        </div>
+                        <div class='img-container'>
+                            <a href='#'>
+                            <img src='src/CatalogueApp/Model/img/all-document5.jpeg'>                       
+                            <div class='title'></div>
+                            </a>
+                        </div>
+                        <div class='img-container'>
+                            <a href='#'>
+                            <img src='src/CatalogueApp/Model/img/all-document6.jpeg'>                       
+                            <div class='title'></div>
+                            </a>
+                        </div>
                     </div>";
 
-        //exiftool -json -g1 FichierTest.pdf
-        //$this->pdf_to_jpg('/Model/pdf/all-meta/all-document1.pdf');
-        
+        /*$path = 'src/CatalogueApp/Model/img/';
+        $directory = opendir($path);
+
+        while($file = readdir($directory)) {
+            if(!is_dir($path.$file))
+            {
+                echo '<a href="'.$path.$file.'">'.$file.'<br></a>';
+                $content = "<div style='text-align: center'>
+                                <div class='img-container'>
+                                    <a href='$path$file'>
+                                    <img src='$path$file'>
+                                    <div class='title'>Consequat</div>
+                                    </a>
+                                </div>
+                            </div>";
+            }
+        }
+        closedir($directory);*/
+
         $this->view->setPart('title', $title);
         $this->view->setPart('content', $content);
     }
@@ -94,8 +130,22 @@ class CatalogueController
         $this->view->setPart('content', $content);
     }
 
+    public function contenuUpload()
+    {
+        $title = "Upload fichier";
+        $content = "<h1>Upload un PDF</h1>
+                        <form method='post' action='#' enctype='multipart/form-data'>
+                            <input name='fichier' type='file'>
+                            <input name='upload' type='submit' value='upload'>
+                        </form>";
+
+        $this->view->setPart('title', $title);
+        $this->view->setPart('content', $content);
+    }
+
     public function contenuTechnique()
     {
+        $title = "Page technique";
         $content = "<div class='contenu_technique'>
                         <h2>Page technique du projet</h2>
                         <p>Ce projet a été réalisé par Sébastien AGNEZ et Sylvain VASSEUR. L'objectif était de
@@ -111,19 +161,8 @@ class CatalogueController
                         
                     </div>";
 
-
+        $this->view->setPart('title', $title);
         $this->view->setPart('content', $content);
-    }
-
-    public function pdf_to_jpg($filename/*,$destination*/) {
-        try {
-            $imagick = new \Imagick($filename);
-        } catch (\ImagickException $e) {
-        }
-        $imagick->setIteratorIndex(0);
-        $imagick->setImageFormat('jpg');
-        echo $imagick;
-        //return $imagick->writeImage($destination);
     }
 
     public function unknownPoem()
