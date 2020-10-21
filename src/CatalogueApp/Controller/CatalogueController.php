@@ -43,63 +43,25 @@ class CatalogueController
     public function makeHomePage()
     {
         $title = "Catalogue de fichiers PDF";
-        $content = "<div style='text-align: center'>
-                        <div class='img-container'>
-                            <a href='#'>
-                            <img src='src/CatalogueApp/Model/img/all-document1.jpeg'>
-                            <div class='title'>Consequat</div>
-                            </a>
-                        </div>
-                        <div class='img-container'>
-                            <a href='#'>
-                            <img src='src/CatalogueApp/Model/img/all-document2.jpeg'>                       
-                            <div class='title'>Congue</div>
-                            </a>
-                        </div>
-                        <div class='img-container'>
-                            <a href='#'>
-                            <img src='src/CatalogueApp/Model/img/all-document3.jpeg'>                       
-                            <div class='title'>Mollis est</div>
-                            </a>
-                        </div>
-                        <div class='img-container'>
-                            <a href='#'>
-                            <img src='src/CatalogueApp/Model/img/all-document4.jpeg'>                       
-                            <div class='title'></div>
-                            </a>
-                        </div>
-                        <div class='img-container'>
-                            <a href='#'>
-                            <img src='src/CatalogueApp/Model/img/all-document5.jpeg'>                       
-                            <div class='title'></div>
-                            </a>
-                        </div>
-                        <div class='img-container'>
-                            <a href='#'>
-                            <img src='src/CatalogueApp/Model/img/all-document6.jpeg'>                       
-                            <div class='title'></div>
-                            </a>
-                        </div>
-                    </div>";
-
-        /*$path = 'src/CatalogueApp/Model/img/';
+        $path = 'src/CatalogueApp/Model/img/';
         $directory = opendir($path);
 
+        $content = "<div style='text-align: center'>
+                        ";
         while($file = readdir($directory)) {
             if(!is_dir($path.$file))
             {
-                echo '<a href="'.$path.$file.'">'.$file.'<br></a>';
-                $content = "<div style='text-align: center'>
-                                <div class='img-container'>
+                //echo '<a href="'.$path.$file.'">'.$file.'<br></a>';
+                $content .= "<div class='img-container'>
                                     <a href='$path$file'>
                                     <img src='$path$file'>
                                     <div class='title'>Consequat</div>
                                     </a>
-                                </div>
-                            </div>";
+                                </div>";
             }
         }
-        closedir($directory);*/
+        $content .= "</div>";
+        closedir($directory);
 
         $this->view->setPart('title', $title);
         $this->view->setPart('content', $content);
