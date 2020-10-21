@@ -4,6 +4,7 @@ html {
 body {
     max-width: 60em;
     margin: auto;
+    background-color: #1e1a3e;
 }
 
 figure {
@@ -24,32 +25,24 @@ figure {
     display: flex;
     justify-content: space-around;
     padding-top: 2%;
+    color: white;
+}
+
+.barre_auth {
+    padding-top: 17%;
 }
 
 .titre_accueil {
     text-align: center;
     padding-top: 5%;
     padding-bottom: 5%;
+    color: white;
 }
 
 .contenu_technique {
     text-align: center;
+    color: white;
 }
-
-/*img {*/
-/*    border: 1px solid black;*/
-/*}*/
-
-/*.thumb a {*/
-/*    display:block;*/
-/*}*/
-
-/*.thumb a img {*/
-/*    margin:0;*/
-/*    padding:0;*/
-/*    width:250px;*/
-/*    height:370px;*/
-/*}*/
 
 .img-container {
     display: inline-block;
@@ -75,3 +68,95 @@ figure {
     font-weight: bolder;
     color: white;
 }
+
+/* Style des boutons */
+.position {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    margin-top: 15%;
+}
+
+#workarea {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    font-family: Raleway;
+}
+
+#personal {
+    color:white;
+    text-decoration:none;
+    position:absolute;
+    bottom:15px;
+    right:2%;
+}
+
+.spot {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.svg-wrapper {
+    margin-top: 0;
+    position: relative;
+    width: 150px;
+    height: 40px;
+    display: inline-block;
+    border-radius: 3px;
+    margin-left: 5px;
+    margin-right: 5px
+}
+
+#shape {
+    stroke-width: 6px;
+    fill: transparent;
+    stroke: #009FFD;
+    stroke-dasharray: 85 400;
+    stroke-dashoffset: -220;
+    transition: 1s all ease;
+}
+
+#text {
+    margin-top: -35px;
+    text-align: center;
+}
+
+#text a {
+    color: white;
+    text-decoration: none;
+    font-weight: 100;
+    font-size: 1.1em;
+}
+
+#text input {
+    color: white;
+    border: none;
+    background-color: #1e1a3e;
+    font-weight: 100;
+    font-size: 1.1em;
+}
+
+.svg-wrapper:hover #shape {
+    stroke-dasharray: 50 0;
+    stroke-width: 3px;
+    stroke-dashoffset: 0;
+    stroke: #06D6A0;
+}
+
+/*
+//Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {}
+
+//Medium devices (tablets, 768px and up)
+@media (win-width: 768px) {}
+
+//Large devices (desktops, 992px and up)
+@media (win-width: 992px) {}
+
+//Extra large devices (large desktops, 1200px and up)
+@media (win-width: 1200px) {}
+*/

@@ -20,18 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5d77a55a-ed9f-4098-9747-9849512c074f" name="Default Changelist" comment="Ajout de classes dans le répertoire Model + boucle (à corriger) qui parcourt le dossier img (1ere page de chaque pdf)">
-      <change afterPath="$PROJECT_DIR$/src/CatalogueApp/Model/Pdf.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/CatalogueApp/Model/PdfStorage.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/CatalogueApp/Model/PdfStorageStub.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/CatalogueApp/Model/img/all-document10.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/CatalogueApp/Model/img/all-document4.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/CatalogueApp/Model/img/all-document5.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/CatalogueApp/Model/img/all-document6.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/CatalogueApp/Model/img/all-document7.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/CatalogueApp/Model/img/all-document8.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/CatalogueApp/Model/img/all-document9.jpeg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CatalogueApp/Controller/CatalogueController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/CatalogueApp/Controller/CatalogueController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/skin/catalogue.css" beforeDir="false" afterPath="$PROJECT_DIR$/skin/catalogue.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CatalogueApp/View/template.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/CatalogueApp/View/template.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -81,13 +71,15 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -111,7 +103,8 @@
       <workItem from="1603102808900" duration="234000" />
       <workItem from="1603126265312" duration="343000" />
       <workItem from="1603182444323" duration="2176000" />
-      <workItem from="1603204682950" duration="7664000" />
+      <workItem from="1603204682950" duration="7759000" />
+      <workItem from="1603267379228" duration="3568000" />
     </task>
     <task id="LOCAL-00001" summary="Petites modifs + début page technique">
       <created>1602857812886</created>
@@ -141,7 +134,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603184593253</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Ajout de classes dans le répertoire Model + boucle (à corriger) qui parcourt le dossier img (1ere page de chaque pdf)">
+      <created>1603212992798</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1603212992798</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -189,9 +189,9 @@
       <screen x="0" y="0" width="1600" height="900" />
     </state>
     <state x="617" y="376" width="359" height="149" key="NewPhpFileDialog/0.0.1600.900@0.0.1600.900" timestamp="1602595129499" />
-    <state x="395" y="168" width="804" height="528" key="Vcs.Push.Dialog.v2" timestamp="1603184608082">
+    <state x="395" y="168" width="804" height="528" key="Vcs.Push.Dialog.v2" timestamp="1603213013208">
       <screen x="0" y="0" width="1600" height="863" />
     </state>
-    <state x="395" y="168" width="804" height="528" key="Vcs.Push.Dialog.v2/0.0.1600.863@0.0.1600.863" timestamp="1603184608082" />
+    <state x="395" y="168" width="804" height="528" key="Vcs.Push.Dialog.v2/0.0.1600.863@0.0.1600.863" timestamp="1603213013208" />
   </component>
 </project>
