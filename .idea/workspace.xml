@@ -19,9 +19,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5d77a55a-ed9f-4098-9747-9849512c074f" name="Default Changelist" comment="Ajout de classes dans le répertoire Model + boucle (à corriger) qui parcourt le dossier img (1ere page de chaque pdf)">
+    <list default="true" id="5d77a55a-ed9f-4098-9747-9849512c074f" name="Default Changelist" comment="Boucle pour afficher les pdf terminée">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/skin/catalogue.css" beforeDir="false" afterPath="$PROJECT_DIR$/skin/catalogue.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CatalogueApp/Controller/CatalogueController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/CatalogueApp/Controller/CatalogueController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -103,7 +102,7 @@
       <workItem from="1603182444323" duration="2176000" />
       <workItem from="1603204682950" duration="7759000" />
       <workItem from="1603267379228" duration="3568000" />
-      <workItem from="1603281109010" duration="1548000" />
+      <workItem from="1603281109010" duration="2237000" />
     </task>
     <task id="LOCAL-00001" summary="Petites modifs + début page technique">
       <created>1602857812886</created>
@@ -140,7 +139,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603212992798</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Boucle pour afficher les pdf terminée">
+      <created>1603283314676</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1603283314676</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -164,7 +170,8 @@
     <MESSAGE value="Ajout dossier pdf" />
     <MESSAGE value="Ajout d'images sur la page d'accueil" />
     <MESSAGE value="Ajout de classes dans le répertoire Model + boucle (à corriger) qui parcourt le dossier img (1ere page de chaque pdf)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ajout de classes dans le répertoire Model + boucle (à corriger) qui parcourt le dossier img (1ere page de chaque pdf)" />
+    <MESSAGE value="Boucle pour afficher les pdf terminée" />
+    <option name="LAST_COMMIT_MESSAGE" value="Boucle pour afficher les pdf terminée" />
   </component>
   <component name="WindowStateProjectService">
     <state x="543" y="236" width="529" height="416" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1603205996176">
@@ -188,9 +195,10 @@
       <screen x="0" y="0" width="1600" height="900" />
     </state>
     <state x="617" y="376" width="359" height="149" key="NewPhpFileDialog/0.0.1600.900@0.0.1600.900" timestamp="1602595129499" />
-    <state x="395" y="168" width="804" height="528" key="Vcs.Push.Dialog.v2" timestamp="1603213013208">
-      <screen x="0" y="0" width="1600" height="863" />
+    <state x="474" y="202" width="804" height="528" key="Vcs.Push.Dialog.v2" timestamp="1603283323033">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="395" y="168" width="804" height="528" key="Vcs.Push.Dialog.v2/0.0.1600.863@0.0.1600.863" timestamp="1603213013208" />
+    <state x="474" y="202" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1603283323033" />
   </component>
 </project>
