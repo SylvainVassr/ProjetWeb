@@ -44,6 +44,10 @@ figure {
     color: white;
 }
 
+.upload_style {
+    color: white;
+}
+
 /*Style affichage des pdf sur la page d'accueil*/
 .img-container {
     display: inline-block;

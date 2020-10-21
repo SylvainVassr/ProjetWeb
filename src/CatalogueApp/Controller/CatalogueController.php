@@ -94,11 +94,21 @@ class CatalogueController
     public function contenuUpload()
     {
         $title = "Upload fichier";
-        $content = "<h1>Upload un PDF</h1>
+        $content = "<div class='upload_style'>
                         <form method='post' action='#' enctype='multipart/form-data'>
-                            <input name='fichier' type='file'>
-                            <input name='upload' type='submit' value='upload'>
-                        </form>";
+                            <input name='fichier' type='file'><br><br>
+                            <div class='position'>
+                                <div class='svg-wrapper'>
+                                    <svg height='40' width='150' xmlns='http://www.w3.org/2000/svg'>
+                                        <rect id='shape' height='40' width='150' />
+                                        <div id='text'>
+                                            <input name='upload' type='submit' value='upload'>
+                                        </div>
+                                    </svg>
+                                </div>
+                            </div>
+                        </form>
+                    </div>";
 
         $this->view->setPart('title', $title);
         $this->view->setPart('content', $content);
