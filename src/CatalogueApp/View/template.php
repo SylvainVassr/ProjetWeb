@@ -51,7 +51,7 @@
                                 <svg height='40' width='150' xmlns='http://www.w3.org/2000/svg'>
                                 <rect id='shape' height='40' width='150' />
                                 <div id='text'>
-                                    <a href='?objet=catalogue&amp;action=contenuUpload&amp;id=03'><span class='spot'></span>Upload fichier</a>
+                                    <a href='?objet=upload&amp;action=show&amp;id=04'><span class='spot'></span>Upload fichier</a>
                                 </div>
                                 </svg>
                             </div>
@@ -69,6 +69,7 @@
                     </ul>";
         if (key_exists("deconnexion", $_POST)) {
             session_unset();
+            header("Location: index.php");
         }
     }
     ?>

@@ -35,21 +35,22 @@ class Router
         return $this->controllerAction;
     }
 
-    /*public function getPoemURL($objet, $action, $id)
-    {
-        return "?objet=$objet&amp;action=$action&amp;id=$id";
-    }*/
-
     protected function parseRequest()
     {
         $package = $this->request->getGetParam('objet');
 
         switch ($package) {
-            case 'catalogue':
-                $this->controllerClassName = '\Vassagnez\CatalogueApp\Controller\CatalogueController';
+            case 'home':
+                $this->controllerClassName = '\Vassagnez\CatalogueApp\Controller\HomeController';
+                break;
+            case 'technique' :
+                $this->controllerClassName = '\Vassagnez\CatalogueApp\Controller\TechniqueController';
+                break;
+            case 'upload':
+                $this->controllerClassName = '\Vassagnez\CatalogueApp\Controller\UploadController';
                 break;
             default:
-                $this->controllerClassName = '\Vassagnez\CatalogueApp\Controller\CatalogueController';
+                $this->controllerClassName = '\Vassagnez\CatalogueApp\Controller\HomeController';
         }
 
         if (!class_exists($this->controllerClassName)) {
