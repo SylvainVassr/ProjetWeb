@@ -43,7 +43,7 @@ class HomeController
     public function makeHomePage()
     {
         $title = "Catalogue de fichiers PDF";
-        $path = 'src/CatalogueApp/Model/img/';
+        $path = 'src/CatalogueApp/Model/img/all-meta/';
         $directory = opendir($path);
 
         $content = "<div style='text-align: center'>";
@@ -69,7 +69,7 @@ class HomeController
     public function show()
     {
         $title = "Catalogue de fichiers PDF";
-        $path = 'src/CatalogueApp/Model/img/';
+        $path = 'src/CatalogueApp/Model/img/all-meta/';
         $directory = opendir($path);
 
         $content = "<div style='text-align: center'>";

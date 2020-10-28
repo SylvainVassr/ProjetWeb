@@ -1,0 +1,47 @@
+[{
+  "SourceFile": "./src/CatalogueApp/Model/pdf/pdf-upload/bad-document4.pdf",
+  "ExifTool": {
+    "ExifToolVersion": 12.08
+  },
+  "System": {
+    "FileName": "bad-document4.pdf",
+    "Directory": "./src/CatalogueApp/Model/pdf/pdf-upload",
+    "FileSize": "177 kB",
+    "FileModifyDate": "2020:10:28 16:25:00+01:00",
+    "FileAccessDate": "2020:10:28 16:25:01+01:00",
+    "FileCreateDate": "2020:10:28 16:25:00+01:00",
+    "FilePermissions": "rw-rw-rw-"
+  },
+  "File": {
+    "FileType": "PDF",
+    "FileTypeExtension": "pdf",
+    "MIMEType": "application/pdf"
+  },
+  "PDF": {
+    "PDFVersion": 1.5,
+    "Linearized": "No",
+    "PageCount": 9,
+    "PageMode": "UseOutlines",
+    "Author": "Bao Kohlmeyer",
+    "Title": "ogfElsutl  siamieor",
+    "Subject": "eeitidrneuiccalueltgntctnl m fe rpe thamlvos caeeho iiioo lteiqqrl.p    iu isq spshvaattept o uila,mnue  sc aanfirasaasvo u u,ssu in cc tn erndusttsttfqist.ivesls umcdrc araisalaurniea laaiepcio suiegEudv,  uic,mTert r ataipugtiiarst uionePutmacimmmnstttsueeleifsmamuueesu t paitsuoie ccdmtatml   eo jn i  uscvtmtipiiulpt el sd msrhrisasovr, utea arinisbrsatuoalaelaboxmacprnluepelnr na tiimrooiupTust elnnsctcnuucpmrat si,simellonntd uaustei v isarvaeseesu ebsiuennnsaiie ponahuoen aftlliu disadoru ctc soe mnst efumi opusnr iacte, inedgt ttceiu m ara curarvpa si vluiiurufbsm.rc nm ste ad tv ntur ule  ais.aiesri re bs ",
+    "Creator": "LaTeX with hyperref package",
+    "Producer": "pdfTeX-1.40.17",
+    "CreateDate": "1991:05:19 21:16:40+02:00",
+    "ModifyDate": "1991:05:19 21:16:40+02:00",
+    "Trapped": false,
+    "PTEX_Fullbanner": "This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) kpathsea version 6.2.2"
+  },
+  "XMP-x": {
+    "XMPToolkit": "Image::ExifTool 12.00"
+  },
+  "XMP-dc": {
+    "Contributor": ["Leann Wittie","Hedwig Lehr"],
+    "Creator": "lamBKoee rhyo",
+    "Date": "2012:10:04 18:33:21+02:00",
+    "Description": "Taciti nisi fusce malesuada ipsum rutrum platea venenatis habitant fringilla, potenti pharetra justo facilisi maecenas varius vulputate molestie, velit dictum mattis diam mollis cursus urna natoque. Tempor egestas proin facilisis urna massa nostra odio in, volutpat maecenas cubilia dictumst gravida eu praesent. Elementum finibus augue eleifend tortor tempor id, convallis nunc suscipit ultricies volutpat vel, ac cursus parturient metus sed. Pulvinar ipsum in mattis neque nascetur torquent suscipit vitae, rhoncus cursus himenaeos mauris lobortis faucibus nam curae, scelerisque vehicula imperdiet at dictumst ex nisl.",
+    "Format": "application/pdf",
+    "Language": "fr",
+    "Title": "Eros feugiat mollis"
+  }
+}]

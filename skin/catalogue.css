@@ -4,7 +4,8 @@ html {
 body {
     max-width: 60em;
     margin: auto;
-    background-color: #1e1a3e;
+    background-color: #005d7e;
+    color: white;
 }
 
 figure {
@@ -25,7 +26,6 @@ figure {
     display: flex;
     justify-content: space-around;
     padding-top: 2%;
-    color: white;
 }
 
 .barre_auth {
@@ -36,16 +36,20 @@ figure {
     text-align: center;
     padding-top: 5%;
     padding-bottom: 5%;
-    color: white;
+}
+
+.ctn_upload {
+    text-align: center;
+    background-color: #EE8900;
+    padding-top: 2%;
+    padding-bottom: 2%;
 }
 
 .contenu_technique {
     text-align: center;
-    color: white;
-}
-
-.upload_style {
-    color: white;
+    background-color: #EE8900;
+    padding-top: 2%;
+    padding-bottom: 2%;
 }
 
 /*Style affichage des pdf sur la page d'accueil*/
@@ -119,7 +123,7 @@ figure {
 #shape {
     stroke-width: 6px;
     fill: transparent;
-    stroke: #009FFD;
+    stroke: #EE8900;
     stroke-dasharray: 85 400;
     stroke-dashoffset: -220;
     transition: 1s all ease;
@@ -140,7 +144,7 @@ figure {
 #text input {
     color: white;
     border: none;
-    background-color: #1e1a3e;
+    background-color: #005d7e;
     font-weight: 100;
     font-size: 1.1em;
 }
@@ -149,7 +153,7 @@ figure {
     stroke-dasharray: 50 0;
     stroke-width: 3px;
     stroke-dashoffset: 0;
-    stroke: #06D6A0;
+    stroke: #FEE441;
 }
 
 /*
