@@ -19,21 +19,17 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5d77a55a-ed9f-4098-9747-9849512c074f" name="Default Changelist" comment="modification des controllers">
+    <list default="true" id="5d77a55a-ed9f-4098-9747-9849512c074f" name="Default Changelist" comment="Ajout upload pdf + modification du style">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/meta.txt" beforeDir="false" afterPath="$PROJECT_DIR$/meta.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/skin/catalogue.css" beforeDir="false" afterPath="$PROJECT_DIR$/skin/catalogue.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CatalogueApp/Controller/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/CatalogueApp/Controller/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CatalogueApp/Controller/TechniqueController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/CatalogueApp/Controller/TechniqueController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CatalogueApp/Controller/UploadController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/CatalogueApp/Controller/UploadController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CatalogueApp/Model/img/all-document1.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CatalogueApp/Model/img/all-document10.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CatalogueApp/Model/img/all-document2.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CatalogueApp/Model/img/all-document3.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CatalogueApp/Model/img/all-document4.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CatalogueApp/Model/img/all-document5.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CatalogueApp/Model/img/all-document6.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CatalogueApp/Model/img/all-document7.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CatalogueApp/Model/img/all-document8.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CatalogueApp/Model/img/all-document9.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CatalogueApp/Model/Pdf.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/CatalogueApp/Model/Pdf.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CatalogueApp/Model/PdfStorageStub.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/CatalogueApp/Model/PdfStorageStub.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CatalogueApp/Router.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/CatalogueApp/Router.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CatalogueApp/View/template.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/CatalogueApp/View/template.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,7 +121,9 @@
       <workItem from="1603818941141" duration="530000" />
       <workItem from="1603821920265" duration="99000" />
       <workItem from="1603879064142" duration="4548000" />
-      <workItem from="1603897083310" duration="1598000" />
+      <workItem from="1603897083310" duration="1702000" />
+      <workItem from="1603966561312" duration="2178000" />
+      <workItem from="1603976612877" duration="5739000" />
     </task>
     <task id="LOCAL-00001" summary="Petites modifs + début page technique">
       <created>1602857812886</created>
@@ -197,7 +195,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603821970242</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Ajout upload pdf + modification du style">
+      <created>1603898794555</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1603898794555</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -225,7 +230,8 @@
     <MESSAGE value="correction bug" />
     <MESSAGE value="style bouton page technique" />
     <MESSAGE value="modification des controllers" />
-    <option name="LAST_COMMIT_MESSAGE" value="modification des controllers" />
+    <MESSAGE value="Ajout upload pdf + modification du style" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ajout upload pdf + modification du style" />
   </component>
   <component name="WindowStateProjectService">
     <state x="543" y="236" width="529" height="416" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1603205996176">
@@ -259,11 +265,11 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="440" y="94" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1603284674751" />
-    <state x="474" y="202" width="804" height="528" key="Vcs.Push.Dialog.v2" timestamp="1603821976863">
+    <state x="474" y="202" width="804" height="528" key="Vcs.Push.Dialog.v2" timestamp="1603898800108">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="395" y="168" width="804" height="528" key="Vcs.Push.Dialog.v2/0.0.1600.863@0.0.1600.863" timestamp="1603213013208" />
-    <state x="474" y="202" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1603821976863" />
+    <state x="474" y="202" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1603898800108" />
     <state x="0" y="0" width="1504" height="1027" key="dock-window-1" timestamp="1603442879608">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

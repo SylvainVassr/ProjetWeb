@@ -19,9 +19,9 @@ class HomeController
         $this->view = $view;
 
         //création du menu
-        $menu = array("Accueil" => '?objet=home&amp;action=show&amp;id=01',
-                      "Liste fichiers" => '?objet=catalogue&amp;action=show&amp;id=02',
-                      "Page technique" => '?objet=technique&amp;action=show&amp;id=03');
+        $menu = array("Accueil" => '?objet=home&amp;action=makeHomePage&amp;id=01',
+                      "Liste fichiers" => '?objet=catalogue&amp;action=show&amp;',
+                      "Page technique" => '?objet=technique&amp;action=show&amp;');
         
         $this->view->setPart('menu', $menu);
     }
@@ -50,13 +50,20 @@ class HomeController
         while($file = readdir($directory)) {
             if(!is_dir($path.$file))
             {
-                $content .= "<div class='img-container'>
-                                    <a href='$path$file'>
-                                    <img src='$path$file'>
-                                    <div class='title'>Consequat</div>
-                                    </a>
-                                </div>
-                            ";
+                $data = shell_exec("exiftool -json -g1 " . $path . $file);
+                $metadata = json_decode($data, true);
+
+                foreach ($metadata[0]["XMP-dc"] as $key => $value) {
+                    if ($key == 'Title') {
+                        $content .= "<div class='img-container'>
+                                        <a href='$path$file'>
+                                        <img src='$path$file'>
+                                        <div class='title'>$value</div>
+                                        </a>
+                                    </div>
+                        ";
+                    }
+                }
             }
         }
         $content .= "</div>";
@@ -69,24 +76,7 @@ class HomeController
     public function show()
     {
         $title = "Catalogue de fichiers PDF";
-        $path = 'src/CatalogueApp/Model/img/all-meta/';
-        $directory = opendir($path);
-
-        $content = "<div style='text-align: center'>";
-        while($file = readdir($directory)) {
-            if(!is_dir($path.$file))
-            {
-                $content .= "<div class='img-container'>
-                                    <a href='$path$file'>
-                                    <img src='$path$file'>
-                                    <div class='title'>Consequat</div>
-                                    </a>
-                                </div>
-                            ";
-            }
-        }
-        $content .= "</div>";
-        closedir($directory);
+        $content = "Une page liste les fichiers et permet de les modifier/supprimer.";
 
         $this->view->setPart('title', $title);
         $this->view->setPart('content', $content);

@@ -5,12 +5,6 @@ namespace Vassagnez\CatalogueApp;
 use \Vassagnez\Framework\Http\Request;
 use Exception;
 
-/*
- * Le routeur s'occupe d'analyser les requêtes HTTP
- * pour décider quoi faire et quoi afficher.
- * Il se contente de passer la main au contrôleur et
- * à la vue une fois qu'il a déterminé l'action à effectuer.
- */
 
 class Router
 {

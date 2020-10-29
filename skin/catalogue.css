@@ -52,13 +52,13 @@ figure {
     padding-bottom: 2%;
 }
 
-/*Style affichage des pdf sur la page d'accueil*/
+/*############ Style affichage des pdf sur la page d'accueil ############*/
 .img-container {
     display: inline-block;
     position: relative;
 }
 
-.img-container img {
+.img-container .img-pdf {
     width: 250px;
     height: 370px;
 }
@@ -78,7 +78,7 @@ figure {
     color: white;
 }
 
-/* Style des boutons */
+/*############ Style des boutons ############*/
 .position {
     margin-left: auto;
     margin-right: auto;

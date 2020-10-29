@@ -51,7 +51,7 @@
                                 <svg height='40' width='150' xmlns='http://www.w3.org/2000/svg'>
                                 <rect id='shape' height='40' width='150' />
                                 <div id='text'>
-                                    <a href='?objet=upload&amp;action=show&amp;id=04'><span class='spot'></span>Upload fichier</a>
+                                    <a href='?objet=upload&amp;action=show&amp;'><span class='spot'></span>Upload fichier</a>
                                 </div>
                                 </svg>
                             </div>

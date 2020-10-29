@@ -19,7 +19,7 @@ class TechniqueController
         $this->view = $view;
 
         //création du menu
-        $menu = array("Accueil" => '?objet=home&amp;action=show&amp;id=01',
+        $menu = array("Accueil" => '?objet=home&amp;action=makeHomePage&amp;id=01',
             "Liste fichiers" => '?objet=catalogue&amp;action=show&amp;id=02',
             "Page technique" => '?objet=technique&amp;action=show&amp;id=03');
 

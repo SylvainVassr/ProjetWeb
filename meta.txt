@@ -1,15 +1,15 @@
 [{
-  "SourceFile": "./src/CatalogueApp/Model/pdf/pdf-upload/bad-document4.pdf",
+  "SourceFile": "./src/CatalogueApp/Model/pdf/pdf-upload/bad-document3.pdf",
   "ExifTool": {
     "ExifToolVersion": 12.08
   },
   "System": {
-    "FileName": "bad-document4.pdf",
+    "FileName": "bad-document3.pdf",
     "Directory": "./src/CatalogueApp/Model/pdf/pdf-upload",
-    "FileSize": "177 kB",
-    "FileModifyDate": "2020:10:28 16:25:00+01:00",
-    "FileAccessDate": "2020:10:28 16:25:01+01:00",
-    "FileCreateDate": "2020:10:28 16:25:00+01:00",
+    "FileSize": "202 kB",
+    "FileModifyDate": "2020:10:29 11:13:51+01:00",
+    "FileAccessDate": "2020:10:29 11:13:51+01:00",
+    "FileCreateDate": "2020:10:29 11:13:51+01:00",
     "FilePermissions": "rw-rw-rw-"
   },
   "File": {
@@ -20,15 +20,15 @@
   "PDF": {
     "PDFVersion": 1.5,
     "Linearized": "No",
-    "PageCount": 9,
+    "PageCount": 20,
     "PageMode": "UseOutlines",
-    "Author": "Bao Kohlmeyer",
-    "Title": "ogfElsutl  siamieor",
-    "Subject": "eeitidrneuiccalueltgntctnl m fe rpe thamlvos caeeho iiioo lteiqqrl.p    iu isq spshvaattept o uila,mnue  sc aanfirasaasvo u u,ssu in cc tn erndusttsttfqist.ivesls umcdrc araisalaurniea laaiepcio suiegEudv,  uic,mTert r ataipugtiiarst uionePutmacimmmnstttsueeleifsmamuueesu t paitsuoie ccdmtatml   eo jn i  uscvtmtipiiulpt el sd msrhrisasovr, utea arinisbrsatuoalaelaboxmacprnluepelnr na tiimrooiupTust elnnsctcnuucpmrat si,simellonntd uaustei v isarvaeseesu ebsiuennnsaiie ponahuoen aftlliu disadoru ctc soe mnst efumi opusnr iacte, inedgt ttceiu m ara curarvpa si vluiiurufbsm.rc nm ste ad tv ntur ule  ais.aiesri re bs ",
+    "Author": "Karleen Dreps",
+    "Title": " asxMmdsiui",
+    "Subject": "i memdn   sa vorauteio,rimoeuttb siolieuum apxpqnminentutitcseesb nlb  isoli ,uoroeeaepa mlsaud staet lmhMaeoi uu tdrau ndu r umlenuls poip,snauen dnie sucpa nmurlt,ouslseandiilrmesacaqio im  i rrauilaraa pesiutrcia ptbdtrlrm enttsmrmsrist ausiesism.u aeuolidstgni amdpstemttcveeunstluuaametu rpcidm oaoaa mgtlug e tidcc pe  ltltmer eseecttgcitvqrunir hcruamsotinttco uit m .ieccm lhaen taas  ieuPmt ,oi barouu im  rsreapi qssoea hu,ero  ra pot cfts  ltsitbput s  s qotidrsqons avrpleutuuieouiimaoonclomecnra rbi .m aursmrecn  emeuomimruloin,emr bplsucdqe ehstnl e tili.nluleitti un urmasaeatsat mxeinl iealmtrs b  nousct ntsddqearaeecitmar  aepuaumeo nlHlm tstotealno  ureadplibelomrlot cuco  eetninqsss mso  aaulsbuiteInxpoeis t bstarfpntusncfuldni eipaeeedb oeormnehe ide eogf ",
     "Creator": "LaTeX with hyperref package",
     "Producer": "pdfTeX-1.40.17",
-    "CreateDate": "1991:05:19 21:16:40+02:00",
-    "ModifyDate": "1991:05:19 21:16:40+02:00",
+    "CreateDate": "1992:12:15 21:16:40+02:00",
+    "ModifyDate": "1992:12:15 21:16:40+02:00",
     "Trapped": false,
     "PTEX_Fullbanner": "This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) kpathsea version 6.2.2"
   },
@@ -36,12 +36,12 @@
     "XMPToolkit": "Image::ExifTool 12.00"
   },
   "XMP-dc": {
-    "Contributor": ["Leann Wittie","Hedwig Lehr"],
-    "Creator": "lamBKoee rhyo",
-    "Date": "2012:10:04 18:33:21+02:00",
-    "Description": "Taciti nisi fusce malesuada ipsum rutrum platea venenatis habitant fringilla, potenti pharetra justo facilisi maecenas varius vulputate molestie, velit dictum mattis diam mollis cursus urna natoque. Tempor egestas proin facilisis urna massa nostra odio in, volutpat maecenas cubilia dictumst gravida eu praesent. Elementum finibus augue eleifend tortor tempor id, convallis nunc suscipit ultricies volutpat vel, ac cursus parturient metus sed. Pulvinar ipsum in mattis neque nascetur torquent suscipit vitae, rhoncus cursus himenaeos mauris lobortis faucibus nam curae, scelerisque vehicula imperdiet at dictumst ex nisl.",
+    "Contributor": ["Keli Rauhecker","Cuc Poth","Eleanor Lindauer"],
+    "Creator": "neeprK asrlDe",
+    "Date": "2015:11:30 18:33:20+02:00",
+    "Description": "Mauris aliquet purus lorem adipiscing torquent dui netus sodales aenean platea, metus blandit condimentum nulla eros cursus faucibus est habitant inceptos, proin sit ad nisl quam neque urna molestie penatibus. Pretium potenti libero bibendum ac lacinia hendrerit suspendisse dictumst porttitor quis imperdiet, class per egestas amet molestie volutpat mauris tortor quam commodo augue placerat, sollicitudin maximus etiam erat hac lorem tempor mollis elementum lobortis. Habitasse vivamus fames maximus rhoncus molestie potenti accumsan urna nostra ex fermentum, lectus tortor pellentesque at aliquet magna dolor dui mus nunc. Id vestibulum platea arcu ultricies quis eleifend, primis himenaeos laoreet elementum bibendum curabitur porttitor, ipsum placerat rhoncus commodo ligula.",
     "Format": "application/pdf",
     "Language": "fr",
-    "Title": "Eros feugiat mollis"
+    "Title": "Maximus dis"
   }
 }]

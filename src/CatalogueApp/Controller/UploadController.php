@@ -21,9 +21,9 @@ class UploadController
         $this->view = $view;
 
         //création du menu
-        $menu = array("Accueil" => '?objet=home&amp;action=show&amp;id=01',
-            "Liste fichiers" => '?objet=catalogue&amp;action=show&amp;id=02',
-            "Page technique" => '?objet=technique&amp;action=show&amp;id=03');
+        $menu = array("Accueil" => '?objet=home&amp;action=makeHomePage&amp;',
+            "Liste fichiers" => '?objet=catalogue&amp;action=show&amp;',
+            "Page technique" => '?objet=technique&amp;action=show&amp;');
 
         $this->view->setPart('menu', $menu);
     }
@@ -100,9 +100,11 @@ class UploadController
                             $content .= '<h4>Date création : </h4><textarea name="description" rows="2" cols="33">'.$value.'</textarea>';
                         }
                     }
+
                     $file_meta = "meta.txt";
                     file_put_contents($file_meta, $data);
-                    $content .= '<br><br><input name="modif" type="submit" value="Modifier"></form>';
+                    $content .= '<br><br><input name="modif" type="submit" value="Modifier">
+                                 <input name="valid" type="submit" value="Valider"></form>';
                 }
                 $content .= '<br>Upload effectué avec succès !';
             }
