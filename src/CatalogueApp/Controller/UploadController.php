@@ -103,8 +103,26 @@ class UploadController
 
                     $file_meta = "meta.txt";
                     file_put_contents($file_meta, $data);
-                    $content .= '<br><br><input name="modif" type="submit" value="Modifier">
-                                 <input name="valid" type="submit" value="Valider"></form>';
+                    $content .= "<br><br><div style='display: inline-block'><div class='position-div-orange'>
+                                            <div class='svg-wrapper-div-orange'>
+                                                <svg height='40' width='150' xmlns='http://www.w3.org/2000/svg'>
+                                                    <rect id='shape-div-orange' height='40' width='150' />
+                                                    <div id='text-div-orange'>
+                                                        <input name='modif' type='submit' value='Modifier'>
+                                                    </div>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                        <div class='position-div-orange'>
+                                            <div class='svg-wrapper-div-orange'>
+                                                <svg height='40' width='150' xmlns='http://www.w3.org/2000/svg'>
+                                                    <rect id='shape-div-orange' height='40' width='150' />
+                                                    <div id='text-div-orange'>
+                                                        <input name='valid' type='submit' value='Valider'></form>
+                                                    </div>
+                                                </svg>
+                                            </div>
+                                        </div></div>";
                 }
                 $content .= '<br>Upload effectué avec succès !';
             }

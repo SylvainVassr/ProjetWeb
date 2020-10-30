@@ -1,15 +1,15 @@
 [{
-  "SourceFile": "./src/CatalogueApp/Model/pdf/pdf-upload/bad-document3.pdf",
+  "SourceFile": "./src/CatalogueApp/Model/pdf/pdf-upload/bad-document6.pdf",
   "ExifTool": {
     "ExifToolVersion": 12.08
   },
   "System": {
-    "FileName": "bad-document3.pdf",
+    "FileName": "bad-document6.pdf",
     "Directory": "./src/CatalogueApp/Model/pdf/pdf-upload",
-    "FileSize": "202 kB",
-    "FileModifyDate": "2020:10:29 11:13:51+01:00",
-    "FileAccessDate": "2020:10:29 11:13:51+01:00",
-    "FileCreateDate": "2020:10:29 11:13:51+01:00",
+    "FileSize": "195 kB",
+    "FileModifyDate": "2020:10:30 17:50:39+01:00",
+    "FileAccessDate": "2020:10:30 17:50:40+01:00",
+    "FileCreateDate": "2020:10:30 17:50:39+01:00",
     "FilePermissions": "rw-rw-rw-"
   },
   "File": {
@@ -20,15 +20,15 @@
   "PDF": {
     "PDFVersion": 1.5,
     "Linearized": "No",
-    "PageCount": 20,
+    "PageCount": 16,
     "PageMode": "UseOutlines",
-    "Author": "Karleen Dreps",
-    "Title": " asxMmdsiui",
-    "Subject": "i memdn   sa vorauteio,rimoeuttb siolieuum apxpqnminentutitcseesb nlb  isoli ,uoroeeaepa mlsaud staet lmhMaeoi uu tdrau ndu r umlenuls poip,snauen dnie sucpa nmurlt,ouslseandiilrmesacaqio im  i rrauilaraa pesiutrcia ptbdtrlrm enttsmrmsrist ausiesism.u aeuolidstgni amdpstemttcveeunstluuaametu rpcidm oaoaa mgtlug e tidcc pe  ltltmer eseecttgcitvqrunir hcruamsotinttco uit m .ieccm lhaen taas  ieuPmt ,oi barouu im  rsreapi qssoea hu,ero  ra pot cfts  ltsitbput s  s qotidrsqons avrpleutuuieouiimaoonclomecnra rbi .m aursmrecn  emeuomimruloin,emr bplsucdqe ehstnl e tili.nluleitti un urmasaeatsat mxeinl iealmtrs b  nousct ntsddqearaeecitmar  aepuaumeo nlHlm tstotealno  ureadplibelomrlot cuco  eetninqsss mso  aaulsbuiteInxpoeis t bstarfpntusncfuldni eipaeeedb oeormnehe ide eogf ",
+    "Author": "Ileen Dilday",
+    "Title": "icdaounere stlrs n udtleotiaprVetm i",
+    "Subject": "tsaqautacgs drortco reaaecnrosseuqu.iaaem nmmt outgte,spuiiiaeispeisuen ,a iitd ni uno dme tgc.aa ietasun au cim   aeretrfLuep lsii errhmluivoetooaldsvtiu  ct hidra,t ms pemvn ssd tbeutepovimneeauarpr ri sus oei sits,lu e ilpsanel nbeqeitspsvpe o   uaci ncessnlnaiorq tumlrdlinsdsu utrtHu titsuelcculoattdp npraicea tn ma sos h tii aia ii a oaisaaoatevtbuetiarinusisniaun scaetttsnmsmurnbtaqtrre ie fiht diiteeeEimptut urserusl  rvslasiu a,t ev ti aeslj gmpa  riruiiio abrnop irtrrssntve,tns nnudclsdspaasie aiencsnsetsis mcbtteausiu  etoun utsr,caiCcu culssrmria ruca rrs ssit sicsdsx i g triusnqt renans vrs rdoiesii elunrdalre rmle ctie il pomxutrpcvudat ti u  ta srtiipaol e iue.ldtpe.r laio  b ltmtc oneisdi,ilfsc",
     "Creator": "LaTeX with hyperref package",
     "Producer": "pdfTeX-1.40.17",
-    "CreateDate": "1992:12:15 21:16:40+02:00",
-    "ModifyDate": "1992:12:15 21:16:40+02:00",
+    "CreateDate": "1995:01:02 09:16:42+02:00",
+    "ModifyDate": "1995:01:02 09:16:42+02:00",
     "Trapped": false,
     "PTEX_Fullbanner": "This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) kpathsea version 6.2.2"
   },
@@ -36,12 +36,12 @@
     "XMPToolkit": "Image::ExifTool 12.00"
   },
   "XMP-dc": {
-    "Contributor": ["Keli Rauhecker","Cuc Poth","Eleanor Lindauer"],
-    "Creator": "neeprK asrlDe",
-    "Date": "2015:11:30 18:33:20+02:00",
-    "Description": "Mauris aliquet purus lorem adipiscing torquent dui netus sodales aenean platea, metus blandit condimentum nulla eros cursus faucibus est habitant inceptos, proin sit ad nisl quam neque urna molestie penatibus. Pretium potenti libero bibendum ac lacinia hendrerit suspendisse dictumst porttitor quis imperdiet, class per egestas amet molestie volutpat mauris tortor quam commodo augue placerat, sollicitudin maximus etiam erat hac lorem tempor mollis elementum lobortis. Habitasse vivamus fames maximus rhoncus molestie potenti accumsan urna nostra ex fermentum, lectus tortor pellentesque at aliquet magna dolor dui mus nunc. Id vestibulum platea arcu ultricies quis eleifend, primis himenaeos laoreet elementum bibendum curabitur porttitor, ipsum placerat rhoncus commodo ligula.",
+    "Contributor": "Giselle Kammel",
+    "Creator": "Ili eyDlndae",
+    "Date": "2020:01:03 18:33:24+02:00",
+    "Description": "Elit fusce volutpat venenatis dis luctus molestie cras ut, ornare varius laoreet tristique nunc lectus id penatibus, potenti justo ex risus odio pharetra vitae. Class porta bibendum magnis sem ac duis imperdiet, nascetur pretium hac vitae tristique primis nisl, luctus interdum facilisis nostra adipiscing consectetur. Habitasse orci luctus dis quis porttitor pharetra tellus venenatis quisque, augue sem praesent sit in accumsan blandit ut dui, sagittis sollicitudin scelerisque varius id pulvinar nostra arcu. Litora nisi mauris praesent laoreet metus nunc semper mattis eleifend cursus, blandit primis ante dis imperdiet himenaeos urna maximus porttitor, gravida erat vel lacinia volutpat lobortis risus massa cras.",
     "Format": "application/pdf",
     "Language": "fr",
-    "Title": "Maximus dis"
+    "Title": "Velit senectus parturient diam dolor"
   }
 }]

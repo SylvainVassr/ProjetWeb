@@ -58,7 +58,7 @@ figure {
     position: relative;
 }
 
-.img-container .img-pdf {
+.img-container img {
     width: 250px;
     height: 370px;
 }
@@ -154,6 +154,61 @@ figure {
     stroke-width: 3px;
     stroke-dashoffset: 0;
     stroke: #FEE441;
+}
+
+/*############ Style des boutons avec les background en orange ############*/
+.position-div-orange {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    margin-top: 15%;
+}
+
+.svg-wrapper-div-orange {
+    margin-top: 0;
+    position: relative;
+    width: 150px;
+    height: 40px;
+    display: inline-block;
+    border-radius: 3px;
+    margin-left: 5px;
+    margin-right: 5px
+}
+
+#shape-div-orange {
+    stroke-width: 6px;
+    fill: transparent;
+    stroke: #005d7e;
+    stroke-dasharray: 85 400;
+    stroke-dashoffset: -220;
+    transition: 1s all ease;
+}
+
+#text-div-orange {
+    margin-top: -35px;
+    text-align: center;
+}
+
+#text-div-orange a {
+    color: white;
+    text-decoration: none;
+    font-weight: 100;
+    font-size: 1.1em;
+}
+
+#text-div-orange input {
+    color: white;
+    border: none;
+    background-color: #EE8900;
+    font-weight: 100;
+    font-size: 1.1em;
+}
+
+.svg-wrapper-div-orange:hover #shape-div-orange {
+    stroke-dasharray: 50 0;
+    stroke-width: 3px;
+    stroke-dashoffset: 0;
+    stroke: #06D6A0;
 }
 
 /*
