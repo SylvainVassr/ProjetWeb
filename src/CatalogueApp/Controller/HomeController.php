@@ -43,7 +43,7 @@ class HomeController
     public function makeHomePage()
     {
         $title = "Catalogue de fichiers PDF";
-        $path = 'src/CatalogueApp/Model/img/all-meta/';
+        $path = 'src/img/all-meta/';
         $directory = opendir($path);
 
         $content = "<div style='text-align: center'>";
