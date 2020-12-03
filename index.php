@@ -15,9 +15,8 @@ spl_autoload_register(
     }
 );
 
-$server = $_SERVER;
 
-$request = new Request($_GET, $_FILES, $server, $_POST);
+$request = new Request($_GET, $_FILES, $_SERVER, $_POST, $_SESSION);
 $response = new Response();
 $router = new FrontControllerCatalogue($request, $response);
 $router->execute();

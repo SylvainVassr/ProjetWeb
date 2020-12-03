@@ -8,13 +8,15 @@ class Request
     private $files;
     private $server;
     private $post;
+    private $session;
 
-    public function __construct($get, $files, $server, $post)
+    public function __construct($get, $files, $server, $post, $session)
     {
         $this->get = $get;
         $this->files = $files;
         $this->server = $server;
         $this->post = $post;
+        $this->session = $session;
     }
 
     /**
@@ -39,12 +41,43 @@ class Request
         return $this->get[$key];
     }
 
+    public function setServer($key, $value)
+    {
+        $this->server[$key] = $value;
+    }
+
+    public function getServerParam($key, $default)
+    {
+        if (!isset($this->server[$key])) {
+            return $default;
+        }
+        return $this->server[$key];
+    }
+
     public function getPostParam($key, $default)
     {
         if (!isset($this->post[$key])) {
             return $default;
         }
         return $this->post[$key];
+    }
+
+    public function getSession($key, $default = null)
+    {
+        if(!key_exists($key, $this->session)) {
+            return $default;
+        }
+        return $this->session[$key];
+    }
+
+    public function setSession($key, $value)
+    {
+        $this->session[$key] = $value;
+    }
+
+    public function __destruct()
+    {
+        $_SESSION = $this->session;
     }
 
     /**

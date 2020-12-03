@@ -20,6 +20,7 @@ figure {
     justify-content: space-around;
 }
 
+/*############ Style affichage de l'authentification ############*/
 .auth {
     list-style: none;
     padding: 0;
@@ -30,6 +31,10 @@ figure {
 
 .barre_auth {
     padding-top: 17%;
+}
+
+.barre_auth .label_nom {
+    font-size: 1.5em;
 }
 
 .titre_accueil {

@@ -37,12 +37,6 @@ class Router
             case 'home':
                 $this->controllerClassName = '\Vassagnez\CatalogueApp\Controller\HomeController';
                 break;
-            case 'technique' :
-                $this->controllerClassName = '\Vassagnez\CatalogueApp\Controller\TechniqueController';
-                break;
-            case 'upload':
-                $this->controllerClassName = '\Vassagnez\CatalogueApp\Controller\UploadController';
-                break;
             default:
                 $this->controllerClassName = '\Vassagnez\CatalogueApp\Controller\HomeController';
         }

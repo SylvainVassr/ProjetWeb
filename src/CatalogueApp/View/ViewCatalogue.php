@@ -17,6 +17,7 @@ class ViewCatalogue extends View
         $title = $this->getPart('title');
         $content = $this->getPart('content');
         $menu = $this->getPart('menu');
+        $auth = $this->getPart('auth');
 
         ob_start();
         include $this->template;
