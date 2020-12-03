@@ -49,25 +49,25 @@ class HomeController
         $directory = opendir($path);
 
         $content = "<div style='text-align: center'>";
-//        while($file = readdir($directory)) {
-//            if(!is_dir($path.$file))
-//            {
-//                $data = shell_exec("exiftool -json -g1 " . $path . $file);
-//                $metadata = json_decode($data, true);
-//
-//                foreach ($metadata[0]["XMP-dc"] as $key => $value) {
-//                    if ($key == 'Title') {
-//                        $content .= "<div class='img-container'>
-//                                        <a href='$path$file'>
-//                                        <img src='$path$file'>
-//                                        <div class='title'>$value</div>
-//                                        </a>
-//                                    </div>
-//                        ";
-//                    }
-//                }
-//            }
-//        }
+        while($file = readdir($directory)) {
+            if(!is_dir($path.$file))
+            {
+                $data = shell_exec("exiftool -json -g1 " . $path . $file);
+                $metadata = json_decode($data, true);
+
+                foreach ($metadata[0]["XMP-dc"] as $key => $value) {
+                    if ($key == 'Title') {
+                        $content .= "<div class='img-container'>
+                                        <a href='$path$file'>
+                                        <img src='$path$file'>
+                                        <div class='title'>$value</div>
+                                        </a>
+                                    </div>
+                        ";
+                    }
+                }
+            }
+        }
         $content .= "</div>";
         closedir($directory);
 
