@@ -3,7 +3,7 @@
 <head>
     <title><?php echo $title ?></title>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" href="skin/catalogue.css" />
+    <link rel="stylesheet" href="src/skin/catalogue.css" />
 </head>
 <body>
     <nav class="menu">

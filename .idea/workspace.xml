@@ -19,63 +19,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5d77a55a-ed9f-4098-9747-9849512c074f" name="Default Changelist" comment="Modification style boutons pour les pages avec fond orange">
+    <list default="true" id="5d77a55a-ed9f-4098-9747-9849512c074f" name="Default Changelist" comment="Changement de l'arborescence">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CatalogueApp/Controller/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/CatalogueApp/Controller/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CatalogueApp/Model/img/all-meta/all-document1.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/src/img/all-meta/all-document1.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CatalogueApp/Model/img/all-meta/all-document10.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/src/img/all-meta/all-document10.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CatalogueApp/Model/img/all-meta/all-document2.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/src/img/all-meta/all-document2.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CatalogueApp/Model/img/all-meta/all-document3.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/src/img/all-meta/all-document3.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CatalogueApp/Model/img/all-meta/all-document4.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/src/img/all-meta/all-document4.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CatalogueApp/Model/img/all-meta/all-document5.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/src/img/all-meta/all-document5.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CatalogueApp/Model/img/all-meta/all-document6.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/src/img/all-meta/all-document6.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CatalogueApp/Model/img/all-meta/all-document7.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/src/img/all-meta/all-document7.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CatalogueApp/Model/img/all-meta/all-document8.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/src/img/all-meta/all-document8.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CatalogueApp/Model/img/all-meta/all-document9.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/src/img/all-meta/all-document9.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CatalogueApp/Model/pdf/all-meta/all-document1.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/src/pdf/all-meta/all-document1.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CatalogueApp/Model/pdf/all-meta/all-document10.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/src/pdf/all-meta/all-document10.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CatalogueApp/Model/pdf/all-meta/all-document2.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/src/pdf/all-meta/all-document2.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CatalogueApp/Model/pdf/all-meta/all-document3.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/src/pdf/all-meta/all-document3.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CatalogueApp/Model/pdf/all-meta/all-document4.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/src/pdf/all-meta/all-document4.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CatalogueApp/Model/pdf/all-meta/all-document5.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/src/pdf/all-meta/all-document5.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CatalogueApp/Model/pdf/all-meta/all-document6.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/src/pdf/all-meta/all-document6.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CatalogueApp/Model/pdf/all-meta/all-document7.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/src/pdf/all-meta/all-document7.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CatalogueApp/Model/pdf/all-meta/all-document8.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/src/pdf/all-meta/all-document8.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CatalogueApp/Model/pdf/all-meta/all-document9.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/src/pdf/all-meta/all-document9.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CatalogueApp/Model/pdf/bad-meta/bad-document1.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/src/pdf/bad-meta/bad-document1.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CatalogueApp/Model/pdf/bad-meta/bad-document10.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/src/pdf/bad-meta/bad-document10.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CatalogueApp/Model/pdf/bad-meta/bad-document2.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/src/pdf/bad-meta/bad-document2.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CatalogueApp/Model/pdf/bad-meta/bad-document3.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/src/pdf/bad-meta/bad-document3.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CatalogueApp/Model/pdf/bad-meta/bad-document4.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/src/pdf/bad-meta/bad-document4.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CatalogueApp/Model/pdf/bad-meta/bad-document5.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/src/pdf/bad-meta/bad-document5.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CatalogueApp/Model/pdf/bad-meta/bad-document6.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/src/pdf/bad-meta/bad-document6.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CatalogueApp/Model/pdf/bad-meta/bad-document7.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/src/pdf/bad-meta/bad-document7.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CatalogueApp/Model/pdf/bad-meta/bad-document8.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/src/pdf/bad-meta/bad-document8.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CatalogueApp/Model/pdf/bad-meta/bad-document9.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/src/pdf/bad-meta/bad-document9.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CatalogueApp/Model/pdf/pdf-meta/pdf-document1.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/src/pdf/pdf-meta/pdf-document1.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CatalogueApp/Model/pdf/pdf-meta/pdf-document10.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/src/pdf/pdf-meta/pdf-document10.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CatalogueApp/Model/pdf/pdf-meta/pdf-document2.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/src/pdf/pdf-meta/pdf-document2.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CatalogueApp/Model/pdf/pdf-meta/pdf-document3.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/src/pdf/pdf-meta/pdf-document3.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CatalogueApp/Model/pdf/pdf-meta/pdf-document4.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/src/pdf/pdf-meta/pdf-document4.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CatalogueApp/Model/pdf/pdf-meta/pdf-document5.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/src/pdf/pdf-meta/pdf-document5.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CatalogueApp/Model/pdf/pdf-meta/pdf-document6.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/src/pdf/pdf-meta/pdf-document6.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CatalogueApp/Model/pdf/pdf-meta/pdf-document7.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/src/pdf/pdf-meta/pdf-document7.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CatalogueApp/Model/pdf/pdf-meta/pdf-document8.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/src/pdf/pdf-meta/pdf-document8.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CatalogueApp/Model/pdf/pdf-meta/pdf-document9.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/src/pdf/pdf-meta/pdf-document9.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CatalogueApp/Model/pdf/pdf-upload/bad-document1.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/src/pdf/pdf-upload/bad-document1.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CatalogueApp/Model/pdf/pdf-upload/bad-document3.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/src/pdf/pdf-upload/bad-document3.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CatalogueApp/Model/pdf/pdf-upload/bad-document4.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/src/pdf/pdf-upload/bad-document4.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CatalogueApp/Model/pdf/pdf-upload/bad-document6.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/src/pdf/pdf-upload/bad-document6.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CatalogueApp/Model/pdf/xmp-meta/xmp-document1.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/src/pdf/xmp-meta/xmp-document1.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CatalogueApp/Model/pdf/xmp-meta/xmp-document10.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/src/pdf/xmp-meta/xmp-document10.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CatalogueApp/Model/pdf/xmp-meta/xmp-document2.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/src/pdf/xmp-meta/xmp-document2.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CatalogueApp/Model/pdf/xmp-meta/xmp-document3.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/src/pdf/xmp-meta/xmp-document3.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CatalogueApp/Model/pdf/xmp-meta/xmp-document4.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/src/pdf/xmp-meta/xmp-document4.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CatalogueApp/Model/pdf/xmp-meta/xmp-document5.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/src/pdf/xmp-meta/xmp-document5.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CatalogueApp/Model/pdf/xmp-meta/xmp-document6.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/src/pdf/xmp-meta/xmp-document6.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CatalogueApp/Model/pdf/xmp-meta/xmp-document7.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/src/pdf/xmp-meta/xmp-document7.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CatalogueApp/Model/pdf/xmp-meta/xmp-document8.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/src/pdf/xmp-meta/xmp-document8.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CatalogueApp/Model/pdf/xmp-meta/xmp-document9.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/src/pdf/xmp-meta/xmp-document9.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CatalogueApp/View/template.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/CatalogueApp/View/template.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -174,7 +119,7 @@
       <workItem from="1603976612877" duration="6046000" />
       <workItem from="1604074114811" duration="3036000" />
       <workItem from="1604225571382" duration="124000" />
-      <workItem from="1607000602790" duration="1778000" />
+      <workItem from="1607000602790" duration="2560000" />
     </task>
     <task id="LOCAL-00001" summary="Petites modifs + début page technique">
       <created>1602857812886</created>
@@ -267,7 +212,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604076939665</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Changement de l'arborescence">
+      <created>1607002553983</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1607002553983</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -298,7 +250,8 @@
     <MESSAGE value="Ajout upload pdf + modification du style" />
     <MESSAGE value="Ajout titres pour chaque pdf avec exiftool + début implémentation des classes dans répertoire model (pdf.php, pdfStorageStub.php)" />
     <MESSAGE value="Modification style boutons pour les pages avec fond orange" />
-    <option name="LAST_COMMIT_MESSAGE" value="Modification style boutons pour les pages avec fond orange" />
+    <MESSAGE value="Changement de l'arborescence" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changement de l'arborescence" />
   </component>
   <component name="WindowStateProjectService">
     <state x="543" y="236" width="529" height="416" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1603205996176">
@@ -332,11 +285,11 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="440" y="94" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1603284674751" />
-    <state x="474" y="202" width="804" height="528" key="Vcs.Push.Dialog.v2" timestamp="1604076954053">
+    <state x="474" y="202" width="804" height="528" key="Vcs.Push.Dialog.v2" timestamp="1607002559171">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="395" y="168" width="804" height="528" key="Vcs.Push.Dialog.v2/0.0.1600.863@0.0.1600.863" timestamp="1603213013208" />
-    <state x="474" y="202" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1604076954053" />
+    <state x="474" y="202" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1607002559171" />
     <state x="0" y="0" width="1504" height="1027" key="dock-window-1" timestamp="1603442879608">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
