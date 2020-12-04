@@ -77,8 +77,9 @@ class HomeController
 
     public function show()
     {
-        $title = "Catalogue de fichiers PDF";
-        $content = "Une page liste les fichiers et permet de les modifier/supprimer.";
+        $title = "Catalogue de fichiers PDF upload";
+        $content = "Cette page liste les fichiers et permet de les modifier/supprimer.";
+
 
         $this->view->setPart('title', $title);
         $this->view->setPart('content', $content);
@@ -108,13 +109,13 @@ class HomeController
     public function upload() {
         $title = "Upload fichier";
         $content = "<div class='upload_style'>
-                        <form method='post' action='' enctype='multipart/form-data'>
-                            <input name='fichier' type='file'><br><br>
-                            <div class='position'>
-                                <div class='svg-wrapper'>
+                        <form class='form-upload' method='post' action='' enctype='multipart/form-data'>
+                            <input class='btn-file' name='fichier' type='file'><br><br>
+                            <div class='position-div-orange'>
+                                <div class='svg-wrapper-div-orange'>
                                     <svg height='40' width='150' xmlns='http://www.w3.org/2000/svg'>
-                                        <rect id='shape' height='40' width='150' />
-                                        <div id='text'>
+                                        <rect id='shape-div-orange' height='40' width='150' />
+                                        <div id='text-div-orange'>
                                             <input name='upload' type='submit' value='upload'>
                                         </div>
                                     </svg>
@@ -123,9 +124,9 @@ class HomeController
                         </form>
                     </div>";
 
-        if( isset($_POST['upload']) )
+        if(isset($_POST['upload']))
         {
-            if (isset($_FILES['fichier']))
+            if(isset($_FILES['fichier']))
             {
                 $dossier = 'src/pdf/pdf-upload/';
                 $fichier = $_FILES['fichier']['name'];
@@ -148,8 +149,8 @@ class HomeController
                             $content .= '<h4>Titre : </h4><textarea name="titre" rows="2" cols="33">' . $value . '</textarea>';
                         }
                     }
-                    foreach ($metadata[0]["XMP-dc"] as $key => $value) {
-                        if($key == 'Description') {
+                    foreach ($metadata[0]["PDF"] as $key => $value) {
+                        if($key == 'Subject') {
                             $content .= '<h4>Description : </h4><textarea name="description" rows="8" cols="95">'.$value.'</textarea>';
                         }
                     }
@@ -158,9 +159,14 @@ class HomeController
                             $content .= '<h4>Auteur : </h4><textarea name="author" rows="2" cols="33">'.$value.'</textarea>';
                         }
                     }
-                    foreach ($metadata[0]["XMP-dc"] as $key => $value) {
-                        if($key == 'Date') {
+                    foreach ($metadata[0]["PDF"] as $key => $value) {
+                        if($key == 'CreateDate') {
                             $content .= '<h4>Date création : </h4><textarea name="description" rows="2" cols="33">'.$value.'</textarea>';
+                        }
+                    }
+                    foreach ($metadata[0]["PDF"] as $key => $value) {
+                        if($key == 'ModifyDate') {
+                            $content .= '<h4>Date modification : </h4><textarea name="description" rows="2" cols="33">'.$value.'</textarea>';
                         }
                     }
 
@@ -185,9 +191,9 @@ class HomeController
                                                     </div>
                                                 </svg>
                                             </div>
-                                        </div></div>";
+                                        </div>";
+                    $content .= '<br>Upload effectué avec succès !</div>';
                 }
-                $content .= '<br>Upload effectué avec succès !';
             }
         }
 

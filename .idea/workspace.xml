@@ -19,21 +19,14 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5d77a55a-ed9f-4098-9747-9849512c074f" name="Default Changelist" comment="Modification chemin skin">
-      <change afterPath="$PROJECT_DIR$/src/CatalogueApp/Controller/AuthentificationInterface.php" afterDir="false" />
+    <list default="true" id="5d77a55a-ed9f-4098-9747-9849512c074f" name="Default Changelist" comment="Mise à jour de l'authentification">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/meta.txt" beforeDir="false" afterPath="$PROJECT_DIR$/meta.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CatalogueApp/Controller/AuthentificationManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/CatalogueApp/Controller/AuthentificationManager.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CatalogueApp/Controller/FrontControllerCatalogue.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/CatalogueApp/Controller/FrontControllerCatalogue.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CatalogueApp/Controller/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/CatalogueApp/Controller/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CatalogueApp/Controller/TechniqueController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CatalogueApp/Controller/UploadController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CatalogueApp/Router.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/CatalogueApp/Router.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CatalogueApp/View/ViewCatalogue.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/CatalogueApp/View/ViewCatalogue.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CatalogueApp/View/template.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/CatalogueApp/View/template.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Framework/FrontController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Framework/FrontController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Framework/Http/Request.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Framework/Http/Request.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pdf/pdf-upload/all-document1.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pdf/pdf-upload/bad-document1.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pdf/pdf-upload/bad-document4.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pdf/pdf-upload/bad-document6.pdf" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/skin/catalogue.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/skin/catalogue.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -88,13 +81,15 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -132,7 +127,8 @@
       <workItem from="1603976612877" duration="6046000" />
       <workItem from="1604074114811" duration="3036000" />
       <workItem from="1604225571382" duration="124000" />
-      <workItem from="1607000602790" duration="13767000" />
+      <workItem from="1607000602790" duration="14057000" />
+      <workItem from="1607072564099" duration="4502000" />
     </task>
     <task id="LOCAL-00001" summary="Petites modifs + début page technique">
       <created>1602857812886</created>
@@ -239,7 +235,21 @@
       <option name="project" value="LOCAL" />
       <updated>1607003320564</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Mise à jour de l'authentification">
+      <created>1607014715864</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1607014715864</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Mise à jour de l'authentification">
+      <created>1607014865375</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1607014865375</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -272,7 +282,8 @@
     <MESSAGE value="Modification style boutons pour les pages avec fond orange" />
     <MESSAGE value="Changement de l'arborescence" />
     <MESSAGE value="Modification chemin skin" />
-    <option name="LAST_COMMIT_MESSAGE" value="Modification chemin skin" />
+    <MESSAGE value="Mise à jour de l'authentification" />
+    <option name="LAST_COMMIT_MESSAGE" value="Mise à jour de l'authentification" />
   </component>
   <component name="WindowStateProjectService">
     <state x="543" y="236" width="529" height="416" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1603205996176">
@@ -307,11 +318,11 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="440" y="94" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1603284674751" />
-    <state x="474" y="202" width="804" height="528" key="Vcs.Push.Dialog.v2" timestamp="1607003323693">
+    <state x="474" y="202" width="804" height="528" key="Vcs.Push.Dialog.v2" timestamp="1607014869609">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="395" y="168" width="804" height="528" key="Vcs.Push.Dialog.v2/0.0.1600.863@0.0.1600.863" timestamp="1603213013208" />
-    <state x="474" y="202" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1607003323693" />
+    <state x="474" y="202" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1607014869609" />
     <state x="0" y="0" width="1504" height="1027" key="dock-window-1" timestamp="1603442879608">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
