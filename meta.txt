@@ -1,47 +1,33 @@
 [{
-  "SourceFile": "src/pdf/pdf-upload/all-document2.pdf",
-  "ExifTool": {
-    "ExifToolVersion": 12.08
-  },
-  "System": {
-    "FileName": "all-document2.pdf",
-    "Directory": "src/pdf/pdf-upload",
-    "FileSize": "251 kB",
-    "FileModifyDate": "2020:12:04 11:18:35+01:00",
-    "FileAccessDate": "2020:12:04 11:18:36+01:00",
-    "FileCreateDate": "2020:12:04 11:18:35+01:00",
-    "FilePermissions": "rw-rw-rw-"
-  },
-  "File": {
-    "FileType": "PDF",
-    "FileTypeExtension": "pdf",
-    "MIMEType": "application/pdf"
-  },
-  "PDF": {
-    "PDFVersion": 1.5,
-    "Linearized": "No",
-    "PageCount": 34,
-    "PageMode": "UseOutlines",
-    "Author": "Debbi Hogberg",
-    "Title": "Congue",
-    "Subject": "Sit enim eget aenean feugiat aptent lacus maximus nisl laoreet, per duis senectus arcu nibh fermentum diam pulvinar accumsan suspendisse, ligula placerat tellus bibendum congue habitant venenatis class. Torquent proin rutrum rhoncus velit dictumst vehicula quis vulputate volutpat, venenatis nostra malesuada elementum ridiculus nisi laoreet placerat, cursus litora in semper habitant penatibus orci enim. Magna vulputate bibendum volutpat nec litora porta per hendrerit phasellus malesuada, efficitur ridiculus lacus dolor posuere magnis tortor nibh dapibus, scelerisque mattis sapien habitant vehicula pharetra ligula potenti placerat. Tellus ultricies felis rutrum tristique vitae porta, magna dignissim pulvinar phasellus nascetur elit, malesuada sit maximus nunc aliquet.",
-    "Creator": "LaTeX with hyperref package",
-    "Producer": "pdfTeX-1.40.17",
-    "CreateDate": "2010:12:23 18:29:24+02:00",
-    "ModifyDate": "2010:12:23 18:29:24+02:00",
-    "Trapped": false,
-    "PTEX_Fullbanner": "This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) kpathsea version 6.2.2"
-  },
-  "XMP-x": {
-    "XMPToolkit": "Image::ExifTool 12.00"
-  },
-  "XMP-dc": {
-    "Contributor": ["Robbyn Caracciola","Nathaniel Karty","Nikita Baillargeon","Luciana Boyas","Stacee Encarnacion"],
-    "Creator": "Debbi Hogberg",
-    "Date": "2010:12:23 18:29:24+02:00",
-    "Description": "Sit enim eget aenean feugiat aptent lacus maximus nisl laoreet, per duis senectus arcu nibh fermentum diam pulvinar accumsan suspendisse, ligula placerat tellus bibendum congue habitant venenatis class. Torquent proin rutrum rhoncus velit dictumst vehicula quis vulputate volutpat, venenatis nostra malesuada elementum ridiculus nisi laoreet placerat, cursus litora in semper habitant penatibus orci enim. Magna vulputate bibendum volutpat nec litora porta per hendrerit phasellus malesuada, efficitur ridiculus lacus dolor posuere magnis tortor nibh dapibus, scelerisque mattis sapien habitant vehicula pharetra ligula potenti placerat. Tellus ultricies felis rutrum tristique vitae porta, magna dignissim pulvinar phasellus nascetur elit, malesuada sit maximus nunc aliquet.",
-    "Format": "application/pdf",
-    "Language": "fr",
-    "Title": "Congue"
-  }
+  "SourceFile": "src/pdf/pdf-upload/all-document7.pdf",
+  "ExifToolVersion": 12.08,
+  "FileName": "all-document7.pdf",
+  "Directory": "src/pdf/pdf-upload",
+  "FileSize": "311 kB",
+  "FileModifyDate": "2020:12:04 23:17:42+01:00",
+  "FileAccessDate": "2020:12:04 23:17:42+01:00",
+  "FileCreateDate": "2020:12:04 23:17:42+01:00",
+  "FilePermissions": "rw-rw-rw-",
+  "FileType": "PDF",
+  "FileTypeExtension": "pdf",
+  "MIMEType": "application/pdf",
+  "PDFVersion": 1.5,
+  "Linearized": "No",
+  "PageCount": 32,
+  "PageMode": "UseOutlines",
+  "XMPToolkit": "Image::ExifTool 12.00",
+  "Contributor": ["Oscar Herriott","Nga Schiefen","Teena Amauty","Lavinia Huner"],
+  "Creator": "Annika Priestley",
+  "Date": "2020:07:05 18:29:31+02:00",
+  "Description": "Sagittis consequat neque dictum lacinia netus sollicitudin ultricies erat, urna scelerisque enim cras sociosqu ipsum risus lorem vel, dui amet class pretium habitasse quam sit. Habitant et fusce ante iaculis velit rhoncus ridiculus, elit ullamcorper nisl tristique eu lectus, malesuada penatibus eros ultrices semper justo. Litora hendrerit nisl luctus ante ac non tellus condimentum et eros consectetur erat montes nostra, nisi auctor faucibus lorem nec felis laoreet torquent feugiat senectus cras vehicula. Nunc hendrerit netus non tempus enim felis tincidunt donec curae, semper massa viverra nulla elit varius etiam vehicula, quam nascetur inceptos quis potenti purus nec mollis.",
+  "Format": "application/pdf",
+  "Language": "fr",
+  "Title": "Aliquet sodales est mollis nibh",
+  "Author": "Annika Priestley",
+  "Subject": "Sagittis consequat neque dictum lacinia netus sollicitudin ultricies erat, urna scelerisque enim cras sociosqu ipsum risus lorem vel, dui amet class pretium habitasse quam sit. Habitant et fusce ante iaculis velit rhoncus ridiculus, elit ullamcorper nisl tristique eu lectus, malesuada penatibus eros ultrices semper justo. Litora hendrerit nisl luctus ante ac non tellus condimentum et eros consectetur erat montes nostra, nisi auctor faucibus lorem nec felis laoreet torquent feugiat senectus cras vehicula. Nunc hendrerit netus non tempus enim felis tincidunt donec curae, semper massa viverra nulla elit varius etiam vehicula, quam nascetur inceptos quis potenti purus nec mollis.",
+  "Producer": "pdfTeX-1.40.17",
+  "CreateDate": "2020:07:05 18:29:31+02:00",
+  "ModifyDate": "2020:07:05 18:29:31+02:00",
+  "Trapped": false,
+  "PTEX_Fullbanner": "This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) kpathsea version 6.2.2"
 }]

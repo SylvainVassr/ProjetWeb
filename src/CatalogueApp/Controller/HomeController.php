@@ -2,6 +2,7 @@
 namespace Vassagnez\CatalogueApp\Controller;
 
 //use \Vassagnez\CatalogueApp\Model\PoemStorageStub;
+use Vassagnez\CatalogueApp\Model\Pdf;
 use \Vassagnez\Framework\Http\Request;
 use \Vassagnez\Framework\Http\Response;
 use \Vassagnez\CatalogueApp\View\ViewCatalogue;
@@ -22,7 +23,7 @@ class HomeController
 
         //création du menu
         $menu = array("Accueil" => '?objet=home&amp;action=makeHomePage',
-                      "Liste fichiers" => '?objet=home&amp;action=show',
+                      "Liste PDF" => '?objet=home&amp;action=show',
                       "Page technique" => '?objet=home&amp;action=technique');
         
         $this->view->setPart('menu', $menu);
@@ -45,31 +46,39 @@ class HomeController
     public function makeHomePage()
     {
         $title = "Catalogue de fichiers PDF";
-        $path = 'src/img/all-meta/';
-        $directory = opendir($path);
+        $img = $this->getImages();
 
-        $content = "<div style='text-align: center'>";
-        while($file = readdir($directory)) {
-            if(!is_dir($path.$file))
-            {
-                $data = shell_exec("exiftool -json -g1 " . $path . $file);
-                $metadata = json_decode($data, true);
-
-                foreach ($metadata[0]["XMP-dc"] as $key => $value) {
-                    if ($key == 'Title') {
-                        $content .= "<div class='img-container'>
-                                        <a href='$path$file'>
-                                        <img src='$path$file'>
-                                        <div class='title'>$value</div>
-                                        </a>
-                                    </div>
-                        ";
-                    }
-                }
-            }
+        $content = "<div class='grid-container'>";
+        foreach ($img  as $pdf) {
+            $content .= "<div class='img-container'>
+                            <a href='?objet=home&amp;action=detail&amp;id=".$pdf->getId()."'>
+                                <img class='div-img' src='".$pdf->getImage()."' alt='".$pdf->getTitle()."'>
+                            </a>
+                         </div>";
         }
-        $content .= "</div>";
-        closedir($directory);
+        $content .= '</div>';
+
+        $this->view->setPart('title', $title);
+        $this->view->setPart('content', $content);
+    }
+
+    public function getImages() {
+        $array = array();
+        $dir = scandir('src/pdf/all-meta/');
+
+        for($i = 2; $i < count($dir); $i++) {
+            $data = shell_exec("exiftool -json src/pdf/all-meta/". $dir[$i]);
+            $metadata = json_decode($data, true);
+
+            array_push($array, (new Pdf($i-2, $metadata[0]['FileName'], $metadata[0]['Title'], $metadata[0]['Author'],
+                $metadata[0]['Description'], $metadata[0]['Language'],$metadata[0]['FileCreateDate'], $metadata[0]['FileName'])));
+        }
+        return ($array);
+    }
+
+    public function detail() {
+        $title = "Détails du fichier PDF";
+        $content = "";
 
         $this->view->setPart('title', $title);
         $this->view->setPart('content', $content);
@@ -77,8 +86,10 @@ class HomeController
 
     public function show()
     {
-        $title = "Catalogue de fichiers PDF upload";
-        $content = "Cette page liste les fichiers et permet de les modifier/supprimer.";
+        $title = "Catalogue de fichiers Upload";
+        $content = "<div class='contenu-upload'>
+                        <p>Cette page liste les fichiers et permet de les modifier/supprimer.</p>
+                    </div>";
 
 
         $this->view->setPart('title', $title);
@@ -89,16 +100,16 @@ class HomeController
         $title = "Page technique";
         $content = "<div class='contenu_technique'>
                         <h2>Page technique du projet</h2>
-                        <p>Ce projet a été réalisé par Sébastien AGNEZ et Sylvain VASSEUR. L'objectif était de
-                        réaliser un catalogue de fichiers PDF.</p>
+                            <p>Ce projet a été réalisé par Sébastien AGNEZ et Sylvain VASSEUR. L'objectif était de
+                            réaliser un catalogue de fichiers PDF.</p>
                         <h3>Détails techniques de l'implémentation</h3>
                         <h4>Fonctionnement du site web</h4>
-                        <p></p>
+                            <p></p>
                         <h4>Détails authentification</h4>    
-                        <p>Le site possède une partie accessible par authentification, il est possible de s'y connecter
-                        avec les deux comptes suivants : <br>
-                        - Le compte de Mr Lecarpentier, <b>login : jml</b> et <b>mdp : toto</b> <br>
-                        - Le compte de Mr Niveau, <b>login : alex</b> et <b>mdp : toto</b></p>             
+                            <p>Le site possède une partie accessible par authentification, il est possible de s'y connecter
+                            avec les deux comptes suivants : <br>
+                            - Le compte de Mr Lecarpentier, <b>login : jml</b> et <b>mdp : toto</b> <br>
+                            - Le compte de Mr Niveau, <b>login : alex</b> et <b>mdp : toto</b></p>             
                         
                     </div>";
 
@@ -132,69 +143,66 @@ class HomeController
                 $fichier = $_FILES['fichier']['name'];
                 if (move_uploaded_file($_FILES['fichier']['tmp_name'], $dossier . $fichier))
                 {
-                    $data = shell_exec("exiftool -json -g1 " . $dossier . $fichier);
-                    //$img = shell_exec("convert ".$fichier."[0] output.jpeg");
+                    $data = shell_exec("exiftool -json " . $dossier . $fichier);
+//                    $img = shell_exec("convert ".$fichier."[0] ./src/output.jpeg");
                     $metadata = json_decode($data, true);
 
                     $content = '<form class="ctn_upload" method="post" action="">
-                                <h2>Informations de l\'image</h2>';
-
-                    foreach ($metadata[0]["System"] as $key => $value) {
-                        if ($key == 'FileName') {
-                            $content .= '<h4>Nom document : </h4><textarea name="titre" rows="2" cols="33">' . $value . '</textarea>';
-                        }
-                    }
-                    foreach ($metadata[0]["PDF"] as $key => $value) {
-                        if ($key == 'Title') {
-                            $content .= '<h4>Titre : </h4><textarea name="titre" rows="2" cols="33">' . $value . '</textarea>';
-                        }
-                    }
-                    foreach ($metadata[0]["PDF"] as $key => $value) {
-                        if($key == 'Subject') {
-                            $content .= '<h4>Description : </h4><textarea name="description" rows="8" cols="95">'.$value.'</textarea>';
-                        }
-                    }
-                    foreach ($metadata[0]["PDF"] as $key => $value) {
-                        if($key == 'Author') {
-                            $content .= '<h4>Auteur : </h4><textarea name="author" rows="2" cols="33">'.$value.'</textarea>';
-                        }
-                    }
-                    foreach ($metadata[0]["PDF"] as $key => $value) {
-                        if($key == 'CreateDate') {
-                            $content .= '<h4>Date création : </h4><textarea name="description" rows="2" cols="33">'.$value.'</textarea>';
-                        }
-                    }
-                    foreach ($metadata[0]["PDF"] as $key => $value) {
-                        if($key == 'ModifyDate') {
-                            $content .= '<h4>Date modification : </h4><textarea name="description" rows="2" cols="33">'.$value.'</textarea>';
-                        }
-                    }
+                                    <h2>Informations de l\'image</h2>';
+                    $content .= '<h4>Nom document : </h4><input for="text" name="FileName" value="'.$metadata[0]["FileName"].'">';
+                    $content .= '<h4>Titre : </h4><input name="Title" value="'.$metadata[0]["Title"].'">';
+                    $content .= '<h4>Description : </h4><textarea name="Description" rows="12" cols="70">'.$metadata[0]["Description"].'</textarea>';
+                    $content .= '<h4>Auteur : </h4><input name="Author" value="'.$metadata[0]["Author"].'">';
+                    $content .= '<h4>Date création : </h4><input name="CreateDate" value="'.$metadata[0]["CreateDate"].'">';
+                    $content .= '<h4>Date modification : </h4><input name="ModifyDate" value="'.$metadata[0]["ModifyDate"].'">';
 
                     $file_meta = "meta.txt";
                     file_put_contents($file_meta, $data);
-                    $content .= "<br><br><div style='display: inline-block'><div class='position-div-orange'>
-                                            <div class='svg-wrapper-div-orange'>
-                                                <svg height='40' width='150' xmlns='http://www.w3.org/2000/svg'>
-                                                    <rect id='shape-div-orange' height='40' width='150' />
-                                                    <div id='text-div-orange'>
-                                                        <input name='modif' type='submit' value='Modifier'>
-                                                    </div>
-                                                </svg>
-                                            </div>
-                                        </div>
+
+                    $content .= "<br><br>
                                         <div class='position-div-orange'>
                                             <div class='svg-wrapper-div-orange'>
                                                 <svg height='40' width='150' xmlns='http://www.w3.org/2000/svg'>
                                                     <rect id='shape-div-orange' height='40' width='150' />
                                                     <div id='text-div-orange'>
-                                                        <input name='valid' type='submit' value='Valider'></form>
+                                                        <input name='valid' type='submit' value='Valider'>
                                                     </div>
                                                 </svg>
                                             </div>
-                                        </div>";
-                    $content .= '<br>Upload effectué avec succès !</div>';
+                                        </div>                                        
+                                        <br><br>Upload effectué avec succès !</form>";
                 }
             }
+        }
+
+        if (isset($_POST['FileName']) && isset($_POST['Title']) && isset($_POST['Description']) &&
+            isset($_POST['Author']) && isset($_POST['CreateDate']) && isset($_POST['ModifyDate'])){
+
+            $dossier = 'src/pdf/pdf-upload/';
+            $data = shell_exec("exiftool -json -g1 " . $dossier . $_POST['FileName']);
+            $metadata = json_decode($data, true);
+
+            foreach ($metadata[0]['PDF'] as $k => $v){
+                if (isset($_POST[$k])){
+                    switch ($k){
+                        case 'FileName':
+                            $v = $_POST[$k];
+                        case 'Title':
+                            print_r($v);
+                            $v = $_POST[$k];
+                            print_r($v);
+                        case 'Description':
+                            $v = $_POST[$k];
+                        case 'Author':
+                            $v = $_POST[$k];
+                        case 'CreateDate':
+                            $v = $_POST[$k];
+                        case 'ModifyDate':
+                            $v = $_POST[$k];
+                    }
+                }
+            }
+            var_dump($metadata[0]['PDF']);
         }
 
         $this->view->setPart('title', $title);

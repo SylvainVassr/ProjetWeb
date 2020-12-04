@@ -1,11 +1,26 @@
-html {
-    overflow-y: scroll;
+* {
+    margin:0;
+    padding:0;
 }
+
 body {
+    background-color: #005d7e;
+    margin-top: 1%;
+}
+
+.main {
+    max-width:1280px;
+    min-height:100%;
+    margin:0 auto;
+    position:relative;
+}
+
+.contenu-page {
     max-width: 60em;
     margin: auto;
-    background-color: #005d7e;
     color: white;
+    padding-right: 3%;
+    padding-left: 3%;
 }
 
 figure {
@@ -13,20 +28,43 @@ figure {
     text-align: center;
 }
 
+/*############ Style affichage du menu ############*/
 .menu ul {
     list-style: none;
     padding: 0;
-    display: flex;
-    justify-content: space-around;
+    margin-left: 15%;
+}
+
+.menu ul li {
+    display: inline-block;
 }
 
 /*############ Style affichage de l'authentification ############*/
 .auth {
     list-style: none;
     padding: 0;
-    display: flex;
     justify-content: space-around;
-    padding-top: 2%;
+    padding-top: 1%;
+    padding-bottom: 5%;
+    margin-left: 17%;
+}
+
+.auth-connexion {
+    list-style: none;
+    padding: 0;
+    justify-content: space-around;
+    padding-top: 1%;
+    padding-bottom: 5%;
+}
+
+.auth li{
+    display: inline-block;
+    padding-left: 8%;
+}
+
+.auth-connexion li{
+    display: inline-block;
+    padding-left: 8%;
 }
 
 .barre_auth {
@@ -34,13 +72,11 @@ figure {
 }
 
 .barre_auth .label_nom {
-    font-size: 1.5em;
+    font-size: 1.3em;
 }
 
 .titre_accueil {
     text-align: center;
-    padding-top: 5%;
-    padding-bottom: 5%;
 }
 
 /*############ Style affichage de la div upload ############*/
@@ -48,10 +84,15 @@ figure {
     background-color: #EE8900;
     padding-top: 2%;
     padding-bottom: 2%;
-    width: 600px;
-    height: 260px;
+    width: 500px;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 15%;
+    margin-bottom: 32.7%;
+}
+
+.btn-file {
+    padding-bottom: 3%;
 }
 
 .upload_style .form-upload {
@@ -63,39 +104,42 @@ figure {
     background-color: #EE8900;
     padding-top: 1%;
     padding-bottom: 2%;
+    margin-bottom: 3%;
+}
+
+.ctn_upload h2 {
+    padding-bottom: 2%;
 }
 
 .contenu_technique {
     text-align: center;
     background-color: #EE8900;
     padding-top: 2%;
-    padding-bottom: 2%;
+    padding-bottom: 4%;
+    margin-bottom: 40.2%;
+}
+
+.contenu-upload {
+    margin-bottom: 60.7%;
 }
 
 /*############ Style affichage des pdf sur la page d'accueil ############*/
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-gap: 20px;
+    max-width: 960px;
+    margin: 0 auto 30px;
+}
+
 .img-container {
-    display: inline-block;
     position: relative;
 }
 
-.img-container img {
-    width: 250px;
-    height: 370px;
-}
-
-.img-container .title {
-    left: 0;
-    top:0;
-    display: flex;
-    position: absolute;
-    width: 250px;
-    height: 370px;
-    align-items: center;
-    justify-content: center;
-    background-color: rgba(0,0,0,.5);
-    font-size: 20pt;
-    font-weight: bolder;
-    color: white;
+.div-img {
+    height: 450px;
+    width: 100%;
+    object-fit: cover;
 }
 
 /*############ Style des boutons ############*/
@@ -181,7 +225,7 @@ figure {
     margin-left: auto;
     margin-right: auto;
     text-align: center;
-    margin-top: 15%;
+    margin-top: 2%;
 }
 
 .svg-wrapper-div-orange {
@@ -231,16 +275,14 @@ figure {
     stroke: #06D6A0;
 }
 
-/*
-//Small devices (landscape phones, 576px and up)
-@media (min-width: 576px) {}
+/*############ Style du footer ############*/
+footer {
+    grid-column: span 3;
+    padding: 30px 20px 30px 40px;
+    text-align: center;
+    font-size: 1em;
+    background-color: black;
+    color: white;
 
-//Medium devices (tablets, 768px and up)
-@media (win-width: 768px) {}
 
-//Large devices (desktops, 992px and up)
-@media (win-width: 992px) {}
-
-//Extra large devices (large desktops, 1200px and up)
-@media (win-width: 1200px) {}
-*/
+}

@@ -35,21 +35,21 @@ class AuthentificationManager implements AuthentificationInterface
         $this->request = $request;
 
         $this->barreAuth = "<form action='".$this->request->getServerParam('REQUEST_AUTH', '?objet=home&amp;action=makeHomePage&amp')."' method='POST'>";
-        $this->barreAuth .= "<ul class='auth'>";
+        $this->barreAuth .= "<ul class='auth-connexion'>";
         $this->barreAuth .= "<li><div class='barre_auth'><label>Login : </label><input name='login' type='text'></div></li>";
         $this->barreAuth .= "<li><div class='barre_auth'><label>Mdp : </label><input name='mdp' type='password'></div></li>";
         $this->barreAuth .= "<li><div class='position'>
                                     <div class='svg-wrapper'>
                                         <svg height='40' width='150' xmlns='http://www.w3.org/2000/svg'>
-                                        <rect id='shape' height='40' width='150' />
-                                        <div id='text'>
-                                            <input type='submit' value='Connexion'>
-                                        </div>
+                                            <rect id='shape' height='40' width='150' />
+                                            <div id='text'>
+                                                <input type='submit' value='Connexion'>
+                                            </div>
                                         </svg>
                                     </div>
                                  </div>
                               </li>";
-        $this->barreAuth .= "</form></ul>";
+        $this->barreAuth .= "</ul></form>";
 
         if($request->getSession('login')) {
             $this->login = $request->getSession('login');
