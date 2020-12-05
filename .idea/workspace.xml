@@ -19,12 +19,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5d77a55a-ed9f-4098-9747-9849512c074f" name="Default Changelist" comment="ID pour chaque fichier pdf">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="5d77a55a-ed9f-4098-9747-9849512c074f" name="Default Changelist" comment="Ajout du menu déroulant">
       <change beforePath="$PROJECT_DIR$/src/CatalogueApp/Controller/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/CatalogueApp/Controller/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CatalogueApp/Model/Pdf.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/CatalogueApp/Model/Pdf.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CatalogueApp/View/template.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/CatalogueApp/View/template.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/skin/catalogue.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/skin/catalogue.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -127,7 +123,7 @@
       <workItem from="1607084752563" duration="20827000" />
       <workItem from="1607113901055" duration="6563000" />
       <workItem from="1607175059403" duration="3010000" />
-      <workItem from="1607179101749" duration="743000" />
+      <workItem from="1607179101749" duration="1066000" />
     </task>
     <task id="LOCAL-00001" summary="Petites modifs + début page technique">
       <created>1602857812886</created>
@@ -269,7 +265,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607120506843</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Ajout du menu déroulant">
+      <created>1607179891982</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1607179891982</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -305,57 +308,7 @@
     <MESSAGE value="Mise à jour de l'authentification" />
     <MESSAGE value="Modification des métadonnées" />
     <MESSAGE value="ID pour chaque fichier pdf" />
-    <option name="LAST_COMMIT_MESSAGE" value="ID pour chaque fichier pdf" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="543" y="236" width="529" height="416" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1603205996176">
-      <screen x="0" y="0" width="1600" height="863" />
-    </state>
-    <state x="543" y="236" width="529" height="416" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1600.863@0.0.1600.863" timestamp="1603205996176" />
-    <state x="640" y="256" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1607178957912">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="640" y="256" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1607178957912" />
-    <state x="442" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1603443219194">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="442" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1603443219194" />
-    <state x="640" y="242" width="528" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1603444767793">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="533" y="209" width="528" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1600.900@0.0.1600.900" timestamp="1602595153738" />
-    <state x="640" y="242" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1603444767793" />
-    <state x="700" y="242" width="428" height="484" key="FileChooserDialogImpl" timestamp="1607078806258">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="583" y="209" width="428" height="484" key="FileChooserDialogImpl/0.0.1600.900@0.0.1600.900" timestamp="1602593987819" />
-    <state x="700" y="242" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1607078806258" />
-    <state x="629" y="199" width="574" height="558" key="NewPhpClassDialog" timestamp="1607004420042">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="524" y="165" width="574" height="558" key="NewPhpClassDialog/0.0.1600.863@0.0.1600.863" timestamp="1603205997879" />
-    <state x="524" y="172" width="609" height="558" key="NewPhpClassDialog/0.0.1600.900@0.0.1600.900" timestamp="1602595119408" />
-    <state x="629" y="199" key="NewPhpClassDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1607004420042" />
-    <state x="617" y="376" width="359" height="149" key="NewPhpFileDialog" timestamp="1602595129499">
-      <screen x="0" y="0" width="1600" height="900" />
-    </state>
-    <state x="617" y="376" width="359" height="149" key="NewPhpFileDialog/0.0.1600.900@0.0.1600.900" timestamp="1602595129499" />
-    <state x="440" y="94" key="SettingsEditor" timestamp="1603284674751">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="440" y="94" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1603284674751" />
-    <state width="498" height="446" key="SwitcherDM" timestamp="1607100966639">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="498" height="446" key="SwitcherDM/0.0.1920.1040@0.0.1920.1040" timestamp="1607100966639" />
-    <state x="474" y="202" width="804" height="528" key="Vcs.Push.Dialog.v2" timestamp="1607120520511">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="395" y="168" width="804" height="528" key="Vcs.Push.Dialog.v2/0.0.1600.863@0.0.1600.863" timestamp="1603213013208" />
-    <state x="474" y="202" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1607120520511" />
-    <state x="0" y="0" width="1504" height="1027" key="dock-window-1" timestamp="1603442879608">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="0" y="0" width="1504" height="1027" key="dock-window-1/0.0.1920.1040@0.0.1920.1040" timestamp="1603442879608" />
+    <MESSAGE value="Ajout du menu déroulant" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ajout du menu déroulant" />
   </component>
 </project>

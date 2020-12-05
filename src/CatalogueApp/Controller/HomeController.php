@@ -48,7 +48,7 @@ class HomeController
         $title = "Catalogue de fichiers PDF";
         $content = "<div class='btn-group' style='margin-bottom: 61.6%'> 
                         <button type='button' class='btn btn-default dropdown-toggle' data-toggle='dropdown'>
-                            Choisissez <span class='caret''></span>
+                            Choisissez vos pdf <span class='caret''></span>
                         </button>
                        <ul class='dropdown-menu' role='menu'> 
                            <li><a href='?objet=home&amp;action=allMeta'>All-meta</a></li> 
@@ -68,7 +68,7 @@ class HomeController
 
         $content = "<div class='btn-group' style='margin-bottom: 3%'> 
                         <button type='button' class='btn btn-default dropdown-toggle' data-toggle='dropdown'>
-                            Choisissez <span class='caret''></span>
+                            Choisissez vos pdf<span class='caret''></span>
                         </button>
                        <ul class='dropdown-menu' role='menu'> 
                            <li><a href='?objet=home&amp;action=allMeta'>All-meta</a></li>
@@ -98,7 +98,7 @@ class HomeController
 
         $content = "<div class='btn-group' style='margin-bottom: 3%'> 
                         <button type='button' class='btn btn-default dropdown-toggle' data-toggle='dropdown'>
-                            Choisissez <span class='caret''></span>
+                            Choisissez vos pdf<span class='caret''></span>
                         </button>
                        <ul class='dropdown-menu' role='menu'> 
                            <li><a href='?objet=home&amp;action=allMeta'>All-meta</a></li>
@@ -128,7 +128,7 @@ class HomeController
 
         $content = "<div class='btn-group' style='margin-bottom: 3%'> 
                         <button type='button' class='btn btn-default dropdown-toggle' data-toggle='dropdown'>
-                            Choisissez <span class='caret''></span>
+                            Choisissez vos pdf<span class='caret''></span>
                         </button>
                        <ul class='dropdown-menu' role='menu'> 
                            <li><a href='?objet=home&amp;action=allMeta'>All-meta</a></li>
@@ -158,7 +158,7 @@ class HomeController
 
         $content = "<div class='btn-group' style='margin-bottom: 3%'> 
                         <button type='button' class='btn btn-default dropdown-toggle' data-toggle='dropdown'>
-                            Choisissez <span class='caret''></span>
+                            Choisissez vos pdf<span class='caret''></span>
                         </button>
                        <ul class='dropdown-menu' role='menu'> 
                            <li><a href='?objet=home&amp;action=allMeta'>All-meta</a></li>
