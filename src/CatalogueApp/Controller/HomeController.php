@@ -46,34 +46,195 @@ class HomeController
     public function makeHomePage()
     {
         $title = "Catalogue de fichiers PDF";
-        $img = $this->getImages();
-
-        $content = "<div class='grid-container'>";
-        foreach ($img  as $pdf) {
-            $content .= "<div class='img-container'>
-                            <a href='?objet=home&amp;action=detail&amp;id=".$pdf->getId()."'>
-                                <img class='div-img' src='".$pdf->getImage()."' alt='".$pdf->getTitle()."'>
-                            </a>
-                         </div>";
-        }
-        $content .= '</div>';
+        $content = "<div class='btn-group' style='margin-bottom: 61.6%'> 
+                        <button type='button' class='btn btn-default dropdown-toggle' data-toggle='dropdown'>
+                            Choisissez <span class='caret''></span>
+                        </button>
+                       <ul class='dropdown-menu' role='menu'> 
+                           <li><a href='?objet=home&amp;action=allMeta'>All-meta</a></li> 
+                           <li><a href='#'>Bad-meta</a></li> 
+                           <li><a href='#'>Pdf-meta</a></li> 
+                           <li><a href='#'>Xmp-meta</a></li>
+                       </ul> 
+                    </div>";
 
         $this->view->setPart('title', $title);
         $this->view->setPart('content', $content);
     }
 
-    public function getImages() {
-        $array = array();
-        $dir = scandir('src/pdf/all-meta/');
+    public function allMeta() {
+        $img = $this->getPdf('allMeta');
+        $title = "Catalogue de fichiers PDF";
 
-        for($i = 2; $i < count($dir); $i++) {
-            $data = shell_exec("exiftool -json src/pdf/all-meta/". $dir[$i]);
-            $metadata = json_decode($data, true);
+        $content = "<div class='btn-group' style='margin-bottom: 3%'> 
+                        <button type='button' class='btn btn-default dropdown-toggle' data-toggle='dropdown'>
+                            Choisissez <span class='caret''></span>
+                        </button>
+                       <ul class='dropdown-menu' role='menu'> 
+                           <li><a href='?objet=home&amp;action=allMeta'>All-meta</a></li>
+                           <li><a href='?objet=home&amp;action=badMeta'>Bad-meta</a></li> 
+                           <li><a href='?objet=home&amp;action=pdfMeta'>Pdf-meta</a></li> 
+                           <li><a href='?objet=home&amp;action=xmpMeta'>Xmp-meta</a></li>
+                       </ul> 
+                    </div>";
 
-            array_push($array, (new Pdf($i-2, $metadata[0]['FileName'], $metadata[0]['Title'], $metadata[0]['Author'],
-                $metadata[0]['Description'], $metadata[0]['Language'],$metadata[0]['FileCreateDate'], $metadata[0]['FileName'])));
+        $content .= "<h2 class='title-meta'><u>Pdf all-meta</u></h2><div class='grid-container'>";
+        foreach ($img  as $pdf) {
+            $imgAllMeta = "src/img/all-meta/".preg_replace("/.pdf/i", ".jpeg", $pdf->getImage());
+            $content .= "<div class='img-container'>
+                            <a href='?objet=home&amp;action=detail&amp;id=".$pdf->getId()."'>
+                                <img class='div-img' src='".$imgAllMeta."' alt='".$pdf->getTitle()."'>
+                            </a>
+                         </div>";
         }
-        return ($array);
+        $content .= '</div>';
+        $this->view->setPart('title', $title);
+        $this->view->setPart('content', $content);
+    }
+
+    public function badMeta() {
+        $img = $this->getPdf('badMeta');
+        $title = "Catalogue de fichiers PDF";
+
+        $content = "<div class='btn-group' style='margin-bottom: 3%'> 
+                        <button type='button' class='btn btn-default dropdown-toggle' data-toggle='dropdown'>
+                            Choisissez <span class='caret''></span>
+                        </button>
+                       <ul class='dropdown-menu' role='menu'> 
+                           <li><a href='?objet=home&amp;action=allMeta'>All-meta</a></li>
+                           <li><a href='?objet=home&amp;action=badMeta'>Bad-meta</a></li> 
+                           <li><a href='?objet=home&amp;action=pdfMeta'>Pdf-meta</a></li> 
+                           <li><a href='?objet=home&amp;action=xmpMeta'>Xmp-meta</a></li>
+                       </ul> 
+                    </div>";
+
+        $content .= "<h2 class='title-meta'><u>Pdf bad-meta</u></h2><div class='grid-container'>";
+        foreach ($img  as $pdf) {
+            $imgBadMeta = "src/img/bad-meta/".preg_replace("/.pdf/i", ".jpeg", $pdf->getImage());
+            $content .= "<div class='img-container'>
+                            <a href='?objet=home&amp;action=detail&amp;id=".$pdf->getId()."'>
+                                <img class='div-img' src='".$imgBadMeta."' alt='".$pdf->getTitle()."'>
+                            </a>
+                         </div>";
+        }
+        $content .= '</div>';
+        $this->view->setPart('title', $title);
+        $this->view->setPart('content', $content);
+    }
+
+    public function pdfMeta() {
+        $img = $this->getPdf('pdfMeta');
+        $title = "Catalogue de fichiers PDF";
+
+        $content = "<div class='btn-group' style='margin-bottom: 3%'> 
+                        <button type='button' class='btn btn-default dropdown-toggle' data-toggle='dropdown'>
+                            Choisissez <span class='caret''></span>
+                        </button>
+                       <ul class='dropdown-menu' role='menu'> 
+                           <li><a href='?objet=home&amp;action=allMeta'>All-meta</a></li>
+                           <li><a href='?objet=home&amp;action=badMeta'>Bad-meta</a></li> 
+                           <li><a href='?objet=home&amp;action=pdfMeta'>Pdf-meta</a></li> 
+                           <li><a href='?objet=home&amp;action=xmpMeta'>Xmp-meta</a></li>
+                       </ul> 
+                    </div>";
+
+        $content .= "<h2 class='title-meta'><u>Pdf pdf-meta</u></h2><div class='grid-container'>";
+        foreach ($img  as $pdf) {
+            $imgPdfMeta = "src/img/pdf-meta/".preg_replace("/.pdf/i", ".jpeg", $pdf->getImage());
+            $content .= "<div class='img-container'>
+                            <a href='?objet=home&amp;action=detail&amp;id=".$pdf->getId()."'>
+                                <img class='div-img' src='".$imgPdfMeta."' alt='".$pdf->getTitle()."'>
+                            </a>
+                         </div>";
+        }
+        $content .= '</div>';
+        $this->view->setPart('title', $title);
+        $this->view->setPart('content', $content);
+    }
+
+    public function xmpMeta() {
+        $img = $this->getPdf('xmpMeta');
+        $title = "Catalogue de fichiers PDF";
+
+        $content = "<div class='btn-group' style='margin-bottom: 3%'> 
+                        <button type='button' class='btn btn-default dropdown-toggle' data-toggle='dropdown'>
+                            Choisissez <span class='caret''></span>
+                        </button>
+                       <ul class='dropdown-menu' role='menu'> 
+                           <li><a href='?objet=home&amp;action=allMeta'>All-meta</a></li>
+                           <li><a href='?objet=home&amp;action=badMeta'>Bad-meta</a></li> 
+                           <li><a href='?objet=home&amp;action=pdfMeta'>Pdf-meta</a></li> 
+                           <li><a href='?objet=home&amp;action=xmpMeta'>Xmp-meta</a></li>
+                       </ul> 
+                    </div>";
+
+        $content .= "<h2 class='title-meta'><u>Pdf xmp-meta</u></h2><div class='grid-container'>";
+        foreach ($img  as $pdf) {
+            $imgXmpMeta = "src/img/xmp-meta/".preg_replace("/.pdf/i", ".jpeg", $pdf->getImage());
+            $content .= "<div class='img-container'>
+                            <a href='?objet=home&amp;action=detail&amp;id=".$pdf->getId()."'>
+                                <img class='div-img' src='".$imgXmpMeta."' alt='".$pdf->getTitle()."'>
+                            </a>
+                         </div>";
+        }
+        $content .= '</div>';
+        $this->view->setPart('title', $title);
+        $this->view->setPart('content', $content);
+    }
+
+    public function getPdf($meta) {
+        if($meta == 'allMeta') {
+            $array = array();
+            $dir = scandir('src/pdf/all-meta/');
+
+            for($i = 2; $i < count($dir); $i++) {
+                $data = shell_exec("exiftool -json src/pdf/all-meta/". $dir[$i]);
+                $metadata = json_decode($data, true);
+
+                array_push($array, (new Pdf($i-2, $metadata[0]['FileName'], $metadata[0]['Title'], $metadata[0]['Author'],
+                    $metadata[0]['Description'], $metadata[0]['Language'],$metadata[0]['FileCreateDate'], $metadata[0]['FileName'])));
+            }
+            return ($array);
+        } elseif ($meta == 'badMeta') {
+            $array = array();
+            $dir = scandir('src/pdf/bad-meta/');
+
+            for($i = 2; $i < count($dir); $i++) {
+                $data = shell_exec("exiftool -json src/pdf/bad-meta/". $dir[$i]);
+                $metadata = json_decode($data, true);
+
+                array_push($array, (new Pdf($i-2, $metadata[0]['FileName'], $metadata[0]['Title'], $metadata[0]['Author'],
+                    $metadata[0]['Description'], $metadata[0]['Language'],$metadata[0]['FileCreateDate'], $metadata[0]['FileName'])));
+            }
+            return ($array);
+        } elseif ($meta == 'pdfMeta') {
+            $array = array();
+            $dir = scandir('src/pdf/pdf-meta/');
+
+            for($i = 2; $i < count($dir); $i++) {
+                $data = shell_exec("exiftool -json src/pdf/pdf-meta/". $dir[$i]);
+                $metadata = json_decode($data, true);
+
+                array_push($array, (new Pdf($i-2, $metadata[0]['FileName'], $metadata[0]['Title'], $metadata[0]['Author'],
+                    $metadata[0]['Subject'], $metadata[0]['FileSize'],$metadata[0]['FileCreateDate'], $metadata[0]['FileName'])));
+            }
+            return ($array);
+        } elseif ($meta == 'xmpMeta') {
+            $array = array();
+            $dir = scandir('src/pdf/xmp-meta/');
+
+            for($i = 2; $i < count($dir); $i++) {
+                $data = shell_exec("exiftool -json src/pdf/xmp-meta/". $dir[$i]);
+                $metadata = json_decode($data, true);
+
+                array_push($array, (new Pdf($i-2, $metadata[0]['FileName'], $metadata[0]['Title'], $metadata[0]['Author'],
+                    $metadata[0]['Description'], $metadata[0]['Language'],$metadata[0]['FileCreateDate'], $metadata[0]['FileName'])));
+            }
+            return ($array);
+        } else {
+            return null;
+        }
+
     }
 
     public function detail() {

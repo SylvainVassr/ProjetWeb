@@ -19,11 +19,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5d77a55a-ed9f-4098-9747-9849512c074f" name="Default Changelist" comment="Modification des métadonnées">
+    <list default="true" id="5d77a55a-ed9f-4098-9747-9849512c074f" name="Default Changelist" comment="ID pour chaque fichier pdf">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/meta.txt" beforeDir="false" afterPath="$PROJECT_DIR$/meta.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CatalogueApp/Controller/AuthentificationManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/CatalogueApp/Controller/AuthentificationManager.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CatalogueApp/Controller/FrontControllerCatalogue.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/CatalogueApp/Controller/FrontControllerCatalogue.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CatalogueApp/Controller/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/CatalogueApp/Controller/HomeController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CatalogueApp/Model/Pdf.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/CatalogueApp/Model/Pdf.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CatalogueApp/View/template.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/CatalogueApp/View/template.php" afterDir="false" />
@@ -81,15 +78,13 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -130,7 +125,9 @@
       <workItem from="1607000602790" duration="14057000" />
       <workItem from="1607072564099" duration="9244000" />
       <workItem from="1607084752563" duration="20827000" />
-      <workItem from="1607113901055" duration="6292000" />
+      <workItem from="1607113901055" duration="6563000" />
+      <workItem from="1607175059403" duration="3010000" />
+      <workItem from="1607179101749" duration="743000" />
     </task>
     <task id="LOCAL-00001" summary="Petites modifs + début page technique">
       <created>1602857812886</created>
@@ -258,7 +255,21 @@
       <option name="project" value="LOCAL" />
       <updated>1607077168838</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="ID pour chaque fichier pdf">
+      <created>1607120389161</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1607120389161</updated>
+    </task>
+    <task id="LOCAL-00020" summary="ID pour chaque fichier pdf">
+      <created>1607120506843</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1607120506843</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -293,13 +304,18 @@
     <MESSAGE value="Modification chemin skin" />
     <MESSAGE value="Mise à jour de l'authentification" />
     <MESSAGE value="Modification des métadonnées" />
-    <option name="LAST_COMMIT_MESSAGE" value="Modification des métadonnées" />
+    <MESSAGE value="ID pour chaque fichier pdf" />
+    <option name="LAST_COMMIT_MESSAGE" value="ID pour chaque fichier pdf" />
   </component>
   <component name="WindowStateProjectService">
     <state x="543" y="236" width="529" height="416" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1603205996176">
       <screen x="0" y="0" width="1600" height="863" />
     </state>
     <state x="543" y="236" width="529" height="416" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1600.863@0.0.1600.863" timestamp="1603205996176" />
+    <state x="640" y="256" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1607178957912">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="640" y="256" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1607178957912" />
     <state x="442" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1603443219194">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -332,11 +348,11 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1920.1040@0.0.1920.1040" timestamp="1607100966639" />
-    <state x="474" y="202" width="804" height="528" key="Vcs.Push.Dialog.v2" timestamp="1607077172878">
+    <state x="474" y="202" width="804" height="528" key="Vcs.Push.Dialog.v2" timestamp="1607120520511">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="395" y="168" width="804" height="528" key="Vcs.Push.Dialog.v2/0.0.1600.863@0.0.1600.863" timestamp="1603213013208" />
-    <state x="474" y="202" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1607077172878" />
+    <state x="474" y="202" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1607120520511" />
     <state x="0" y="0" width="1504" height="1027" key="dock-window-1" timestamp="1603442879608">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

@@ -20,7 +20,7 @@ class Pdf
         $this->id = $id;
         $this->name = $name;
         $this->title = $title;
-        $this->image = "src/img/all-meta/".preg_replace("/.pdf/i", ".jpeg", $image);
+        $this->image = $image;
         $this->author = $author;
         $this->description = $description;
         $this->language = $language;

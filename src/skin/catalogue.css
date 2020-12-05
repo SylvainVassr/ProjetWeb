@@ -88,7 +88,7 @@ figure {
     margin-left: auto;
     margin-right: auto;
     margin-top: 15%;
-    margin-bottom: 32.7%;
+    margin-bottom: 32.9%;
 }
 
 .btn-file {
@@ -112,11 +112,10 @@ figure {
 }
 
 .contenu_technique {
-    text-align: center;
+    text-align: left;
     background-color: #EE8900;
-    padding-top: 2%;
-    padding-bottom: 4%;
-    margin-bottom: 40.2%;
+    padding: 4%;
+    margin-bottom: 17.5%;
 }
 
 .contenu-upload {
@@ -140,6 +139,11 @@ figure {
     height: 450px;
     width: 100%;
     object-fit: cover;
+}
+
+.title-meta {
+    text-align: center;
+    margin-bottom: 3%;
 }
 
 /*############ Style des boutons ############*/
