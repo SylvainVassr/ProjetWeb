@@ -52,9 +52,9 @@ class HomeController
                         </button>
                        <ul class='dropdown-menu' role='menu'> 
                            <li><a href='?objet=home&amp;action=allMeta'>All-meta</a></li> 
-                           <li><a href='#'>Bad-meta</a></li> 
-                           <li><a href='#'>Pdf-meta</a></li> 
-                           <li><a href='#'>Xmp-meta</a></li>
+                           <li><a href='?objet=home&amp;action=badMeta'>Bad-meta</a></li> 
+                           <li><a href='?objet=home&amp;action=pdfMeta'>Pdf-meta</a></li> 
+                           <li><a href='?objet=home&amp;action=xmpMeta'>Xmp-meta</a></li>
                        </ul> 
                     </div>";
 
