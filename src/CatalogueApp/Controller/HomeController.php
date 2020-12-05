@@ -82,7 +82,7 @@ class HomeController
         foreach ($img  as $pdf) {
             $imgAllMeta = "src/img/all-meta/".preg_replace("/.pdf/i", ".jpeg", $pdf->getImage());
             $content .= "<div class='img-container'>
-                            <a href='?objet=home&amp;action=detail&amp;id=".$pdf->getId()."'>
+                            <a href='?objet=home&amp;action=detail&amp;id=".$pdf->getName()."'>
                                 <img class='div-img' src='".$imgAllMeta."' alt='".$pdf->getTitle()."'>
                             </a>
                          </div>";
@@ -112,7 +112,7 @@ class HomeController
         foreach ($img  as $pdf) {
             $imgBadMeta = "src/img/bad-meta/".preg_replace("/.pdf/i", ".jpeg", $pdf->getImage());
             $content .= "<div class='img-container'>
-                            <a href='?objet=home&amp;action=detail&amp;id=".$pdf->getId()."'>
+                            <a href='?objet=home&amp;action=detail&amp;id=".$pdf->getName()."'>
                                 <img class='div-img' src='".$imgBadMeta."' alt='".$pdf->getTitle()."'>
                             </a>
                          </div>";
@@ -142,7 +142,7 @@ class HomeController
         foreach ($img  as $pdf) {
             $imgPdfMeta = "src/img/pdf-meta/".preg_replace("/.pdf/i", ".jpeg", $pdf->getImage());
             $content .= "<div class='img-container'>
-                            <a href='?objet=home&amp;action=detail&amp;id=".$pdf->getId()."'>
+                            <a href='?objet=home&amp;action=detail&amp;id=".$pdf->getName()."'>
                                 <img class='div-img' src='".$imgPdfMeta."' alt='".$pdf->getTitle()."'>
                             </a>
                          </div>";
@@ -172,7 +172,7 @@ class HomeController
         foreach ($img  as $pdf) {
             $imgXmpMeta = "src/img/xmp-meta/".preg_replace("/.pdf/i", ".jpeg", $pdf->getImage());
             $content .= "<div class='img-container'>
-                            <a href='?objet=home&amp;action=detail&amp;id=".$pdf->getId()."'>
+                            <a href='?objet=home&amp;action=detail&amp;id=".$pdf->getName()."'>
                                 <img class='div-img' src='".$imgXmpMeta."' alt='".$pdf->getTitle()."'>
                             </a>
                          </div>";
@@ -191,8 +191,8 @@ class HomeController
                 $data = shell_exec("exiftool -json src/pdf/all-meta/". $dir[$i]);
                 $metadata = json_decode($data, true);
 
-                array_push($array, (new Pdf($i-2, $metadata[0]['FileName'], $metadata[0]['Title'], $metadata[0]['Author'],
-                    $metadata[0]['Description'], $metadata[0]['Language'],$metadata[0]['FileCreateDate'], $metadata[0]['FileName'])));
+                array_push($array, (new Pdf($i-2, $metadata[0]['SourceFile'], $metadata[0]['Title'], $metadata[0]['Author'],
+                    $metadata[0]['Description'], $metadata[0]['Language'],$metadata[0]['CreateDate'], $metadata[0]['FileName'])));
             }
             return ($array);
         } elseif ($meta == 'badMeta') {
@@ -203,8 +203,8 @@ class HomeController
                 $data = shell_exec("exiftool -json src/pdf/bad-meta/". $dir[$i]);
                 $metadata = json_decode($data, true);
 
-                array_push($array, (new Pdf($i-2, $metadata[0]['FileName'], $metadata[0]['Title'], $metadata[0]['Author'],
-                    $metadata[0]['Description'], $metadata[0]['Language'],$metadata[0]['FileCreateDate'], $metadata[0]['FileName'])));
+                array_push($array, (new Pdf($i-2, $metadata[0]['SourceFile'], $metadata[0]['Title'], $metadata[0]['Author'],
+                    $metadata[0]['Description'], $metadata[0]['Language'],$metadata[0]['CreateDate'], $metadata[0]['FileName'])));
             }
             return ($array);
         } elseif ($meta == 'pdfMeta') {
@@ -215,8 +215,8 @@ class HomeController
                 $data = shell_exec("exiftool -json src/pdf/pdf-meta/". $dir[$i]);
                 $metadata = json_decode($data, true);
 
-                array_push($array, (new Pdf($i-2, $metadata[0]['FileName'], $metadata[0]['Title'], $metadata[0]['Author'],
-                    $metadata[0]['Subject'], $metadata[0]['FileSize'],$metadata[0]['FileCreateDate'], $metadata[0]['FileName'])));
+                array_push($array, (new Pdf($i-2, $metadata[0]['SourceFile'], $metadata[0]['Title'], $metadata[0]['Author'],
+                    $metadata[0]['Subject'], $metadata[0]['FileSize'],$metadata[0]['CreateDate'], $metadata[0]['FileName'])));
             }
             return ($array);
         } elseif ($meta == 'xmpMeta') {
@@ -227,8 +227,8 @@ class HomeController
                 $data = shell_exec("exiftool -json src/pdf/xmp-meta/". $dir[$i]);
                 $metadata = json_decode($data, true);
 
-                array_push($array, (new Pdf($i-2, $metadata[0]['FileName'], $metadata[0]['Title'], $metadata[0]['Author'],
-                    $metadata[0]['Description'], $metadata[0]['Language'],$metadata[0]['FileCreateDate'], $metadata[0]['FileName'])));
+                array_push($array, (new Pdf($i-2, $metadata[0]['SourceFile'], $metadata[0]['Title'], $metadata[0]['Author'],
+                    $metadata[0]['Description'], $metadata[0]['Language'],$metadata[0]['CreateDate'], $metadata[0]['FileName'])));
             }
             return ($array);
         } else {
@@ -239,7 +239,26 @@ class HomeController
 
     public function detail() {
         $title = "Détails du fichier PDF";
-        $content = "";
+        $name = $_GET['id'];
+        $data = shell_exec("exiftool -json ".$name);
+        $metadata = json_decode($data, true)[0];
+
+//        $imgXmpMeta = "src/img/xmp-meta/".preg_replace("/.pdf/i", ".jpeg", $pdf->getImage());
+
+        $content = "<div class='contenu-global-detail'>";
+//        $content .= "<img class='div-img' src='".$metadata['']."' alt=''>";
+        $content .= "<div class='contenu-detail'>";
+        $content .= "<p><u>Nom</u> :  ". $metadata['FileName']."</p>";
+        $content .= "<p><u>Titre</u> :  ". $metadata['Title']."</p>";
+        $content .= "<p><u>Nombre de pages</u> :  ". $metadata['PageCount']." pages</p>";
+        $content .= "<p><u>Auteur</u> :  ". $metadata['Author']."</p>";
+        $content .= "<p><u>Description</u> :  ". $metadata['Subject']."</p>";
+        $content .= "<p><u>Taille</u> :  ". $metadata['FileSize']."</p>";
+        $content .= "<p><u>Date de création</u> :  ". $metadata['FileCreateDate']."</p>";
+        $content .= "<p><u>Date d'accès</u> :  ". $metadata['FileAccessDate']."</p>";
+        $content .= "<p><u>Type de fichier</u> :  ". $metadata['FileType']."</p>";
+        $content .= "</div>";
+        $content .= "</div>";
 
         $this->view->setPart('title', $title);
         $this->view->setPart('content', $content);
