@@ -19,11 +19,13 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5d77a55a-ed9f-4098-9747-9849512c074f" name="Default Changelist" comment="Ajout du menu déroulant">
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+    <list default="true" id="5d77a55a-ed9f-4098-9747-9849512c074f" name="Default Changelist" comment="Ajout des détails pour chaque fichier pdf, manque plus qu'à afficher l'image">
+      <change afterPath="$PROJECT_DIR$/src/js/upload.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/phpcbf.phar" beforeDir="false" afterPath="$PROJECT_DIR$/phpcbf.phar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CatalogueApp/Controller/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/CatalogueApp/Controller/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/skin/catalogue.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/skin/catalogue.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CatalogueApp/View/ViewCatalogue.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/CatalogueApp/View/ViewCatalogue.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CatalogueApp/View/template.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/CatalogueApp/View/template.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,6 +35,13 @@
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -55,6 +64,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../met-ta-donnee-6f798fb5ae06fd99224a5dff733c8bc3e62578d5" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -77,13 +87,15 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -126,7 +138,8 @@
       <workItem from="1607084752563" duration="20827000" />
       <workItem from="1607113901055" duration="6563000" />
       <workItem from="1607175059403" duration="3010000" />
-      <workItem from="1607179101749" duration="9635000" />
+      <workItem from="1607179101749" duration="9966000" />
+      <workItem from="1607332721070" duration="6790000" />
     </task>
     <task id="LOCAL-00001" summary="Petites modifs + début page technique">
       <created>1602857812886</created>
@@ -289,7 +302,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607180792337</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Ajout des détails pour chaque fichier pdf, manque plus qu'à afficher l'image">
+      <created>1607193919021</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1607193919021</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -326,6 +346,7 @@
     <MESSAGE value="Modification des métadonnées" />
     <MESSAGE value="ID pour chaque fichier pdf" />
     <MESSAGE value="Ajout du menu déroulant" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ajout du menu déroulant" />
+    <MESSAGE value="Ajout des détails pour chaque fichier pdf, manque plus qu'à afficher l'image" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ajout des détails pour chaque fichier pdf, manque plus qu'à afficher l'image" />
   </component>
 </project>

@@ -242,8 +242,13 @@ class HomeController
         $name = $_GET['id'];
         $data = shell_exec("exiftool -json ".$name);
         $metadata = json_decode($data, true)[0];
+        //        $imgXmpMeta = "src/img/xmp-meta/".preg_replace("/.pdf/i", ".jpeg", $pdf->getImage());
 
-//        $imgXmpMeta = "src/img/xmp-meta/".preg_replace("/.pdf/i", ".jpeg", $pdf->getImage());
+
+        if(isset($metadata['Description']))
+            $desc = $metadata['Description'];
+        else
+            $desc = $metadata['Subject'];
 
         $content = "<div class='contenu-global-detail'>";
 //        $content .= "<img class='div-img' src='".$metadata['']."' alt=''>";
@@ -252,16 +257,31 @@ class HomeController
         $content .= "<p><u>Titre</u> :  ". $metadata['Title']."</p>";
         $content .= "<p><u>Nombre de pages</u> :  ". $metadata['PageCount']." pages</p>";
         $content .= "<p><u>Auteur</u> :  ". $metadata['Author']."</p>";
-        $content .= "<p><u>Description</u> :  ". $metadata['Subject']."</p>";
+        $content .= "<p><u>Description</u> :  ".$desc."</p>";
         $content .= "<p><u>Taille</u> :  ". $metadata['FileSize']."</p>";
-        $content .= "<p><u>Date de création</u> :  ". $metadata['FileCreateDate']."</p>";
+        $content .= "<p><u>Date de création</u> :  ". $metadata['CreateDate']."</p>";
         $content .= "<p><u>Date d'accès</u> :  ". $metadata['FileAccessDate']."</p>";
         $content .= "<p><u>Type de fichier</u> :  ". $metadata['FileType']."</p>";
         $content .= "</div>";
         $content .= "</div>";
 
+        // <!-- Open Graph / Facebook --> //
+        $meta = "<meta property='og:title' content='".$metadata['Title']."'>";
+        $meta .= "<meta property='og:url' content='https://dev-22000212.users.info.unicaen.fr/ProjetWeb/?objet=home&action=detail&id=".$metadata['SourceFile']."'>";
+        $meta .= "<meta property='og:site_name' content='Catalogue de fichier PDF'>";
+        $meta .= "<meta property='og:image' content=''>";
+        $meta .= "<meta property='og:description' content='".$metadata['Subject']."'>";
+
+        // <!-- Twitter Cards --> //
+        $meta .= "<meta property='twitter:card' content='summary_large_image'>";
+        $meta .= "<meta property='twitter:url' content='https://dev-22000212.users.info.unicaen.fr/ProjetWeb/?objet=home&action=detail&id=".$metadata['SourceFile']."'>";
+        $meta .= "<meta property='twitter:title' content='".$metadata['Title']."'>";
+        $meta .= "<meta property='twitter:description' content='".$metadata['Subject']."'>";
+        $meta .= "<meta property='twitter:image' content=''>";
+
         $this->view->setPart('title', $title);
         $this->view->setPart('content', $content);
+        $this->view->setPart('meta', $meta);
     }
 
     public function show()
