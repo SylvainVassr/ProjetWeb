@@ -7,24 +7,28 @@ class Pdf
     protected $id;
     protected $name;
     protected $title;
-    protected $image;
+    protected $path;
     protected $author;
     protected $description;
-    protected $language;
     protected $date;
+    protected $pageCount;
+    protected $size;
+    protected $dateAccess;
+    protected $type;
 
-
-
-    public function __construct($id, $name, $title, $author, $description, $language, $date, $image)
+    public function __construct($id, $path, $title, $author, $description, $date, $name, $pageCount, $size, $dateAccess, $type)
     {
         $this->id = $id;
-        $this->name = $name;
+        $this->path = $path;
         $this->title = $title;
-        $this->image = $image;
+        $this->name = $name;
         $this->author = $author;
         $this->description = $description;
-        $this->language = $language;
         $this->date = $date;
+        $this->pageCount = $pageCount;
+        $this->size = $size;
+        $this->dateAccess = $dateAccess;
+        $this->type = $type;
     }
 
     public function getId()
@@ -32,9 +36,9 @@ class Pdf
         return $this->id;
     }
 
-    public function getName()
+    public function getPath()
     {
-        return $this->name;
+        return $this->path;
     }
 
     public function getTitle()
@@ -42,9 +46,9 @@ class Pdf
         return $this->title;
     }
 
-    public function getImage()
+    public function getName()
     {
-        return $this->image;
+        return $this->name;
     }
 
     public function getAuthor()
@@ -57,13 +61,24 @@ class Pdf
         return $this->description;
     }
 
-    public function getLanguage()
-    {
-        return $this->language;
-    }
-
     public function getDate()
     {
         return $this->date;
+    }
+
+    public function getPageCount() {
+        return $this->pageCount;
+    }
+
+    public function getSize() {
+        return $this->size;
+    }
+
+    public function getDateAccess() {
+        return $this->dateAccess;
+    }
+
+    public function getType() {
+        return $this->type;
     }
 }
