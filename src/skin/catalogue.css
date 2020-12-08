@@ -88,7 +88,8 @@ figure {
     margin-left: auto;
     margin-right: auto;
     margin-top: 15%;
-    margin-bottom: 32.9%;
+    margin-bottom: 24.1%;
+    border-radius: 10px;
 }
 
 .btn-file {
@@ -116,10 +117,29 @@ figure {
     background-color: #EE8900;
     padding: 4%;
     margin-bottom: 17.5%;
+    border-radius: 10px;
 }
 
 .contenu-upload {
     margin-bottom: 60.7%;
+}
+
+/*############ Style de la barre de progression ############*/
+.container {
+    width: 500px;
+    margin: 0 auto;
+    text-align: center;
+}
+.progress_bar {
+    border: 1px solid #000;
+    border-radius: 10px;
+    margin-top: 9%;
+}
+.progress {
+    width: 20%;
+    background: green;
+    height: 20px;
+    border-radius: 10px;
 }
 
 /*############ Style affichage des pdf sur la page d'accueil ############*/
@@ -312,6 +332,16 @@ figure {
     font-weight: bolder;
     color: white;
 }
+
+/*############ Style du footer ############*/
+.btnListe {
+    margin-top: 2%;
+}
+
+.btnListe .btn-supprimer {
+    margin-left: 45%;
+}
+
 
 /*############ Style du footer ############*/
 footer {
