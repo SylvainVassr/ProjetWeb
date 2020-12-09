@@ -19,17 +19,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5d77a55a-ed9f-4098-9747-9849512c074f" name="Default Changelist" comment="Ajout des pdf dans la page liste fichiers et ajout de la barre de progression dans l'upload">
-      <change afterPath="$PROJECT_DIR$/src/CatalogueApp/Controller/upload.php" afterDir="false" />
+    <list default="true" id="5d77a55a-ed9f-4098-9747-9849512c074f" name="Default Changelist" comment="Upload effectué">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/meta.txt" beforeDir="false" afterPath="$PROJECT_DIR$/meta.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CatalogueApp/Controller/FrontControllerCatalogue.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/CatalogueApp/Controller/FrontControllerCatalogue.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CatalogueApp/Controller/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/CatalogueApp/Controller/HomeController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CatalogueApp/Controller/meta.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/CatalogueApp/Controller/meta.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CatalogueApp/View/template.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/CatalogueApp/View/template.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/upload.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/upload.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pdf/pdf-upload/all-document9.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/skin/catalogue.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/skin/catalogue.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -147,7 +140,7 @@
       <workItem from="1607418449664" duration="3154000" />
       <workItem from="1607429295863" duration="13760000" />
       <workItem from="1607508168279" duration="4961000" />
-      <workItem from="1607515330526" duration="4209000" />
+      <workItem from="1607515330526" duration="6537000" />
     </task>
     <task id="LOCAL-00001" summary="Petites modifs + début page technique">
       <created>1602857812886</created>
@@ -338,7 +331,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607443221664</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="Upload effectué">
+      <created>1607519835038</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1607519835038</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -379,6 +379,7 @@
     <MESSAGE value="ajout des données open graph et twitter cards" />
     <MESSAGE value="Modification accès détails par id" />
     <MESSAGE value="Ajout des pdf dans la page liste fichiers et ajout de la barre de progression dans l'upload" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ajout des pdf dans la page liste fichiers et ajout de la barre de progression dans l'upload" />
+    <MESSAGE value="Upload effectué" />
+    <option name="LAST_COMMIT_MESSAGE" value="Upload effectué" />
   </component>
 </project>

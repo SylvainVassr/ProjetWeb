@@ -327,7 +327,7 @@ class HomeController
                                 <img class='div-img' src='".$imgPdfMeta."'>";
                 $content .= "<div class='btnListe'>
                                     <a href='?objet=home&amp;action=fileUpload&amp;pdf=".$pdf->getName()."'>Modifier</a>
-                                    <input class='btn-supprimer' type='button' value='Supprimer'>
+                                    <a class='btn-supprimer' href='?objet=home&amp;action=deletePdf&amp;pdf=".$pdf->getName()."'>Supprimer</a>
                                 </div>
                             </a>
                          </div>";
@@ -406,14 +406,12 @@ class HomeController
             $author = $metadata[0]["Creator"];
 
 
-        $content = '<form class="ctn_upload" method="post" action="">
+        $content = '<form class="ctn_upload" method="post" action="?objet=home&amp;action=newMeta" enctype="multipart/form-data">
                         <h2>Informations du PDF</h2>';
         $content .= '<h4>Nom document : </h4><textarea name="FileName" rows="1" cols="33">' . $metadata[0]["FileName"] . '</textarea>';
         $content .= '<h4>Titre : </h4><textarea name="title" rows="1" cols="33">' . $metadata[0]["Title"] . '</textarea>';
         $content .= '<h4>Description : </h4><textarea name="Description" rows="12" cols="80">'.$desc.'</textarea>';
         $content .= '<h4>Auteur : </h4><textarea name="Author" rows="1" cols="33">'.$author.'</textarea>';
-        $content .= '<h4>Date création : </h4><textarea name="CreateDate" rows="1" cols="33">' . $metadata[0]["CreateDate"] . '</textarea>';
-        $content .= '<h4>Date modification : </h4><textarea name="ModifyDate" rows="1" cols="33">' . $metadata[0]["ModifyDate"] . '</textarea>';
 
         $content .= "<br><br>
                             <div class='position-div-orange'>
@@ -421,7 +419,7 @@ class HomeController
                                     <svg height='40' width='150' xmlns='http://www.w3.org/2000/svg'>
                                         <rect id='shape-div-orange' height='40' width='150' />
                                         <div id='text-div-orange'>
-                                            <a href='?objet=home&amp;action=modifierMeta&amp;'>Valider</a>
+                                            <input type='submit' value='Valider'>
                                         </div>
                                     </svg>
                                 </div>
@@ -430,6 +428,18 @@ class HomeController
 
         $this->view->setPart('title', $title);
         $this->view->setPart('content', $content);
+    }
+
+    public function newMeta() {
+        print_r($this->request->getAllPostParams());
+    }
+
+    public function deletePdf() {
+        $pdf = $this->request->getGetParam('pdf');
+        $dossier = 'src/pdf/pdf-upload/';
+        if(file_exists($dossier.$pdf))
+            unlink($dossier.$pdf);
+        header('Location: ?objet=home');
     }
 
     public function deco() {
