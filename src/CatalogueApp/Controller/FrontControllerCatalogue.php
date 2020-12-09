@@ -61,7 +61,6 @@ class FrontControllerCatalogue extends FrontController
                 } else {
                     $content .= $authentif->getBarreAuth();
                     $menu = array("Accueil" => '?objet=home&amp;action=makeHomePage',
-                        "Liste PDF" => '?objet=home&amp;action=show',
                         "Page technique" => '?objet=home&amp;action=technique'
                     );
                     $view->setPart('menu', $menu);

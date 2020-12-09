@@ -23,7 +23,6 @@ class HomeController
 
         //création du menu
         $menu = array("Accueil" => '?objet=home&amp;action=makeHomePage',
-            "Liste PDF" => '?objet=home&amp;action=show',
             "Page technique" => '?objet=home&amp;action=technique');
 
         $this->view->setPart('menu', $menu);
@@ -326,14 +325,12 @@ class HomeController
             $content .= "<div class='img-container'>
                             <a href='?objet=home&amp;action=detail&amp;meta=PdfUpload&amp;id=".$pdf->getId()."'>
                                 <img class='div-img' src='".$imgPdfMeta."'>";
-//            if(!$authentif->checkAuthentification($loginAuthentif, $mdpAuthentif)) {
                 $content .= "<div class='btnListe'>
-                                    <input type='button' value='Modifier'>
+                                    <a href='?objet=home&amp;action=fileUpload&amp;pdf=".$pdf->getName()."'>Modifier</a>
                                     <input class='btn-supprimer' type='button' value='Supprimer'>
                                 </div>
                             </a>
                          </div>";
-//            }
         }
         $content .= '</div>';
         $this->view->setPart('title', $title);
@@ -364,10 +361,8 @@ class HomeController
     public function upload() {
         $title = "Upload fichier";
         $content = "<div class='upload_style'>
-                        <div class='container'>
-                        <form id='upload_form' enctype='multipart/form-data' method='post'>
                             <p>
-                                Sélectionner un pdf :<input type='file' id='filePdf' name='fichier' style='margin-bottom: 4%'>
+                                Sélectionner un ou plusieurs pdf :<br><input type='file' id='filePdf' name='fichier' style='margin-bottom: 4%' multiple>
                                 <div class='position-div-orange'>
                                     <div class='svg-wrapper-div-orange'>
                                         <svg height='40' width='150' xmlns='http://www.w3.org/2000/svg'>
@@ -382,80 +377,56 @@ class HomeController
                             <div class='progress_bar'>
                                 <div id='progress' class='progress'></div>
                             </div>
-                            </form>
-                        </div>
                     </div>";
 
-        if(isset($_POST['submit']))
-        {
-            if(isset($_FILES['fichier']))
-            {
-                $dossier = 'src/pdf/pdf-upload/';
-                $fichier = $_FILES['fichier']['name'];
-                if (move_uploaded_file($_FILES['fichier']['tmp_name'], $dossier . $fichier))
-                {
-                    $data = shell_exec("exiftool -json " . $dossier . $fichier);
-                    $imgPdfUpload = preg_replace("/.pdf/i", ".jpeg", $fichier);
-                    $img = shell_exec("convert ".$dossier.$fichier."[0] src/img/img-upload/".$imgPdfUpload);
-                    $metadata = json_decode($data, true);
+        $this->view->setPart('title', $title);
+        $this->view->setPart('content', $content);
+    }
 
-                    $content = '<form class="ctn_upload" method="post" action="">
-                                    <h2>Informations de l\'image</h2>';
-                    $content .= '<h4>Nom document : </h4><input for="text" name="FileName" value="'.$metadata[0]["FileName"].'">';
-                    $content .= '<h4>Titre : </h4><input name="Title" value="'.$metadata[0]["Title"].'">';
-                    $content .= '<h4>Description : </h4><textarea name="Description" rows="12" cols="70">'.$metadata[0]["Description"].'</textarea>';
-                    $content .= '<h4>Auteur : </h4><input name="Author" value="'.$metadata[0]["Author"].'">';
-                    $content .= '<h4>Date création : </h4><input name="CreateDate" value="'.$metadata[0]["CreateDate"].'">';
-                    $content .= '<h4>Date modification : </h4><input name="ModifyDate" value="'.$metadata[0]["ModifyDate"].'">';
+    public function fileUpload() {
+        $title = "Upload fichier";
+        $dossier = 'src/pdf/pdf-upload/';
+        $pdf = $this->request->getGetParam('pdf');
 
-                    $file_meta = "meta.txt";
-                    file_put_contents($file_meta, $data);
+        $data = shell_exec("exiftool -json ".$dossier.$pdf);
+        $imgPdfUpload = preg_replace("/.pdf/i", ".jpeg", $pdf);
+        $img = shell_exec("convert ".$dossier.$pdf."[0] src/img/img-upload/".$imgPdfUpload);
+        $metadata = json_decode($data, true);
 
-                    $content .= "<br><br>
-                                        <div class='position-div-orange'>
-                                            <div class='svg-wrapper-div-orange'>
-                                                <svg height='40' width='150' xmlns='http://www.w3.org/2000/svg'>
-                                                    <rect id='shape-div-orange' height='40' width='150' />
-                                                    <div id='text-div-orange'>
-                                                        <input name='valid' type='submit' value='Valider'>
-                                                    </div>
-                                                </svg>
-                                            </div>
+        $fileMeta = file_put_contents('src/CatalogueApp/Controller/meta.txt', $data);
+
+        if(isset($metadata[0]['Description']))
+            $desc = $metadata[0]['Description'];
+        else
+            $desc = $metadata[0]['Subject'];
+
+        if(isset($metadata[0]['Author']) && $metadata[0]['Author'] != "")
+            $author = $metadata[0]['Author'];
+        else if(isset($metadata[0]['Creator']))
+            $author = $metadata[0]["Creator"];
+
+
+        $content = '<form class="ctn_upload" method="post" action="">
+                        <h2>Informations du PDF</h2>';
+        $content .= '<h4>Nom document : </h4><textarea name="FileName" rows="1" cols="33">' . $metadata[0]["FileName"] . '</textarea>';
+        $content .= '<h4>Titre : </h4><textarea name="title" rows="1" cols="33">' . $metadata[0]["Title"] . '</textarea>';
+        $content .= '<h4>Description : </h4><textarea name="Description" rows="12" cols="80">'.$desc.'</textarea>';
+        $content .= '<h4>Auteur : </h4><textarea name="Author" rows="1" cols="33">'.$author.'</textarea>';
+        $content .= '<h4>Date création : </h4><textarea name="CreateDate" rows="1" cols="33">' . $metadata[0]["CreateDate"] . '</textarea>';
+        $content .= '<h4>Date modification : </h4><textarea name="ModifyDate" rows="1" cols="33">' . $metadata[0]["ModifyDate"] . '</textarea>';
+
+        $content .= "<br><br>
+                            <div class='position-div-orange'>
+                                <div class='svg-wrapper-div-orange'>
+                                    <svg height='40' width='150' xmlns='http://www.w3.org/2000/svg'>
+                                        <rect id='shape-div-orange' height='40' width='150' />
+                                        <div id='text-div-orange'>
+                                            <a href='?objet=home&amp;action=modifierMeta&amp;'>Valider</a>
                                         </div>
-                                        <br><br>Upload effectué avec succès !</form>";
-                }
-            }
-        }
-
-//        if (isset($_POST['FileName']) && isset($_POST['Title']) && isset($_POST['Description']) &&
-//            isset($_POST['Author']) && isset($_POST['CreateDate']) && isset($_POST['ModifyDate'])){
-//
-//            $dossier = 'src/pdf/pdf-upload/';
-//            $data = shell_exec("exiftool -json -g1 " . $dossier . $_POST['FileName']);
-//            $metadata = json_decode($data, true);
-//
-//            foreach ($metadata[0]['PDF'] as $k => $v){
-//                if (isset($_POST[$k])){
-//                    switch ($k){
-//                        case 'FileName':
-//                            $v = $_POST[$k];
-//                        case 'Title':
-//                            print_r($v);
-//                            $v = $_POST[$k];
-//                            print_r($v);
-//                        case 'Description':
-//                            $v = $_POST[$k];
-//                        case 'Author':
-//                            $v = $_POST[$k];
-//                        case 'CreateDate':
-//                            $v = $_POST[$k];
-//                        case 'ModifyDate':
-//                            $v = $_POST[$k];
-//                    }
-//                }
-//            }
-//            var_dump($metadata[0]['PDF']);
-//        }
+                                    </svg>
+                                </div>
+                            </div>
+                            <br><br><p style='color: darkviolet'>Upload effectué avec succès !<p></form>";
 
         $this->view->setPart('title', $title);
         $this->view->setPart('content', $content);

@@ -1,25 +1,26 @@
 let btn_upload = document.getElementById("submitPdf");
 let progress = document.getElementById("progress");
-let file = document.getElementById("filePdf");
+let fileUpload = document.getElementById("filePdf");
 
 let upload = function () {
     let data = new FormData();
-    data.append('pdf', file[0]);
-
     let request = new XMLHttpRequest();
-    request.open('POST', '?objet=home');
-
-    console.log(file.files[0].name);
 
     request.upload.addEventListener('progress', function(e){
-        progress.style.width = Math.ceil(e.loaded/e.total) * 100 + '%';
+        progress.style.width = (e.loaded/e.total) * 100 + '%';
     }, false);
 
-    request.addEventListener('load', function(e) {
-        // console.log(request.status);
-        // console.log(request.response);
-    });
-
+    for(const file of fileUpload.files) {
+        data.append('pdf[]', file);
+    }
+    request.onreadystatechange = function () {
+        if (this.readyState === 4 && this.status === 200) {
+            let response = this.responseText;
+            let url = encodeURI("?objet=home&action=fileUpload&pdf=" + response);
+            window.location.href = url;
+        }
+    };
+    request.open('POST', 'src/CatalogueApp/Controller/upload.php');
     request.send(data);
 }
 btn_upload.addEventListener('click', upload);
