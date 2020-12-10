@@ -96,12 +96,6 @@ class FrontControllerCatalogue extends FrontController
             $view->setPart('title', 'Erreur');
             $view->setPart('content', "Une erreur d'exécution s'est produite");
         }
-
-//        if ($this->request->isAjaxRequest()) {
-//            $content = $view->getPart('content');
-//        } else {
-//            $content = $view->render();
-//        }
         $this->response->send($view->render());
     }
 }

@@ -292,8 +292,27 @@ class HomeController
         $content .= "<p><u>Date de création</u> :  ". $pdf->getDate()."</p>";
         $content .= "<p><u>Date d'accès</u> :  ". $pdf->getDateAccess()."</p>";
         $content .= "<p><u>Type de fichier</u> :  ".$pdf->getType()."</p>";
+        $content .= "<p><u>Prix du pdf</u> :  15€</p>";
+
+        $content .= "<form class='formAchat' action='?objet=paiement&amp;action=infosPaiement' method='POST'>";
+        $content .= "<input type='hidden' name='prix' value='15'>";
+        $content .= "<input type='hidden' name='pathFile' value='".$pdf->getPath()."'>";
+        $content .= "<input type='email' class='email' name='email' size='25' placeholder='Entrez votre adresse mail'>";
+        $content .= "<div class='position-div-orange'>";
+        $content .= "<div class='svg-wrapper-div-orange'>";
+        $content .= "<svg height='40' width='150' xmlns='http://www.w3.org/2000/svg'>";
+        $content .= "<rect id='shape-div-orange' height='40' width='150' />";
+        $content .= "<div id='text-div-orange'>";
+        $content .= "<input class='btnAcheter' type='submit' value='Acheter'>";
+        $content .= "</div>";
+        $content .= "</svg>";
         $content .= "</div>";
         $content .= "</div>";
+        $content .= "</form>";
+
+        $content .= "</div>";
+        $content .= "</div>";
+
 
         // <!-- Open Graph / Facebook --> //
         $meta = "<meta property='og:title' content='".$pdf->getTitle()."'>";
@@ -326,9 +345,33 @@ class HomeController
                             <a href='?objet=home&amp;action=detail&amp;meta=PdfUpload&amp;id=".$pdf->getId()."'>
                                 <img class='div-img' src='".$imgPdfMeta."'>";
                 $content .= "<div class='btnListe'>
-                                    <a href='?objet=home&amp;action=fileUpload&amp;pdf=".$pdf->getName()."'>Modifier</a>
-                                    <a class='btn-supprimer' href='?objet=home&amp;action=deletePdf&amp;pdf=".$pdf->getName()."'>Supprimer</a>
-                                </div>
+                                <ul class='col'>
+                                    <li class='ligne'>
+                                      <div class='position-upload'>
+                                        <div class='svg-wrapper-upload'>
+                                            <svg height='40' width='150' xmlns='http://www.w3.org/2000/svg'>
+                                            <rect id='shape-upload' height='40' width='150' />
+                                            <div id='text-upload'>
+                                                <a href='?objet=home&amp;action=fileUpload&amp;pdf=".$pdf->getName()."'>Modifier</a>
+                                            </div>
+                                            </svg>
+                                        </div>
+                                      </div>
+                                    </li>
+                                    <li class='ligne'>
+                                      <div class='position-upload'>
+                                        <div class='svg-wrapper-upload'>
+                                            <svg height='40' width='150' xmlns='http://www.w3.org/2000/svg'>
+                                            <rect id='shape-upload' height='40' width='150' />
+                                            <div id='text-upload'>
+                                                <a href='?objet=home&amp;action=deletePdf&amp;pdf=".$pdf->getName()."'>Supprimer</a>
+                                            </div>
+                                            </svg>
+                                        </div>
+                                      </div>
+                                    </li>
+                                </ul>  
+                             </div>
                             </a>
                          </div>";
         }
@@ -471,9 +514,12 @@ class HomeController
 
     public function deletePdf() {
         $pdf = $this->request->getGetParam('pdf');
-        $dossier = 'src/pdf/pdf-upload/';
-        if(file_exists($dossier.$pdf))
-            unlink($dossier.$pdf);
+        $dossierPDF = 'src/pdf/pdf-upload/';
+        $imgPdf = "src/img/img-upload/".preg_replace("/.pdf/i", ".jpeg", $pdf);
+
+        if(file_exists($dossierPDF.$pdf) && file_exists($imgPdf))
+            unlink($dossierPDF.$pdf);
+            unlink($imgPdf);
         $this->show();
     }
 

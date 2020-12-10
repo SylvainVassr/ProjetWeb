@@ -37,6 +37,9 @@ class Router
             case 'home':
                 $this->controllerClassName = '\Vassagnez\CatalogueApp\Controller\HomeController';
                 break;
+            case 'paiement':
+                $this->controllerClassName = '\Vassagnez\CatalogueApp\Controller\PaiementController';
+                break;
             default:
                 $this->controllerClassName = '\Vassagnez\CatalogueApp\Controller\HomeController';
         }
