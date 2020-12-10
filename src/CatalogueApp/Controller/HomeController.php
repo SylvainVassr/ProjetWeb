@@ -409,7 +409,7 @@ class HomeController
         $content = '<form class="ctn_upload" method="post" action="?objet=home&amp;action=newMeta" enctype="multipart/form-data">
                         <h2>Informations du PDF</h2>';
         $content .= '<h4>Nom document : </h4><textarea name="FileName" rows="1" cols="33">' . $metadata[0]["FileName"] . '</textarea>';
-        $content .= '<h4>Titre : </h4><textarea name="title" rows="1" cols="33">' . $metadata[0]["Title"] . '</textarea>';
+        $content .= '<h4>Titre : </h4><textarea name="Title" rows="1" cols="33">' . $metadata[0]["Title"] . '</textarea>';
         $content .= '<h4>Description : </h4><textarea name="Description" rows="12" cols="80">'.$desc.'</textarea>';
         $content .= '<h4>Auteur : </h4><textarea name="Author" rows="1" cols="33">'.$author.'</textarea>';
 
@@ -431,7 +431,42 @@ class HomeController
     }
 
     public function newMeta() {
-        print_r($this->request->getAllPostParams());
+        if(isset($_POST['FileName']) && $_POST['Title'] && $_POST['Description'] && $_POST['Author']) {
+            $filename = $_POST['FileName'];
+            $title = $_POST['Title'];
+            $description = $_POST['Description'];
+            $author = $_POST['Author'];
+            $path = 'src/CatalogueApp/Controller/meta.txt';
+
+            $metatxt = fopen($path, 'r');
+            $data = fread($metatxt, filesize($path));
+            $metadata = json_decode($data, true);
+            $pdf = "src/pdf/pdf-upload/" . $metadata[0]['FileName'];
+
+            foreach ($metadata[0] as $key => $value) {
+                if ($key == 'FileName' && $value != $filename) {
+                    $metadata[0]['FileName'] = $filename;
+                }
+                if ($key == 'Title' && $value != $title) {
+                    $metadata[0]['Title'] = $title;
+                }
+                if ($key == 'Description' && $value != $description) {
+                    $metadata[0]['Description'] = $description;
+                }
+                if ($key == 'Author' && $value != $author) {
+                    $metadata[0]['Author'] = $author;
+                }
+            }
+
+            $data = json_encode($metadata);
+            $json = file_put_contents($path, $data);
+            shell_exec("exiftool -json=" . $path . " " . $pdf);
+            fclose($metatxt);
+
+            if (file_exists("src/pdf/pdf-upload/" . $filename . "_original"))
+                unlink("src/pdf/pdf-upload/" . $filename . "_original");
+            $this->show();
+        }
     }
 
     public function deletePdf() {
@@ -439,7 +474,7 @@ class HomeController
         $dossier = 'src/pdf/pdf-upload/';
         if(file_exists($dossier.$pdf))
             unlink($dossier.$pdf);
-        header('Location: ?objet=home');
+        $this->show();
     }
 
     public function deco() {
