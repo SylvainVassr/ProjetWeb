@@ -19,7 +19,7 @@ DEBUG!YES!
 # indiquer:
 # ------------------------------------------------------------------------
 #
-D_LOGO!/ProjetWeb/src/img/logos/!
+D_LOGO!/devoir-idc2020/ProjetWeb/src/img/logos/!
 #
 # --------------------------------------------------------------------------
 #  Fichiers param�tres li�s a l'api sherlocks paiement	

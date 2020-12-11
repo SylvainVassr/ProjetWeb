@@ -19,28 +19,17 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5d77a55a-ed9f-4098-9747-9849512c074f" name="Default Changelist" comment="modification métadonnées fonctionnelle">
-      <change afterPath="$PROJECT_DIR$/src/CatalogueApp/Controller/PaiementController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Sherlocks/bin/README.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Sherlocks/bin/glibc-2.5-42/request" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Sherlocks/bin/glibc-2.5-42/response" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Sherlocks/bin/static/request" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Sherlocks/bin/static/response" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Sherlocks/param_demo/certif.fr.014295303911111.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Sherlocks/param_demo/certif.fr.014295303911112.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Sherlocks/param_demo/parmcom.014295303911111" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Sherlocks/param_demo/parmcom.sherlocks" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Sherlocks/param_demo/pathfile" afterDir="false" />
+    <list default="true" id="5d77a55a-ed9f-4098-9747-9849512c074f" name="Default Changelist" comment="début moyen de paiement d'un pdf">
+      <change afterPath="$PROJECT_DIR$/src/CatalogueApp/Controller/paiement.log.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/CatalogueApp/Model/Email.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CatalogueApp/Controller/FrontControllerCatalogue.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/CatalogueApp/Controller/FrontControllerCatalogue.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/phpcbf.phar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/phpcs.phar" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CatalogueApp/Controller/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/CatalogueApp/Controller/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CatalogueApp/Controller/meta.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/CatalogueApp/Controller/meta.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CatalogueApp/Router.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/CatalogueApp/Router.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CatalogueApp/View/template.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/CatalogueApp/View/template.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pdf/pdf-upload/all-document5.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pdf/pdf-upload/pdf-document2.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pdf/pdf-upload/pdf-document6.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/skin/catalogue.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/skin/catalogue.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CatalogueApp/Controller/PaiementController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/CatalogueApp/Controller/PaiementController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CatalogueApp/Model/PdfStorageStub.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Sherlocks/param_demo/parmcom.014295303911111" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sherlocks/param_demo/parmcom.014295303911111" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Sherlocks/param_demo/pathfile" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sherlocks/param_demo/pathfile" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -160,7 +149,9 @@
       <workItem from="1607508168279" duration="4961000" />
       <workItem from="1607515330526" duration="6755000" />
       <workItem from="1607590765565" duration="8271000" />
-      <workItem from="1607603051167" duration="13128000" />
+      <workItem from="1607603051167" duration="13300000" />
+      <workItem from="1607683979279" duration="2146000" />
+      <workItem from="1607689830114" duration="3864000" />
     </task>
     <task id="LOCAL-00001" summary="Petites modifs + début page technique">
       <created>1602857812886</created>
@@ -372,7 +363,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607594685526</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="début moyen de paiement d'un pdf">
+      <created>1607617755515</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1607617755515</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -391,7 +389,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Petites modifs + début page technique" />
     <MESSAGE value="Ajout fonction pour convertir 1 pdf en image" />
     <MESSAGE value="Ajout dossier pdf" />
     <MESSAGE value="Ajout d'images sur la page d'accueil" />
@@ -416,6 +413,7 @@
     <MESSAGE value="Upload effectué" />
     <MESSAGE value="Début modification métadonnées newPDF" />
     <MESSAGE value="modification métadonnées fonctionnelle" />
-    <option name="LAST_COMMIT_MESSAGE" value="modification métadonnées fonctionnelle" />
+    <MESSAGE value="début moyen de paiement d'un pdf" />
+    <option name="LAST_COMMIT_MESSAGE" value="début moyen de paiement d'un pdf" />
   </component>
 </project>

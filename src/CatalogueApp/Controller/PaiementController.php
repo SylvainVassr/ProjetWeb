@@ -5,6 +5,7 @@ namespace Vassagnez\CatalogueApp\Controller;
 
 
 use Vassagnez\CatalogueApp\View\ViewCatalogue;
+use Vassagnez\CatalogueApp\Model\Email;
 use Vassagnez\Framework\Http\Request;
 use Vassagnez\Framework\Http\Response;
 
@@ -49,23 +50,21 @@ class PaiementController
     {
         $email = $this->request->getPostParam('email', '');
         $prix = $this->request->getPostParam('prix', '');
-        $pathFile = $this->request->getPostParam('pathFile', '');
+        $pathPDF = $this->request->getPostParam('pathFile', '');
 
-        $fichier_exec = "/users/22000212/www-dev/Tp5/paiement/Sherlocks/bin/static/request";
-        $pathfile = "/users/22000212/www-dev/Tp5/paiement/Sherlocks/param_demo/pathfile";
+        $fichier_exec = "/users/22000212/www-dev/devoir-idc2020/ProjetWeb/src/Sherlocks/bin/static/request";
         $id_trans = rand(100, 100000);
-        $rand = rand(10, 2450);
 
         $data = [
-            "amount" => $rand*100,
+            "amount" => $prix*100,
             "merchant_id" => "014295303911111",
             "merchant_country" => "fr",
             "currency_code" => 978,
-            "pathfile" => "/users/22000212/www-dev/Tp5/paiement/Sherlocks/param_demo/pathfile",
+            "pathfile" => "/users/22000212/www-dev/devoir-idc2020/ProjetWeb/src/Sherlocks/param_demo/pathfile",
             "transaction_id" => $id_trans,
-            "normal_return_url" => "https://dev-22000212.users.info.unicaen.fr/Tp5/paiement/retourManuel.php",
-            "cancel_return_url" => "https://dev-22000212.users.info.unicaen.fr/Tp5/paiement/cancel.php",
-            "automatic_response_url" => "https://dev-22000212.users.info.unicaen.fr/Tp5/paiement/retourAuto.php",
+            "normal_return_url" => "https://dev-22000212.users.info.unicaen.fr/devoir-idc2020/ProjetWeb/?action=reponseAccepte",
+            "cancel_return_url" => "https://dev-22000212.users.info.unicaen.fr/devoir-idc2020/ProjetWeb/?action=reponseRefuse",
+            "automatic_response_url" => "https://dev-22000212.users.info.unicaen.fr/devoir-idc2020/ProjetWeb/?action=reponseAccepte",
             "language" => "fr",
             "payment_means" => "CB,2,VISA,2,MASTERCARD,2",
             "header_flag" => "no",
@@ -80,9 +79,9 @@ class PaiementController
             "templatefile" => "",
             "logo_id" => "",
             "receipt_complement" => "",
-            "caddie" => "",
+            "caddie" => "https://dev-22000212.users.info.unicaen.fr/devoir-idc2020/ProjetWeb/".$pathPDF,
             "customer_id" => "156198489",
-            "customer_email" => "",
+            "customer_email" => $email,
             "customer_ip_address" => "",
             "data" => "",
             "return_context" => "",
@@ -96,10 +95,8 @@ class PaiementController
                 $request .= $key. "=" .$values." ";
             }
         }
-        print_r($request);
         $exec = exec($fichier_exec." ".$request);
         $contenu = explode("!", $exec);
-        var_dump($contenu);
 
         $title = "Paiement du PDF";
         $content = "<div class='contenu-paiement'>
@@ -110,8 +107,8 @@ class PaiementController
                         <h3>Choisissez votre moyen de paiment :</h3>
                         ".$contenu[3]."
                     </div>";
+
         $this->view->setPart('title', $title);
         $this->view->setPart('content', $content);
     }
-
 }

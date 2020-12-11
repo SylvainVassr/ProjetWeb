@@ -1,10 +1,10 @@
 <?php
 namespace Vassagnez\CatalogueApp\Controller;
 
-//use \Vassagnez\CatalogueApp\Model\PoemStorageStub;
 use Vassagnez\CatalogueApp\Model\Pdf;
 use \Vassagnez\Framework\Http\Request;
 use \Vassagnez\Framework\Http\Response;
+use Vassagnez\CatalogueApp\Model\Email;
 use \Vassagnez\CatalogueApp\View\ViewCatalogue;
 
 class HomeController
@@ -521,6 +521,28 @@ class HomeController
             unlink($dossierPDF.$pdf);
             unlink($imgPdf);
         $this->show();
+    }
+
+    public function reponseAccepte()
+    {
+        $fichier_exec = "/users/22000212/www-dev/devoir-idc2020/ProjetWeb/src/Sherlocks/bin/static/response";
+        $pathfile = "pathfile=/users/22000212/www-dev/devoir-idc2020/ProjetWeb/src/Sherlocks/param_demo/pathfile";
+
+        $message_data = "message=" . $_POST['DATA'];
+        $exec = exec($fichier_exec . " " . $message_data . " " . $pathfile);
+        $tableau = explode("!", $exec);
+
+        $caddie = $tableau[22];
+        $customer_email = $tableau[28];
+
+        $email = new Email($caddie);
+        $email->sendMail($customer_email);
+        $this->makeHomePage();
+    }
+
+    public function reponseRefuse()
+    {
+        $this->makeHomePage();
     }
 
     public function deco() {
