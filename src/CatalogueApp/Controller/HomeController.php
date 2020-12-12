@@ -45,7 +45,7 @@ class HomeController
     public function makeHomePage()
     {
         $title = "Catalogue de fichiers PDF";
-        $content = "<div class='btn-group' style='margin-bottom: 61.6%'> 
+        $content = "<div class='btn-group' style='margin-bottom: 3%'> 
                         <button type='button' class='btn btn-default dropdown-toggle' data-toggle='dropdown'>
                             Choisissez vos pdf <span class='caret''></span>
                         </button>
@@ -376,6 +376,20 @@ class HomeController
                          </div>";
         }
         $content .= '</div>';
+
+        $namePdf = $this->request->getGetParam('pdf');
+        if(isset($namePdf)) {
+            $dossier = 'src/pdf/pdf-upload/';
+            $newPdf = str_replace(".pdf", ".pdf/", $namePdf);
+            $arrayPdfImg = explode("/", $newPdf);
+
+            for($i = 0; $i < count($arrayPdfImg); $i++) {
+                $imgPdfUpload = preg_replace("/.pdf/i", ".jpeg", $arrayPdfImg[$i]);
+                shell_exec("convert ".$dossier.$arrayPdfImg[$i]."[0] src/img/img-upload/".$imgPdfUpload);
+            }
+        }
+
+
         $this->view->setPart('title', $title);
         $this->view->setPart('content', $content);
     }
@@ -409,7 +423,7 @@ class HomeController
                                 les cases correspondantes et valide. Il pourra voir ce qu'il a modifié dans la page des détails
                                 du PDF. La page \"Upload PDF\" permet de télécharger un ou plusieurs PDF sur le site, une barre
                                 de progression affiche l'état du téléchargement quand il clique sur le bouton \"upload\". Une fois
-                                ajouté, un formulaire apparaît à l'écran avec les métadonnées et peut les modifier s'il le souhaite.</p>
+                                ajouté, il est renvoyé sur la liste des PDF.</p>
                         <h4>Détails authentification</h4>    
                             <p>Le site possède une partie accessible par authentification, il est possible de s'y connecter
                             avec les deux comptes suivants : <br>
@@ -447,15 +461,14 @@ class HomeController
         $this->view->setPart('content', $content);
     }
 
+
     public function fileUpload() {
         $title = "Upload fichier";
         $dossier = 'src/pdf/pdf-upload/';
+
         $pdf = $this->request->getGetParam('pdf');
-        var_dump($pdf);
 
         $data = shell_exec("exiftool -json ".$dossier.$pdf);
-        $imgPdfUpload = preg_replace("/.pdf/i", ".jpeg", $pdf);
-        shell_exec("convert ".$dossier.$pdf."[0] src/img/img-upload/".$imgPdfUpload);
         $metadata = json_decode($data, true);
 
         $fileMeta = file_put_contents('src/CatalogueApp/Controller/meta.txt', $data);
@@ -516,8 +529,12 @@ class HomeController
                 if ($key == 'Title' && $value != $title) {
                     $metadata[0]['Title'] = $title;
                 }
-                if ($key == 'Description' && $value != $description) {
-                    $metadata[0]['Description'] = $description;
+                if ($value != $description) {
+                    if($key == 'Description') {
+                        $metadata[0]['Description'] = $description;
+                    } elseif($key == 'Subject') {
+                        $metadata[0]['Subject'] = $description;
+                    }
                 }
                 if ($key == 'Author' && $value != $author) {
                     $metadata[0]['Author'] = $author;
