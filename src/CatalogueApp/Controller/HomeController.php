@@ -388,7 +388,28 @@ class HomeController
                             réaliser un catalogue de fichiers PDF.</p>
                         <h3>Détails techniques de l'implémentation</h3>
                         <h4>Fonctionnement du site web</h4>
-                            <p></p>
+                            <p><h5>Partie publique : </h5>
+                                Le site possède deux onglets \"Accueil\" et \"Page technique\" lorsqu'un utilisateur n'est pas connecté
+                                ou ne possède pas de compte. Nous avons une première page \"Accueil\" qui, à partir d'un menu
+                                déroulant affiche la capture de la première page des différents PDF. Quand l'utilisateur clique 
+                                sur l'un des PDF, il est renvoyé sur une nouvelle page qui affiche ses informations en faisant 
+                                une extraction des métadonnées qu'il contient. Cette page de détails est composée d'un aperçu de
+                                la première page du PDF ainsi qu'une autre partie où l'on voit toutes les informations qui lui
+                                correspond. Il a également la possibilité d'acheter un pdf en inscrivant son email et en cliquant 
+                                sur le bouton acheter. L'utilisateur est envoyé sur une nouvelle page qui affiche l'adresse mail, 
+                                le montant et le moyen de paiement que l'on veut choisir. Une fois le paiement effectué, un mail
+                                est envoyé à l'adresse indiquée et un lien est disponible pour le téléchargement.<br><br>
+                                
+                                <h5>Partie à accès restreint :</h5> 
+                                Une fois l'utilisateur connecté, deux nouveaux onglets \"Liste PDF\" et \"Upload PDF\" sont ajoutés 
+                                dans la barre de navigation. La page \"Liste PDF\" contient tous les fichiers qui ont été ajoutés
+                                par l'utilisateur, il est possible de supprimer un PDF ou modifier ses métadonnées ou voir ses
+                                détails lorsqu'il clique sur l'image. Quand l'utilisateur veut modifier un PDF, il arrive sur
+                                un formulaire qui contient toutes les métadonnées, s'il veut modifier des données, il écrit dans
+                                les cases correspondantes et valide. Il pourra voir ce qu'il a modifié dans la page des détails
+                                du PDF. La page \"Upload PDF\" permet de télécharger un ou plusieurs PDF sur le site, une barre
+                                de progression affiche l'état du téléchargement quand il clique sur le bouton \"upload\". Une fois
+                                ajouté, un formulaire apparaît à l'écran avec les métadonnées et peut les modifier s'il le souhaite.</p>
                         <h4>Détails authentification</h4>    
                             <p>Le site possède une partie accessible par authentification, il est possible de s'y connecter
                             avec les deux comptes suivants : <br>
@@ -430,10 +451,11 @@ class HomeController
         $title = "Upload fichier";
         $dossier = 'src/pdf/pdf-upload/';
         $pdf = $this->request->getGetParam('pdf');
+        var_dump($pdf);
 
         $data = shell_exec("exiftool -json ".$dossier.$pdf);
         $imgPdfUpload = preg_replace("/.pdf/i", ".jpeg", $pdf);
-        $img = shell_exec("convert ".$dossier.$pdf."[0] src/img/img-upload/".$imgPdfUpload);
+        shell_exec("convert ".$dossier.$pdf."[0] src/img/img-upload/".$imgPdfUpload);
         $metadata = json_decode($data, true);
 
         $fileMeta = file_put_contents('src/CatalogueApp/Controller/meta.txt', $data);
@@ -443,10 +465,11 @@ class HomeController
         else
             $desc = $metadata[0]['Subject'];
 
-        if(isset($metadata[0]['Author']) && $metadata[0]['Author'] != "")
+        if(isset($metadata[0]['Author']) && $metadata[0]['Author'] != "") {
             $author = $metadata[0]['Author'];
-        else if(isset($metadata[0]['Creator']))
+        } else if(isset($metadata[0]['Creator'])){
             $author = $metadata[0]["Creator"];
+        }
 
 
         $content = '<form class="ctn_upload" method="post" action="?objet=home&amp;action=newMeta" enctype="multipart/form-data">

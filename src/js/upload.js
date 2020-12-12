@@ -2,6 +2,7 @@ let btn_upload = document.getElementById("submitPdf");
 let progress = document.getElementById("progress");
 let fileUpload = document.getElementById("filePdf");
 
+
 let upload = function () {
     let data = new FormData();
     let request = new XMLHttpRequest();
