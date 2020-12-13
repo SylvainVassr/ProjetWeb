@@ -19,21 +19,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5d77a55a-ed9f-4098-9747-9849512c074f" name="Default Changelist" comment="Plusieurs fichiers peuvent être ajoutés en meme temps + correction bug description pdf-meta lors de la modification de la description">
+    <list default="true" id="5d77a55a-ed9f-4098-9747-9849512c074f" name="Default Changelist" comment="Ajout de la javadoc et quelques corrections de bugs">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CatalogueApp/Controller/AuthentificationManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/CatalogueApp/Controller/AuthentificationManager.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CatalogueApp/Controller/FrontControllerCatalogue.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/CatalogueApp/Controller/FrontControllerCatalogue.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CatalogueApp/Controller/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/CatalogueApp/Controller/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CatalogueApp/Controller/PaiementController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/CatalogueApp/Controller/PaiementController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CatalogueApp/Controller/upload.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/CatalogueApp/Controller/upload.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CatalogueApp/Model/Email.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/CatalogueApp/Model/Email.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CatalogueApp/Model/Pdf.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/CatalogueApp/Model/Pdf.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CatalogueApp/Model/PdfStorage.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CatalogueApp/Router.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/CatalogueApp/Router.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CatalogueApp/View/ViewCatalogue.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/CatalogueApp/View/ViewCatalogue.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Framework/Http/Request.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Framework/Http/Request.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/js/upload.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/upload.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/skin/catalogue.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/skin/catalogue.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,15 +86,13 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -160,7 +148,8 @@
       <workItem from="1607689830114" duration="3864000" />
       <workItem from="1607779756654" duration="5613000" />
       <workItem from="1607793180641" duration="3933000" />
-      <workItem from="1607852122500" duration="6513000" />
+      <workItem from="1607852122500" duration="6581000" />
+      <workItem from="1607864883097" duration="4801000" />
     </task>
     <task id="LOCAL-00001" summary="Petites modifs + début page technique">
       <created>1602857812886</created>
@@ -400,7 +389,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607797141273</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="Ajout de la javadoc et quelques corrections de bugs">
+      <created>1607858758349</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1607858758349</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -419,7 +415,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Ajout de classes dans le répertoire Model + boucle (à corriger) qui parcourt le dossier img (1ere page de chaque pdf)" />
     <MESSAGE value="Boucle pour afficher les pdf terminée" />
     <MESSAGE value="correction bug" />
     <MESSAGE value="style bouton page technique" />
@@ -444,6 +439,7 @@
     <MESSAGE value="Ajout moyen de paiement" />
     <MESSAGE value="Ajout des détails de l'implémentation du site" />
     <MESSAGE value="Plusieurs fichiers peuvent être ajoutés en meme temps + correction bug description pdf-meta lors de la modification de la description" />
-    <option name="LAST_COMMIT_MESSAGE" value="Plusieurs fichiers peuvent être ajoutés en meme temps + correction bug description pdf-meta lors de la modification de la description" />
+    <MESSAGE value="Ajout de la javadoc et quelques corrections de bugs" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ajout de la javadoc et quelques corrections de bugs" />
   </component>
 </project>

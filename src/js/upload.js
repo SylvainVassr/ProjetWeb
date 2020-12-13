@@ -31,7 +31,7 @@ let upload = function () {
     request.onreadystatechange = function () {
         if (this.readyState === 4 && this.status === 200) {
             let response = this.responseText;
-            let url = encodeURI("?objet=home&action=show&pdf=" + response);
+            let url = encodeURI("?objet=home&action=fileUpload&pdf=" + response);
             window.location.href = url;
         }
     };

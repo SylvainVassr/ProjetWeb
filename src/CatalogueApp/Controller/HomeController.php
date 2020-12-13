@@ -72,8 +72,21 @@ class HomeController
                            <li><a href='?objet=home&amp;action=badMeta'>Bad-meta</a></li> 
                            <li><a href='?objet=home&amp;action=pdfMeta'>Pdf-meta</a></li> 
                            <li><a href='?objet=home&amp;action=xmpMeta'>Xmp-meta</a></li>
-                       </ul> 
+                       </ul>
                     </div>";
+
+        $img = $this->getImage('badMeta');
+        $rand = rand(0, count($img) - 2);
+        $content .= "<div class='grid-container'>";
+        for($i = $rand; $i <= $rand+2; $i++) {
+            $imgBadMeta = "src/img/bad-meta/".preg_replace("/.pdf/i", ".jpeg", $img[$i]->getName());
+            $content .= "<div class='img-container'>
+                            <a href='?objet=home&amp;action=detail&amp;meta=BadMeta&amp;id=".$img[$i]->getId()."'>
+                                <img class='div-img' src='".$imgBadMeta."'>
+                            </a>
+                         </div>";
+        }
+        $content .= '</div>';
 
         $this->view->setPart('title', $title);
         $this->view->setPart('content', $content);
@@ -423,18 +436,6 @@ class HomeController
         }
         $content .= '</div>';
 
-        $namePdf = $this->request->getGetParam('pdf');
-        if(isset($namePdf)) {
-            $dossier = 'src/pdf/pdf-upload/';
-            $newPdf = str_replace(".pdf", ".pdf/", $namePdf);
-            $arrayPdfImg = explode("/", $newPdf);
-
-            for($i = 0; $i < count($arrayPdfImg); $i++) {
-                $imgPdfUpload = preg_replace("/.pdf/i", ".jpeg", $arrayPdfImg[$i]);
-                shell_exec("convert ".$dossier.$arrayPdfImg[$i]."[0] src/img/img-upload/".$imgPdfUpload);
-            }
-        }
-
         $this->view->setPart('title', $title);
         $this->view->setPart('content', $content);
     }
@@ -457,7 +458,7 @@ class HomeController
                                 sur l'un des PDF, il est renvoyé sur une nouvelle page qui affiche ses informations en faisant 
                                 une extraction des métadonnées qu'il contient. Cette page de détails est composée d'un aperçu de
                                 la première page du PDF ainsi qu'une autre partie où l'on voit toutes les informations qui lui
-                                correspond. Il a également la possibilité d'acheter un pdf en inscrivant son email et en cliquant 
+                                correspondent. Il a également la possibilité d'acheter un pdf en inscrivant son email et en cliquant 
                                 sur le bouton acheter. L'utilisateur est envoyé sur une nouvelle page qui affiche l'adresse mail, 
                                 le montant et le moyen de paiement que l'on veut choisir. Une fois le paiement effectué, un mail
                                 est envoyé à l'adresse indiquée et un lien est disponible pour le téléchargement.<br><br>
@@ -470,14 +471,18 @@ class HomeController
                                 un formulaire qui contient toutes les métadonnées, s'il veut modifier des données, il écrit dans
                                 les cases correspondantes et valide. Il pourra voir ce qu'il a modifié dans la page des détails
                                 du PDF. La page \"Upload PDF\" permet de télécharger un ou plusieurs PDF sur le site, une barre
-                                de progression affiche l'état du téléchargement quand il clique sur le bouton \"upload\". Une fois
-                                ajouté, il est renvoyé sur la liste des PDF.</p>
+                                de progression affiche l'état du téléchargement quand il clique sur le bouton \"upload\". Si 
+                                l'utilisateur ajoute plusieurs fichiers, il sera directement redirigé vers la liste des PDF                               
+                                sinon il sera envoyé sur le formulaire des métadonnées du pdf, il pourra choisir de les modifier
+                                maintenant ou plus tard sur la page \"Liste PDF\".</p>
                         <h4>Détails authentification</h4>    
                             <p>Le site possède une partie accessible par authentification, il est possible de s'y connecter
                             avec les deux comptes suivants : <br>
                             - Le compte de Mr Lecarpentier, <b>login : jml</b> et <b>mdp : toto</b> <br>
                             - Le compte de Mr Niveau, <b>login : alex</b> et <b>mdp : toto</b></p>             
-                        
+                        <h4>Détails paiement</h4>    
+                            <p>Afin d'effectuer un paiement pour acheter un PDF, il faut utiliser la carte n° 4974934125497800 et le 
+                            cryptogramme 600 et renseigner une date d'expiration.</p>
                     </div>";
 
         $this->view->setPart('title', $title);
@@ -525,31 +530,41 @@ class HomeController
 
         $pdf = $this->request->getGetParam('pdf');
 
-        $data = shell_exec("exiftool -json ".$dossier.$pdf);
-        $metadata = json_decode($data, true);
+        if(isset($pdf)) {
+            $newPdf = str_replace(".pdf", ".pdf/", $pdf);
+            $arrayPdfImg = explode("/", $newPdf);
 
-        $fileMeta = file_put_contents('src/CatalogueApp/Controller/meta.txt', $data);
+            for ($i = 0; $i < count($arrayPdfImg); $i++) {
+                $imgPdfUpload = preg_replace("/.pdf/i", ".jpeg", $arrayPdfImg[$i]);
+                shell_exec("convert " . $dossier . $arrayPdfImg[$i] . "[0] src/img/img-upload/" . $imgPdfUpload);
+            }
 
-        if(isset($metadata[0]['Description']))
-            $desc = $metadata[0]['Description'];
-        else
-            $desc = $metadata[0]['Subject'];
+            if(count($arrayPdfImg) - 1 == 1) {
+                $data = shell_exec("exiftool -json " . $dossier . $pdf);
+                $metadata = json_decode($data, true);
 
-        if(isset($metadata[0]['Author']) && $metadata[0]['Author'] != "") {
-            $author = $metadata[0]['Author'];
-        } else if(isset($metadata[0]['Creator'])){
-            $author = $metadata[0]["Creator"];
-        }
+                $fileMeta = file_put_contents('src/CatalogueApp/Controller/meta.txt', $data);
+
+                if (isset($metadata[0]['Description']))
+                    $desc = $metadata[0]['Description'];
+                else
+                    $desc = $metadata[0]['Subject'];
+
+                if (isset($metadata[0]['Author']) && $metadata[0]['Author'] != "") {
+                    $author = $metadata[0]['Author'];
+                } else if (isset($metadata[0]['Creator'])) {
+                    $author = $metadata[0]["Creator"];
+                }
 
 
-        $content = '<form class="ctn_upload" method="post" action="?objet=home&amp;action=newMeta" enctype="multipart/form-data">
+                $content = '<form class="ctn_upload" method="post" action="?objet=home&amp;action=newMeta" enctype="multipart/form-data">
                         <h2>Informations du PDF</h2>';
-        $content .= '<h4>Nom document : </h4><textarea name="FileName" rows="1" cols="33">' . $metadata[0]["FileName"] . '</textarea>';
-        $content .= '<h4>Titre : </h4><textarea name="Title" rows="1" cols="33">' . $metadata[0]["Title"] . '</textarea>';
-        $content .= '<h4>Description : </h4><textarea name="Description" rows="12" cols="80">'.$desc.'</textarea>';
-        $content .= '<h4>Auteur : </h4><textarea name="Author" rows="1" cols="33">'.$author.'</textarea>';
+                $content .= '<h4>Nom document : </h4><textarea name="FileName" rows="1" cols="33">' . $metadata[0]["FileName"] . '</textarea>';
+                $content .= '<h4>Titre : </h4><textarea name="Title" rows="1" cols="33">' . $metadata[0]["Title"] . '</textarea>';
+                $content .= '<h4>Description : </h4><textarea name="Description" rows="12" cols="80">' . $desc . '</textarea>';
+                $content .= '<h4>Auteur : </h4><textarea name="Author" rows="1" cols="33">' . $author . '</textarea>';
 
-        $content .= "<br><br>
+                $content .= "<br><br>
                             <div class='position-div-orange'>
                                 <div class='svg-wrapper-div-orange'>
                                     <svg height='40' width='150' xmlns='http://www.w3.org/2000/svg'>
@@ -562,8 +577,13 @@ class HomeController
                             </div>
                             <br><br><p style='color: darkviolet'>Upload effectué avec succès !<p></form>";
 
-        $this->view->setPart('title', $title);
-        $this->view->setPart('content', $content);
+                $this->view->setPart('title', $title);
+                $this->view->setPart('content', $content);
+            }
+            else {
+                $this->show();
+            }
+        }
     }
 
     /**

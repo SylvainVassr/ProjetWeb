@@ -41,9 +41,9 @@ class email
 
         // Envoi d'email
         if(mail($to, $subject, $message, $headers)){
-            echo '<p>Votre message a été envoyé avec succès.</p>';
+            echo "<script>alert(\"Votre message a été envoyé avec succès.\")</script>";
         } else{
-            echo 'Impossible d\'envoyer des courriels. Veuillez réessayer.';
+            echo "<script>alert(\"Impossible d\'envoyer des courriels. Veuillez réessayer.\")</script>";
         }
     }
 }
