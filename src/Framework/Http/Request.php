@@ -41,11 +41,20 @@ class Request
         return $this->get[$key];
     }
 
+    /**
+     * @param $key
+     * @param $value
+     */
     public function setServer($key, $value)
     {
         $this->server[$key] = $value;
     }
 
+    /**
+     * @param $key
+     * @param $default
+     * @return mixed
+     */
     public function getServerParam($key, $default)
     {
         if (!isset($this->server[$key])) {
@@ -54,6 +63,11 @@ class Request
         return $this->server[$key];
     }
 
+    /**
+     * @param $key la clé à chercher dans POST
+     * @param $default la valeur à renvoyer si $key n'existe pas
+     * @return mixed
+     */
     public function getPostParam($key, $default)
     {
         if (!isset($this->post[$key])) {
@@ -62,19 +76,31 @@ class Request
         return $this->post[$key];
     }
 
+    /**
+     * @param $key la clé à chercher dans SESSION
+     * @param null $default
+     * @return mixed|null
+     */
     public function getSession($key, $default = null)
     {
-        if(!key_exists($key, $this->session)) {
+        if (!key_exists($key, $this->session)) {
             return $default;
         }
         return $this->session[$key];
     }
 
+    /**
+     * @param $key
+     * @param $value
+     */
     public function setSession($key, $value)
     {
         $this->session[$key] = $value;
     }
 
+    /**
+     * Destruction d'une session
+     */
     public function __destruct()
     {
         $_SESSION = $this->session;

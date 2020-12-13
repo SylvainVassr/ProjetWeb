@@ -19,15 +19,14 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5d77a55a-ed9f-4098-9747-9849512c074f" name="Default Changelist" comment="Mise à jour de l'authentification">
+    <list default="true" id="5d77a55a-ed9f-4098-9747-9849512c074f" name="Default Changelist" comment="Ajout de la javadoc et quelques corrections de bugs">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/meta.txt" beforeDir="false" afterPath="$PROJECT_DIR$/meta.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CatalogueApp/Controller/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/CatalogueApp/Controller/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pdf/pdf-upload/all-document1.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pdf/pdf-upload/bad-document1.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pdf/pdf-upload/bad-document4.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pdf/pdf-upload/bad-document6.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/skin/catalogue.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/skin/catalogue.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CatalogueApp/Controller/PaiementController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/CatalogueApp/Controller/PaiementController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CatalogueApp/Model/Email.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/CatalogueApp/Model/Email.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Sherlocks/param_demo/parmcom.014295303911111" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sherlocks/param_demo/parmcom.014295303911111" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Sherlocks/param_demo/pathfile" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sherlocks/param_demo/pathfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/upload.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/upload.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,6 +36,20 @@
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Pull.Settings">
+    <option name="OPTIONS">
+      <set>
+        <option value="REBASE" />
+      </set>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -58,19 +71,21 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../banque-37dacba8914d27af516ed4a62bec1c8e4a4dc291" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Paiment" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Logiciels\Xampp\htdocs\ProjetWeb\src\Paiment" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/src/CatalogueApp/Controller" />
       <recent name="$PROJECT_DIR$/src/CatalogueApp/View" />
       <recent name="$PROJECT_DIR$/src/CatalogueApp" />
-      <recent name="$PROJECT_DIR$/src/Framework" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Logiciels\Xampp\htdocs\ProjetWeb\src" />
@@ -81,15 +96,13 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -128,7 +141,25 @@
       <workItem from="1604074114811" duration="3036000" />
       <workItem from="1604225571382" duration="124000" />
       <workItem from="1607000602790" duration="14057000" />
-      <workItem from="1607072564099" duration="4502000" />
+      <workItem from="1607072564099" duration="9244000" />
+      <workItem from="1607084752563" duration="20827000" />
+      <workItem from="1607113901055" duration="6563000" />
+      <workItem from="1607175059403" duration="3010000" />
+      <workItem from="1607179101749" duration="9966000" />
+      <workItem from="1607332721070" duration="6895000" />
+      <workItem from="1607344355462" duration="9292000" />
+      <workItem from="1607418449664" duration="3154000" />
+      <workItem from="1607429295863" duration="13760000" />
+      <workItem from="1607508168279" duration="4961000" />
+      <workItem from="1607515330526" duration="6755000" />
+      <workItem from="1607590765565" duration="8271000" />
+      <workItem from="1607603051167" duration="13300000" />
+      <workItem from="1607683979279" duration="2146000" />
+      <workItem from="1607689830114" duration="3864000" />
+      <workItem from="1607779756654" duration="5613000" />
+      <workItem from="1607793180641" duration="3933000" />
+      <workItem from="1607852122500" duration="6581000" />
+      <workItem from="1607864883097" duration="4801000" />
     </task>
     <task id="LOCAL-00001" summary="Petites modifs + début page technique">
       <created>1602857812886</created>
@@ -249,7 +280,133 @@
       <option name="project" value="LOCAL" />
       <updated>1607014865375</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Modification des métadonnées">
+      <created>1607077168838</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1607077168838</updated>
+    </task>
+    <task id="LOCAL-00019" summary="ID pour chaque fichier pdf">
+      <created>1607120389161</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1607120389161</updated>
+    </task>
+    <task id="LOCAL-00020" summary="ID pour chaque fichier pdf">
+      <created>1607120506843</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1607120506843</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Ajout du menu déroulant">
+      <created>1607179891982</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1607179891982</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Ajout du menu déroulant">
+      <created>1607180188408</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1607180188408</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Ajout du menu déroulant">
+      <created>1607180792337</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1607180792337</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Ajout des détails pour chaque fichier pdf, manque plus qu'à afficher l'image">
+      <created>1607193919021</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1607193919021</updated>
+    </task>
+    <task id="LOCAL-00025" summary="ajout des données open graph et twitter cards">
+      <created>1607340066510</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1607340066510</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Modification accès détails par id">
+      <created>1607353731045</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1607353731045</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Ajout des pdf dans la page liste fichiers et ajout de la barre de progression dans l'upload">
+      <created>1607443221664</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1607443221664</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Upload effectué">
+      <created>1607519835038</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1607519835038</updated>
+    </task>
+    <task id="LOCAL-00029" summary="Début modification métadonnées newPDF">
+      <created>1607522112189</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1607522112189</updated>
+    </task>
+    <task id="LOCAL-00030" summary="modification métadonnées fonctionnelle">
+      <created>1607594685526</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1607594685526</updated>
+    </task>
+    <task id="LOCAL-00031" summary="début moyen de paiement d'un pdf">
+      <created>1607617755515</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1607617755515</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Ajout moyen de paiement">
+      <created>1607705816998</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1607705816998</updated>
+    </task>
+    <task id="LOCAL-00033" summary="Ajout des détails de l'implémentation du site">
+      <created>1607785461265</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1607785461265</updated>
+    </task>
+    <task id="LOCAL-00034" summary="Plusieurs fichiers peuvent être ajoutés en meme temps + correction bug description pdf-meta lors de la modification de la description">
+      <created>1607797141272</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1607797141273</updated>
+    </task>
+    <task id="LOCAL-00035" summary="Ajout de la javadoc et quelques corrections de bugs">
+      <created>1607858758349</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1607858758349</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -268,11 +425,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Petites modifs + début page technique" />
-    <MESSAGE value="Ajout fonction pour convertir 1 pdf en image" />
-    <MESSAGE value="Ajout dossier pdf" />
-    <MESSAGE value="Ajout d'images sur la page d'accueil" />
-    <MESSAGE value="Ajout de classes dans le répertoire Model + boucle (à corriger) qui parcourt le dossier img (1ere page de chaque pdf)" />
     <MESSAGE value="Boucle pour afficher les pdf terminée" />
     <MESSAGE value="correction bug" />
     <MESSAGE value="style bouton page technique" />
@@ -283,49 +435,21 @@
     <MESSAGE value="Changement de l'arborescence" />
     <MESSAGE value="Modification chemin skin" />
     <MESSAGE value="Mise à jour de l'authentification" />
-    <option name="LAST_COMMIT_MESSAGE" value="Mise à jour de l'authentification" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="543" y="236" width="529" height="416" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1603205996176">
-      <screen x="0" y="0" width="1600" height="863" />
-    </state>
-    <state x="543" y="236" width="529" height="416" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1600.863@0.0.1600.863" timestamp="1603205996176" />
-    <state x="442" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1603443219194">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="442" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1603443219194" />
-    <state x="640" y="242" width="528" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1603444767793">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="533" y="209" width="528" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1600.900@0.0.1600.900" timestamp="1602595153738" />
-    <state x="640" y="242" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1603444767793" />
-    <state x="700" y="242" width="428" height="484" key="FileChooserDialogImpl" timestamp="1607013553630">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="583" y="209" width="428" height="484" key="FileChooserDialogImpl/0.0.1600.900@0.0.1600.900" timestamp="1602593987819" />
-    <state x="700" y="242" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1607013553630" />
-    <state x="629" y="199" width="574" height="558" key="NewPhpClassDialog" timestamp="1607004420042">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="524" y="165" width="574" height="558" key="NewPhpClassDialog/0.0.1600.863@0.0.1600.863" timestamp="1603205997879" />
-    <state x="524" y="172" width="609" height="558" key="NewPhpClassDialog/0.0.1600.900@0.0.1600.900" timestamp="1602595119408" />
-    <state x="629" y="199" key="NewPhpClassDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1607004420042" />
-    <state x="617" y="376" width="359" height="149" key="NewPhpFileDialog" timestamp="1602595129499">
-      <screen x="0" y="0" width="1600" height="900" />
-    </state>
-    <state x="617" y="376" width="359" height="149" key="NewPhpFileDialog/0.0.1600.900@0.0.1600.900" timestamp="1602595129499" />
-    <state x="440" y="94" key="SettingsEditor" timestamp="1603284674751">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="440" y="94" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1603284674751" />
-    <state x="474" y="202" width="804" height="528" key="Vcs.Push.Dialog.v2" timestamp="1607014869609">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="395" y="168" width="804" height="528" key="Vcs.Push.Dialog.v2/0.0.1600.863@0.0.1600.863" timestamp="1603213013208" />
-    <state x="474" y="202" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1607014869609" />
-    <state x="0" y="0" width="1504" height="1027" key="dock-window-1" timestamp="1603442879608">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="0" y="0" width="1504" height="1027" key="dock-window-1/0.0.1920.1040@0.0.1920.1040" timestamp="1603442879608" />
+    <MESSAGE value="Modification des métadonnées" />
+    <MESSAGE value="ID pour chaque fichier pdf" />
+    <MESSAGE value="Ajout du menu déroulant" />
+    <MESSAGE value="Ajout des détails pour chaque fichier pdf, manque plus qu'à afficher l'image" />
+    <MESSAGE value="ajout des données open graph et twitter cards" />
+    <MESSAGE value="Modification accès détails par id" />
+    <MESSAGE value="Ajout des pdf dans la page liste fichiers et ajout de la barre de progression dans l'upload" />
+    <MESSAGE value="Upload effectué" />
+    <MESSAGE value="Début modification métadonnées newPDF" />
+    <MESSAGE value="modification métadonnées fonctionnelle" />
+    <MESSAGE value="début moyen de paiement d'un pdf" />
+    <MESSAGE value="Ajout moyen de paiement" />
+    <MESSAGE value="Ajout des détails de l'implémentation du site" />
+    <MESSAGE value="Plusieurs fichiers peuvent être ajoutés en meme temps + correction bug description pdf-meta lors de la modification de la description" />
+    <MESSAGE value="Ajout de la javadoc et quelques corrections de bugs" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ajout de la javadoc et quelques corrections de bugs" />
   </component>
 </project>
