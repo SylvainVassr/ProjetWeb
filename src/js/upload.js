@@ -1,8 +1,22 @@
 let btn_upload = document.getElementById("submitPdf");
 let progress = document.getElementById("progress");
 let fileUpload = document.getElementById("filePdf");
+let div = document.getElementById('div-fichier');
 
+/**
+ * Permet d'afficher les pdf upload lorsqu'on en sélectionne
+ */
+fileUpload.addEventListener('change', function () {
+    for(const file of fileUpload.files) {
+        let p = document.createElement('p');
+        p.textContent = file.name;
+        div.appendChild(p);
+    }
+});
 
+/**
+ * Méthode qui permet d'ajouter un fichier réalisé en AJAX
+ */
 let upload = function () {
     let data = new FormData();
     let request = new XMLHttpRequest();

@@ -16,6 +16,13 @@ class PaiementController
     protected $view;
     protected $auth;
 
+    /**
+     * PaiementController constructor.
+     * @param Request $request
+     * @param Response $response
+     * @param ViewCatalogue $view
+     * @param AuthentificationInterface $auth
+     */
     public function __construct(Request $request, Response $response, ViewCatalogue $view, AuthentificationInterface $auth)
     {
         $this->request = $request;
@@ -32,6 +39,11 @@ class PaiementController
         $this->view->setPart('menu', $menu);
     }
 
+    /**
+     * Exécuter le contrôleur de la classe pour effecteur l'action
+     * @param $action
+     * @return mixed
+     */
     public function execute($action)
     {
         if (method_exists($this, $action)) {
@@ -46,6 +58,9 @@ class PaiementController
         return $this->infosPaiement();
     }
 
+    /**
+     * Affiche les informations du pdf que l'utilisateur va payer
+     */
     public function infosPaiement()
     {
         $email = $this->request->getPostParam('email', '');

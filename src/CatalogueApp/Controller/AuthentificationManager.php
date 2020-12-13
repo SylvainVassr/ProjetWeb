@@ -30,6 +30,10 @@ class AuthentificationManager implements AuthentificationInterface
         )
     );
 
+    /**
+     * AuthentificationManager constructor.
+     * @param Request $request
+     */
     public function __construct(Request $request)
     {
         $this->request = $request;
@@ -63,7 +67,13 @@ class AuthentificationManager implements AuthentificationInterface
             $this->statut = null;
         }
     }
-    
+
+    /**
+     * Vérifier si l'utilisateur est bien connecté
+     * @param $login
+     * @param $mdp
+     * @return false
+     */
     public function checkAuthentification($login, $mdp)
     {
         foreach ($this->users as $key => $values) {
@@ -77,11 +87,18 @@ class AuthentificationManager implements AuthentificationInterface
         return false;
     }
 
+    /**
+     * Récupérer l'affichage de la barre d'authentification
+     * @return string
+     */
     public function getBarreAuth()
     {
         return $this->barreAuth;
     }
 
+    /**
+     * Permettre la déconnexion
+     */
     public function deconnecter()
     {
         session_destroy();

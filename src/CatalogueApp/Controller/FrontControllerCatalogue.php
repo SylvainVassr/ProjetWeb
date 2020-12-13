@@ -9,12 +9,20 @@ use Vassagnez\Framework\Http\Response;
 
 class FrontControllerCatalogue extends FrontController
 {
+    /**
+     * FrontControllerCatalogue constructor.
+     * @param Request $request
+     * @param Response $response
+     */
     public function __construct(Request $request, Response $response)
     {
         $this->request = $request;
         $this->response = $response;
     }
 
+    /**
+     * Méthode qui permet de lancer les contrôleurs et d'exécuter les actions à faire
+     */
     public function execute()
     {
         $view = new ViewCatalogue('template.php');

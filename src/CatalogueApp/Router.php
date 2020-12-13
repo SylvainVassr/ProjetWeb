@@ -13,22 +13,38 @@ class Router
     protected $controllerAction;
     protected $request;
 
+    /**
+     * Router constructor.
+     * @param Request $request
+     * @throws Exception
+     */
     public function __construct(Request $request)
     {
         $this->request = $request;
         $this->parseRequest();
     }
 
+    /**
+     * Retourne la classe du contrôleur
+     * @return mixed
+     */
     public function getControllerClassName()
     {
         return $this->controllerClassName;
     }
 
+    /**
+     * Retourne l'action du contrôleur
+     * @return mixed
+     */
     public function getControllerAction()
     {
         return $this->controllerAction;
     }
 
+    /**
+     * @throws Exception
+     */
     protected function parseRequest()
     {
         $package = $this->request->getGetParam('objet');

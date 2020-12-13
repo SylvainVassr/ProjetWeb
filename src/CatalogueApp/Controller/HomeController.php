@@ -14,6 +14,13 @@ class HomeController
     protected $view;
     protected $auth;
 
+    /**
+     * HomeController constructor.
+     * @param Request $request
+     * @param Response $response
+     * @param ViewCatalogue $view
+     * @param AuthentificationInterface $auth
+     */
     public function __construct(Request $request, Response $response, ViewCatalogue $view, AuthentificationInterface $auth)
     {
         $this->request = $request;
@@ -28,6 +35,11 @@ class HomeController
         $this->view->setPart('menu', $menu);
     }
 
+    /**
+     * Exécuter le contrôleur de la classe pour effecteur l'action
+     * @param $action
+     * @return mixed
+     */
     public function execute($action)
     {
         if (method_exists($this, $action)) {
@@ -37,15 +49,21 @@ class HomeController
         }
     }
 
+    /**
+     * Charger la méthode makeHomePage par défaut
+     */
     public function defaultAction()
     {
         return $this->makeHomePage();
     }
 
+    /**
+     * Affichage de la page d'accueil
+     */
     public function makeHomePage()
     {
         $title = "Catalogue de fichiers PDF";
-        $content = "<div class='btn-group' style='margin-bottom: 3%'> 
+        $content = "<div class='btn-group' style='margin-bottom: 5.2%'> 
                         <button type='button' class='btn btn-default dropdown-toggle' data-toggle='dropdown'>
                             Choisissez vos pdf <span class='caret''></span>
                         </button>
@@ -61,6 +79,9 @@ class HomeController
         $this->view->setPart('content', $content);
     }
 
+    /**
+     * Récupérer le nom et afficher les images des all-meta PDF
+     */
     public function allMeta() {
         $img = $this->getImage('allMeta');
         $title = "Catalogue de fichiers PDF";
@@ -91,6 +112,9 @@ class HomeController
         $this->view->setPart('content', $content);
     }
 
+    /**
+     * Récupérer le nom et afficher les images des bad-meta PDF
+     */
     public function badMeta() {
         $img = $this->getImage('badMeta');
         $title = "Catalogue de fichiers PDF";
@@ -121,6 +145,9 @@ class HomeController
         $this->view->setPart('content', $content);
     }
 
+    /**
+     * Récupérer le nom et afficher les images des pdf-meta PDF
+     */
     public function pdfMeta() {
         $img = $this->getImage('pdfMeta');
         $title = "Catalogue de fichiers PDF";
@@ -151,6 +178,9 @@ class HomeController
         $this->view->setPart('content', $content);
     }
 
+    /**
+     * Récupérer le nom et afficher les images des xmp-meta PDF
+     */
     public function xmpMeta() {
         $img = $this->getImage('xmpMeta');
         $title = "Catalogue de fichiers PDF";
@@ -181,6 +211,11 @@ class HomeController
         $this->view->setPart('content', $content);
     }
 
+    /**
+     * Création d'un pdf à partir des métadonnées puis ajouté dans un array
+     * @param $meta
+     * @return array
+     */
     public function getImage($meta) {
         if($meta == 'allMeta') {
             $dir = scandir('src/pdf/all-meta/');
@@ -222,6 +257,11 @@ class HomeController
             return ($array);
     }
 
+    /**
+     * Retourne un nouveau pdf
+     * @param $meta
+     * @return Pdf
+     */
     public function getPdf($meta) {
         if($meta == 'allMeta') {
             $dir = scandir('src/pdf/all-meta/');
@@ -261,6 +301,9 @@ class HomeController
 
     }
 
+    /**
+     * Affiche les détails d'un pdf à partir des métadonnées
+     */
     public function detail() {
         $title = "Détails du fichier PDF";
         if($this->request->getGetParam("meta") == 'AllMeta') {
@@ -295,9 +338,9 @@ class HomeController
         $content .= "<p><u>Prix du pdf</u> :  15€</p>";
 
         $content .= "<form class='formAchat' action='?objet=paiement&amp;action=infosPaiement' method='POST'>";
-        $content .= "<input type='hidden' name='prix' value='15'>";
+        $content .= "<input type='hidden' name='prix' value='14,90'>";
         $content .= "<input type='hidden' name='pathFile' value='".$pdf->getPath()."'>";
-        $content .= "<input type='email' class='email' name='email' size='25' placeholder='Entrez votre adresse mail'>";
+        $content .= "<fieldset class='fieldsetEmail'><input type='email' class='email' name='email' size='25' placeholder='Entrez votre adresse mail'></fieldset>";
         $content .= "<div class='position-div-orange'>";
         $content .= "<div class='svg-wrapper-div-orange'>";
         $content .= "<svg height='40' width='150' xmlns='http://www.w3.org/2000/svg'>";
@@ -333,6 +376,9 @@ class HomeController
         $this->view->setPart('meta', $meta);
     }
 
+    /**
+     * Affichage de la liste des pdf Upload
+     */
     public function show()
     {
         $title = "Catalogue de fichiers Upload";
@@ -389,11 +435,13 @@ class HomeController
             }
         }
 
-
         $this->view->setPart('title', $title);
         $this->view->setPart('content', $content);
     }
 
+    /**
+     * Affichage de la page technique du projet
+     */
     public function technique() {
         $title = "Page technique";
         $content = "<div class='contenu_technique'>
@@ -436,11 +484,17 @@ class HomeController
         $this->view->setPart('content', $content);
     }
 
+    /**
+     * Affichage de la page pour upload un ou plusieurs pdf
+     */
     public function upload() {
         $title = "Upload fichier";
         $content = "<div class='upload_style'>
                             <p>
-                                Sélectionner un ou plusieurs pdf :<br><input type='file' id='filePdf' name='fichier' style='margin-bottom: 4%' multiple>
+                                Sélectionner un ou plusieurs pdf :<br>
+                                <label for='filePdf' class='label-file'>Cliquez-ici !</label>                                
+                                <input type='file' id='filePdf' name='fichier' style='margin-bottom: 4%' multiple>
+                                <div id='div-fichier'></div>
                                 <div class='position-div-orange'>
                                     <div class='svg-wrapper-div-orange'>
                                         <svg height='40' width='150' xmlns='http://www.w3.org/2000/svg'>
@@ -462,6 +516,9 @@ class HomeController
     }
 
 
+    /**
+     * Affichage des métadonnées à modifier dans un formulaire
+     */
     public function fileUpload() {
         $title = "Upload fichier";
         $dossier = 'src/pdf/pdf-upload/';
@@ -509,6 +566,9 @@ class HomeController
         $this->view->setPart('content', $content);
     }
 
+    /**
+     * Mise à jour des métadonnées modifiées dans un fichier meta.txt
+     */
     public function newMeta() {
         if(isset($_POST['FileName']) && $_POST['Title'] && $_POST['Description'] && $_POST['Author']) {
             $filename = $_POST['FileName'];
@@ -552,6 +612,9 @@ class HomeController
         }
     }
 
+    /**
+     * Méthode pour supprimer un pdf
+     */
     public function deletePdf() {
         $pdf = $this->request->getGetParam('pdf');
         $dossierPDF = 'src/pdf/pdf-upload/';
@@ -563,6 +626,9 @@ class HomeController
         $this->show();
     }
 
+    /**
+     * Méthode qui envoie un mail quand le paiement est accepté
+     */
     public function reponseAccepte()
     {
         $fichier_exec = "/users/22000212/www-dev/devoir-idc2020/ProjetWeb/src/Sherlocks/bin/static/response";
@@ -580,16 +646,25 @@ class HomeController
         $this->makeHomePage();
     }
 
+    /**
+     * Méthode qui renvoie vers la page d'accueil quand le paiement est refusé
+     */
     public function reponseRefuse()
     {
         $this->makeHomePage();
     }
 
+    /**
+     * Déconnecter l'utilisateur et le renvoyer sur la page d'accueil
+     */
     public function deco() {
         $this->auth->deconnecter();
         $this->response->addHeader('Location: ?objet=home&amp;action=makeHomePage&amp;');
     }
 
+    /**
+     * Renvoie une erreur si aucun pdf n'est trouvé
+     */
     public function unknownPdf()
     {
         $title = "Fichier inconnu ou non trouvé";

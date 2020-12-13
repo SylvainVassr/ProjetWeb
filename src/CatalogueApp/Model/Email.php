@@ -8,11 +8,19 @@ class email
 {
     private $lienPdf;
 
+    /**
+     * email constructor.
+     * @param $lienPdf
+     */
     public function __construct($lienPdf)
     {
         $this->lienPdf = $lienPdf;
     }
 
+    /**
+     * Méthode qui permet d'envoyer le mail quand on achète un pdf
+     * @param $mail
+     */
     public function sendMail($mail)
     {
         $to = $mail;
