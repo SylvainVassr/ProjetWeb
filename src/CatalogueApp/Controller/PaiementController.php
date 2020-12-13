@@ -22,9 +22,12 @@ class PaiementController
      * @param ViewCatalogue $view
      * @param AuthentificationInterface $auth
      */
-    public function __construct(Request $request, Response $response, ViewCatalogue $view,
-                                AuthentificationInterface $auth)
-    {
+    public function __construct(
+        Request $request,
+        Response $response,
+        ViewCatalogue $view,
+        AuthentificationInterface $auth
+    ) {
         $this->request = $request;
         $this->response = $response;
         $this->view = $view;
@@ -67,7 +70,7 @@ class PaiementController
         $prix = $this->request->getPostParam('prix', '');
         $pathPDF = $this->request->getPostParam('pathFile', '');
 
-        $fichier_exec = "/users/22012123/www-dev/devoir-idc2020/ProjetWeb/src/Sherlocks/bin/static/request";
+        $fichier_exec = "/users/22000212/www-dev/devoir-idc2020/ProjetWeb/src/Sherlocks/bin/static/request";
         $id_trans = rand(100, 100000);
 
         $data = [
@@ -75,14 +78,14 @@ class PaiementController
             "merchant_id" => "014295303911111",
             "merchant_country" => "fr",
             "currency_code" => 978,
-            "pathfile" => "/users/22012123/www-dev/devoir-idc2020/ProjetWeb/src/Sherlocks/param_demo/pathfile",
+            "pathfile" => "/users/22000212/www-dev/devoir-idc2020/ProjetWeb/src/Sherlocks/param_demo/pathfile",
             "transaction_id" => $id_trans,
-            "normal_return_url" => "https://dev-22012123.users.info.unicaen.fr/devoir-idc2020/ProjetWeb/
-                                    ?action=reponseAccepte",
-            "cancel_return_url" => "https://dev-22012123.users.info.unicaen.fr/devoir-idc2020/ProjetWeb/
-                                    ?action=reponseRefuse",
-            "automatic_response_url" => "https://dev-22012123.users.info.unicaen.fr/devoir-idc2020/ProjetWeb/
-                                    ?action=reponseAccepte",
+            "normal_return_url" =>
+            "https://dev-22000212.users.info.unicaen.fr/devoir-idc2020/ProjetWeb/?action=reponseAccepte",
+            "cancel_return_url" =>
+            "https://dev-22000212.users.info.unicaen.fr/devoir-idc2020/ProjetWeb/?action=reponseRefuse",
+            "automatic_response_url" =>
+            "https://dev-22000212.users.info.unicaen.fr/devoir-idc2020/ProjetWeb/?action=reponseAccepte",
             "language" => "fr",
             "payment_means" => "CB,2,VISA,2,MASTERCARD,2",
             "header_flag" => "no",
@@ -97,7 +100,7 @@ class PaiementController
             "templatefile" => "",
             "logo_id" => "",
             "receipt_complement" => "",
-            "caddie" => "https://dev-22012123.users.info.unicaen.fr/devoir-idc2020/ProjetWeb/".$pathPDF,
+            "caddie" => "https://dev-22000212.users.info.unicaen.fr/devoir-idc2020/ProjetWeb/".$pathPDF,
             "customer_id" => "156198489",
             "customer_email" => $email,
             "customer_ip_address" => "",

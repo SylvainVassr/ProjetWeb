@@ -539,7 +539,7 @@ class HomeController
         $content = "<div class='upload_style'>
                             <p>
                                 Sélectionner un ou plusieurs pdf :<br>
-                                <label for='filePdf' class='label-file'>Cliquez-ici !</label>                                
+                                <label for='filePdf' class='label-file'>Cliquez-ici !</label>
                                 <input type='file' id='filePdf' name='fichier' style='margin-bottom: 4%' multiple>
                                 <div id='div-fichier'></div>
                                 <div class='position-div-orange'>
@@ -604,12 +604,12 @@ class HomeController
                 $content = '<form class="ctn_upload" method="post" action="?objet=home&amp;action=newMeta" 
                             enctype="multipart/form-data">
                 <h2>Informations du PDF</h2>';
-                $content .= '<h4>Nom document : </h4><textarea name="FileName" rows="1" cols="33">
-                            ' . $metadata[0]["FileName"] . '</textarea>';
-                $content .= '<h4>Titre : </h4><textarea name="Title" rows="1" cols="33">
-                            ' . $metadata[0]["Title"] . '</textarea>';
-                $content .= '<h4>Description : </h4><textarea name="Description" rows="12" cols="80">
-                            ' . $desc . '</textarea>';
+                $content .= '<h4>Nom document : </h4>
+                             <textarea name="FileName" rows="1" cols="33">' . $metadata[0]["FileName"] . '</textarea>';
+                $content .= '<h4>Titre : </h4>
+                             <textarea name="Title" rows="1" cols="33">' . $metadata[0]["Title"] . '</textarea>';
+                $content .= '<h4>Description : </h4>
+                             <textarea name="Description" rows="12" cols="80">' . $desc . '</textarea>';
                 $content .= '<h4>Auteur : </h4><textarea name="Author" rows="1" cols="33">' . $author . '</textarea>';
 
                 $content .= "<br><br>
@@ -702,8 +702,8 @@ class HomeController
      */
     public function reponseAccepte()
     {
-        $fichier_exec = "/users/22012123/www-dev/devoir-idc2020/ProjetWeb/src/Sherlocks/bin/static/response";
-        $pathfile = "pathfile=/users/22012123/www-dev/devoir-idc2020/ProjetWeb/src/Sherlocks/param_demo/pathfile";
+        $fichier_exec = "/users/22000212/www-dev/devoir-idc2020/ProjetWeb/src/Sherlocks/bin/static/response";
+        $pathfile = "pathfile=/users/22000212/www-dev/devoir-idc2020/ProjetWeb/src/Sherlocks/param_demo/pathfile";
 
         $message_data = "message=" . $_POST['DATA'];
         $exec = exec($fichier_exec . " " . $message_data . " " . $pathfile);
