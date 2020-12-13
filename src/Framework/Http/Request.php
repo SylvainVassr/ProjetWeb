@@ -83,7 +83,7 @@ class Request
      */
     public function getSession($key, $default = null)
     {
-        if(!key_exists($key, $this->session)) {
+        if (!key_exists($key, $this->session)) {
             return $default;
         }
         return $this->session[$key];

@@ -3,8 +3,7 @@
 
 namespace Vassagnez\CatalogueApp\Model;
 
-
-class email
+class Email
 {
     private $lienPdf;
 
@@ -36,13 +35,14 @@ class email
 
         $message = '<html><body>';
         $message .= '<h1>Bonjour,</h1>';
-        $message .= "<p>Tu viens de réaliser un achat d'un pdf sur notre site Catalogue PDF. Voici le lien de téléchargement : <a href='$this->lienPdf' download>clique ici</a></p>";
+        $message .= "<p>Tu viens de réaliser un achat d'un pdf sur notre site Catalogue PDF. 
+        Voici le lien de téléchargement : <a href='$this->lienPdf' download>clique ici</a></p>";
         $message .= '</body></html>';
 
         // Envoi d'email
-        if(mail($to, $subject, $message, $headers)){
+        if (mail($to, $subject, $message, $headers)) {
             echo "<script>alert(\"Votre message a été envoyé avec succès.\")</script>";
-        } else{
+        } else {
             echo "<script>alert(\"Impossible d\'envoyer des courriels. Veuillez réessayer.\")</script>";
         }
     }

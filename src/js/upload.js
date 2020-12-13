@@ -7,7 +7,7 @@ let div = document.getElementById('div-fichier');
  * Permet d'afficher les pdf upload lorsqu'on en sélectionne
  */
 fileUpload.addEventListener('change', function () {
-    for(const file of fileUpload.files) {
+    for (const file of fileUpload.files) {
         let p = document.createElement('p');
         p.textContent = file.name;
         div.appendChild(p);
@@ -21,11 +21,11 @@ let upload = function () {
     let data = new FormData();
     let request = new XMLHttpRequest();
 
-    request.upload.addEventListener('progress', function(e){
+    request.upload.addEventListener('progress', function (e) {
         progress.style.width = (e.loaded/e.total) * 100 + '%';
     }, false);
 
-    for(const file of fileUpload.files) {
+    for (const file of fileUpload.files) {
         data.append('pdf[]', file);
     }
     request.onreadystatechange = function () {

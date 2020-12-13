@@ -3,7 +3,6 @@
 
 namespace Vassagnez\CatalogueApp\Controller;
 
-
 interface AuthentificationInterface
 {
     public function checkAuthentification($login, $mdp);

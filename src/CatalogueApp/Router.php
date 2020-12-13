@@ -5,7 +5,6 @@ namespace Vassagnez\CatalogueApp;
 use \Vassagnez\Framework\Http\Request;
 use Exception;
 
-
 class Router
 {
 

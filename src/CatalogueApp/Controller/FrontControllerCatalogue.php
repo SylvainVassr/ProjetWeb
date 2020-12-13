@@ -41,18 +41,20 @@ class FrontControllerCatalogue extends FrontController
             $mdpAuthentif = $this->request->getPostParam('mdp', '');
             $content = '';
 
-            if($this->request->getSession('login') == '') {
-                if($mdpAuthentif != '') {
-                    if(!$authentif->checkAuthentification($loginAuthentif, $mdpAuthentif)) {
+            if ($this->request->getSession('login') == '') {
+                if ($mdpAuthentif != '') {
+                    if (!$authentif->checkAuthentification($loginAuthentif, $mdpAuthentif)) {
                         $content .= "<ul class='auth'>";
-                        $content .= "<li><div class='barre_auth'><label class='label_nom'>Bonjour, " . $this->request->getSession('prenom') . " " . $this->request->getSession('nom') . "</label></div></li>";
+                        $content .= "<li><div class='barre_auth'><label class='label_nom'>Bonjour, "
+                                    . $this->request->getSession('prenom') . " "
+                                    . $this->request->getSession('nom') . "</label></div></li>";
                         $content .= "<li>
                                         <div class='position'>
                                             <div class='svg-wrapper'>
                                                 <svg height='40' width='150' xmlns='http://www.w3.org/2000/svg'>
                                                     <rect id='shape' height='40' width='150' />
                                                     <div id='text'> 
-                                                        <a href='?objet=home&amp;action=deco'>Déconnexion</a>                                              
+                                                        <a href='?objet=home&amp;action=deco'>Déconnexion</a>
                                                     </div>
                                                 </svg>
                                             </div>
@@ -76,7 +78,8 @@ class FrontControllerCatalogue extends FrontController
             } else {
                 $content .= "<ul class='auth'>";
                 $content .= "<li><div class='barre_auth'>
-                                    <label class='label_nom'>Bonjour, " . $this->request->getSession('prenom') . " " . $this->request->getSession('nom') . "</label>
+                                    <label class='label_nom'>Bonjour, " . $this->request->getSession('prenom')
+                                    . " " . $this->request->getSession('nom') . "</label>
                                  </div>
                              </li>";
                 $content .= "<li>
@@ -85,7 +88,7 @@ class FrontControllerCatalogue extends FrontController
                                         <svg height='40' width='150' xmlns='http://www.w3.org/2000/svg'>
                                             <rect id='shape' height='40' width='150' />
                                             <div id='text'> 
-                                                <a href='?objet=home&amp;action=deco'>Déconnexion</a>                                              
+                                                <a href='?objet=home&amp;action=deco'>Déconnexion</a>
                                             </div>
                                         </svg>
                                     </div>

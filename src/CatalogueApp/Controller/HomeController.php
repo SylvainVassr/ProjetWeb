@@ -21,8 +21,12 @@ class HomeController
      * @param ViewCatalogue $view
      * @param AuthentificationInterface $auth
      */
-    public function __construct(Request $request, Response $response, ViewCatalogue $view, AuthentificationInterface $auth)
-    {
+    public function __construct(
+        Request $request,
+        Response $response,
+        ViewCatalogue $view,
+        AuthentificationInterface $auth
+    ) {
         $this->request = $request;
         $this->response = $response;
         $this->view = $view;
@@ -78,7 +82,7 @@ class HomeController
         $img = $this->getImage('badMeta');
         $rand = rand(0, count($img) - 2);
         $content .= "<div class='grid-container'>";
-        for($i = $rand; $i <= $rand+2; $i++) {
+        for ($i = $rand; $i <= $rand+2; $i++) {
             $imgBadMeta = "src/img/bad-meta/".preg_replace("/.pdf/i", ".jpeg", $img[$i]->getName());
             $content .= "<div class='img-container'>
                             <a href='?objet=home&amp;action=detail&amp;meta=BadMeta&amp;id=".$img[$i]->getId()."'>
@@ -95,7 +99,8 @@ class HomeController
     /**
      * Récupérer le nom et afficher les images des all-meta PDF
      */
-    public function allMeta() {
+    public function allMeta()
+    {
         $img = $this->getImage('allMeta');
         $title = "Catalogue de fichiers PDF";
 
@@ -112,7 +117,7 @@ class HomeController
                     </div>";
 
         $content .= "<h2 class='title-meta'><u>Pdf all-meta</u></h2><div class='grid-container'>";
-        foreach ($img  as $pdf) {
+        foreach ($img as $pdf) {
             $imgAllMeta = "src/img/all-meta/".preg_replace("/.pdf/i", ".jpeg", $pdf->getName());
             $content .= "<div class='img-container'>
                             <a href='?objet=home&amp;action=detail&amp;meta=AllMeta&amp;id=".$pdf->getId()."'>
@@ -128,7 +133,8 @@ class HomeController
     /**
      * Récupérer le nom et afficher les images des bad-meta PDF
      */
-    public function badMeta() {
+    public function badMeta()
+    {
         $img = $this->getImage('badMeta');
         $title = "Catalogue de fichiers PDF";
 
@@ -145,7 +151,7 @@ class HomeController
                     </div>";
 
         $content .= "<h2 class='title-meta'><u>Pdf bad-meta</u></h2><div class='grid-container'>";
-        foreach ($img  as $pdf) {
+        foreach ($img as $pdf) {
             $imgBadMeta = "src/img/bad-meta/".preg_replace("/.pdf/i", ".jpeg", $pdf->getName());
             $content .= "<div class='img-container'>
                             <a href='?objet=home&amp;action=detail&amp;meta=BadMeta&amp;id=".$pdf->getId()."'>
@@ -161,7 +167,8 @@ class HomeController
     /**
      * Récupérer le nom et afficher les images des pdf-meta PDF
      */
-    public function pdfMeta() {
+    public function pdfMeta()
+    {
         $img = $this->getImage('pdfMeta');
         $title = "Catalogue de fichiers PDF";
 
@@ -178,7 +185,7 @@ class HomeController
                     </div>";
 
         $content .= "<h2 class='title-meta'><u>Pdf pdf-meta</u></h2><div class='grid-container'>";
-        foreach ($img  as $pdf) {
+        foreach ($img as $pdf) {
             $imgPdfMeta = "src/img/pdf-meta/".preg_replace("/.pdf/i", ".jpeg", $pdf->getName());
             $content .= "<div class='img-container'>
                             <a href='?objet=home&amp;action=detail&amp;meta=PdfMeta&amp;id=".$pdf->getId()."'>
@@ -194,7 +201,8 @@ class HomeController
     /**
      * Récupérer le nom et afficher les images des xmp-meta PDF
      */
-    public function xmpMeta() {
+    public function xmpMeta()
+    {
         $img = $this->getImage('xmpMeta');
         $title = "Catalogue de fichiers PDF";
 
@@ -211,7 +219,7 @@ class HomeController
                     </div>";
 
         $content .= "<h2 class='title-meta'><u>Pdf xmp-meta</u></h2><div class='grid-container'>";
-        foreach ($img  as $pdf) {
+        foreach ($img as $pdf) {
             $imgXmpMeta = "src/img/xmp-meta/".preg_replace("/.pdf/i", ".jpeg", $pdf->getName());
             $content .= "<div class='img-container'>
                             <a href='?objet=home&amp;action=detail&amp;meta=XmpMeta&amp;id=".$pdf->getId()."'>
@@ -229,8 +237,9 @@ class HomeController
      * @param $meta
      * @return array
      */
-    public function getImage($meta) {
-        if($meta == 'allMeta') {
+    public function getImage($meta)
+    {
+        if ($meta == 'allMeta') {
             $dir = scandir('src/pdf/all-meta/');
             $path = "src/pdf/all-meta/";
         } elseif ($meta == 'badMeta') {
@@ -248,25 +257,36 @@ class HomeController
         }
 
         $array = array();
-            for($i = 2; $i < count($dir); $i++) {
-                $data = shell_exec("exiftool -json ".$path.$dir[$i]);
-                $metadata = json_decode($data, true);
+        for ($i = 2; $i < count($dir); $i++) {
+            $data = shell_exec("exiftool -json ".$path.$dir[$i]);
+            $metadata = json_decode($data, true);
 
-                if(isset($metadata[0]['Description']))
-                    $desc = $metadata[0]['Description'];
-                else
-                    $desc = $metadata[0]['Subject'];
-
-                if(isset($metadata[0]['Author']) && $metadata[0]['Author'] != "") {
-                    $author = $metadata[0]['Author'];
-                } else if(isset($metadata[0]['Creator'])){
-                    $author = $metadata[0]["Creator"];
-                }
-
-                array_push($array, (new Pdf($i-2, $metadata[0]['SourceFile'], $metadata[0]['Title'], $author,
-                    $desc, $metadata[0]['CreateDate'], $metadata[0]['FileName'],
-                    $metadata[0]['PageCount'], $metadata[0]['FileSize'], $metadata[0]['FileAccessDate'], $metadata[0]['FileType'])));
+            if (isset($metadata[0]['Description'])) {
+                $desc = $metadata[0]['Description'];
+            } else {
+                $desc = $metadata[0]['Subject'];
             }
+
+            if (isset($metadata[0]['Author']) && $metadata[0]['Author'] != "") {
+                $author = $metadata[0]['Author'];
+            } elseif (isset($metadata[0]['Creator'])) {
+                $author = $metadata[0]["Creator"];
+            }
+
+            array_push($array, (new Pdf(
+                $i-2,
+                $metadata[0]['SourceFile'],
+                $metadata[0]['Title'],
+                $author,
+                $desc,
+                $metadata[0]['CreateDate'],
+                $metadata[0]['FileName'],
+                $metadata[0]['PageCount'],
+                $metadata[0]['FileSize'],
+                $metadata[0]['FileAccessDate'],
+                $metadata[0]['FileType']
+            )));
+        }
             return ($array);
     }
 
@@ -275,20 +295,21 @@ class HomeController
      * @param $meta
      * @return Pdf
      */
-    public function getPdf($meta) {
-        if($meta == 'allMeta') {
+    public function getPdf($meta)
+    {
+        if ($meta == 'allMeta') {
             $dir = scandir('src/pdf/all-meta/');
             $path = "src/pdf/all-meta/";
-        } elseif($meta == 'badMeta') {
+        } elseif ($meta == 'badMeta') {
             $dir = scandir('src/pdf/bad-meta/');
             $path = "src/pdf/bad-meta/";
-        } elseif($meta == 'pdfMeta') {
+        } elseif ($meta == 'pdfMeta') {
             $dir = scandir('src/pdf/pdf-meta/');
             $path = "src/pdf/pdf-meta/";
-        } elseif($meta == 'xmpMeta') {
+        } elseif ($meta == 'xmpMeta') {
             $dir = scandir('src/pdf/xmp-meta/');
             $path = "src/pdf/xmp-meta/";
-        } elseif($meta == 'pdfUpload') {
+        } elseif ($meta == 'pdfUpload') {
             $dir = scandir('src/pdf/pdf-upload/');
             $path = "src/pdf/pdf-upload/";
         }
@@ -296,42 +317,53 @@ class HomeController
             $data = shell_exec("exiftool -json ".$path.$dir[$this->request->getGetParam("id")+2]);
             $metadata = json_decode($data, true);
 
-            if(isset($metadata[0]['Description']))
-                $desc = $metadata[0]['Description'];
-            else
-                $desc = $metadata[0]['Subject'];
+        if (isset($metadata[0]['Description'])) {
+            $desc = $metadata[0]['Description'];
+        } else {
+            $desc = $metadata[0]['Subject'];
+        }
 
-            if(isset($metadata[0]['Author']) && $metadata[0]['Author'] != "") {
-                $author = $metadata[0]['Author'];
-            } else if(isset($metadata[0]['Creator'])){
-                $author = $metadata[0]["Creator"];
-            }
+        if (isset($metadata[0]['Author']) && $metadata[0]['Author'] != "") {
+            $author = $metadata[0]['Author'];
+        } elseif (isset($metadata[0]['Creator'])) {
+            $author = $metadata[0]["Creator"];
+        }
 
-            $pdf = new Pdf($this->request->getGetParam("id"), $metadata[0]['SourceFile'], $metadata[0]['Title'], $author,
-                $desc, $metadata[0]['CreateDate'], $metadata[0]['FileName'],
-                $metadata[0]['PageCount'], $metadata[0]['FileSize'], $metadata[0]['FileAccessDate'], $metadata[0]['FileType']);
+            $pdf = new Pdf(
+                $this->request->getGetParam("id"),
+                $metadata[0]['SourceFile'],
+                $metadata[0]['Title'],
+                $author,
+                $desc,
+                $metadata[0]['CreateDate'],
+                $metadata[0]['FileName'],
+                $metadata[0]['PageCount'],
+                $metadata[0]['FileSize'],
+                $metadata[0]['FileAccessDate'],
+                $metadata[0]['FileType']
+            );
             return $pdf;
-
     }
 
     /**
      * Affiche les détails d'un pdf à partir des métadonnées
      */
-    public function detail() {
+    public function detail()
+    {
         $title = "Détails du fichier PDF";
-        if($this->request->getGetParam("meta") == 'AllMeta') {
+        if ($this->request->getGetParam("meta") == 'AllMeta') {
             $pdf = $this->getPdf("allMeta");
             $img = "src/img/all-meta/".preg_replace("/.pdf/i", ".jpeg", $pdf->getName());
-        } elseif($this->request->getGetParam("meta") == 'BadMeta') {
+        } elseif ($this->request->getGetParam("meta") == 'BadMeta') {
             $pdf = $this->getPdf("badMeta");
             $img = "src/img/bad-meta/".preg_replace("/.pdf/i", ".jpeg", $pdf->getName());
-        } elseif($this->request->getGetParam("meta") == 'PdfMeta') {
+        } elseif ($this->request->getGetParam("meta") == 'PdfMeta') {
             $pdf = $this->getPdf("pdfMeta");
             $img = "src/img/pdf-meta/".preg_replace("/.pdf/i", ".jpeg", $pdf->getName());
-        } elseif($this->request->getGetParam("meta") == 'XmpMeta') {
+        } elseif ($this->request->getGetParam("meta") == 'XmpMeta') {
             $pdf = $this->getPdf("xmpMeta");
             $img = "src/img/xmp-meta/".preg_replace("/.pdf/i", ".jpeg", $pdf->getName());
-        } elseif($this->request->getGetParam("meta") == 'PdfUpload') {
+        } elseif ($this->request->getGetParam("meta") == 'PdfUpload') {
             $pdf = $this->getPdf("pdfUpload");
             $img = "src/img/img-upload/".preg_replace("/.pdf/i", ".jpeg", $pdf->getName());
         }
@@ -353,7 +385,8 @@ class HomeController
         $content .= "<form class='formAchat' action='?objet=paiement&amp;action=infosPaiement' method='POST'>";
         $content .= "<input type='hidden' name='prix' value='14,90'>";
         $content .= "<input type='hidden' name='pathFile' value='".$pdf->getPath()."'>";
-        $content .= "<fieldset class='fieldsetEmail'><input type='email' class='email' name='email' size='25' placeholder='Entrez votre adresse mail'></fieldset>";
+        $content .= "<fieldset class='fieldsetEmail'><input type='email' class='email' name='email' size='25' 
+                    placeholder='Entrez votre adresse mail'></fieldset>";
         $content .= "<div class='position-div-orange'>";
         $content .= "<div class='svg-wrapper-div-orange'>";
         $content .= "<svg height='40' width='150' xmlns='http://www.w3.org/2000/svg'>";
@@ -372,14 +405,16 @@ class HomeController
 
         // <!-- Open Graph / Facebook --> //
         $meta = "<meta property='og:title' content='".$pdf->getTitle()."'>";
-        $meta .= "<meta property='og:url' content='https://dev-22000212.users.info.unicaen.fr/ProjetWeb/?objet=home&action=detail&id=".$pdf->getId()."'>";
+        $meta .= "<meta property='og:url' content='https://dev-22000212.users.info.unicaen.fr/ProjetWeb/
+        ?objet=home&action=detail&id=".$pdf->getId()."'>";
         $meta .= "<meta property='og:site_name' content='Catalogue de fichier PDF'>";
         $meta .= "<meta property='og:image' content='".$img."'>";
         $meta .= "<meta property='og:description' content='".$pdf->getDescription()."'>";
 
         // <!-- Twitter Cards --> //
         $meta .= "<meta property='twitter:card' content='summary_large_image'>";
-        $meta .= "<meta property='twitter:url' content='https://dev-22000212.users.info.unicaen.fr/ProjetWeb/?objet=home&action=detail&id=".$pdf->getId()."'>";
+        $meta .= "<meta property='twitter:url' content='https://dev-22000212.users.info.unicaen.fr/ProjetWeb/
+        ?objet=home&action=detail&id=".$pdf->getId()."'>";
         $meta .= "<meta property='twitter:title' content='".$pdf->getTitle()."'>";
         $meta .= "<meta property='twitter:description' content='".$pdf->getDescription()."'>";
 //        $meta .= "<meta property='twitter:image' content='".$img.">";
@@ -398,7 +433,7 @@ class HomeController
         $img = $this->getImage('pdfUpload');
 
         $content = "<h2 class='title-meta'><u>Pdf Image-Upload</u></h2><div class='grid-container'>";
-        foreach ($img  as $pdf) {
+        foreach ($img as $pdf) {
             $imgPdfMeta = "src/img/img-upload/".preg_replace("/.pdf/i", ".jpeg", $pdf->getName());
             $content .= "<div class='img-container'>
                             <a href='?objet=home&amp;action=detail&amp;meta=PdfUpload&amp;id=".$pdf->getId()."'>
@@ -411,7 +446,8 @@ class HomeController
                                             <svg height='40' width='150' xmlns='http://www.w3.org/2000/svg'>
                                             <rect id='shape-upload' height='40' width='150' />
                                             <div id='text-upload'>
-                                                <a href='?objet=home&amp;action=fileUpload&amp;pdf=".$pdf->getName()."'>Modifier</a>
+                                                <a href='?objet=home&amp;action=fileUpload&amp;pdf=".$pdf->getName()."'>
+                                                Modifier</a>
                                             </div>
                                             </svg>
                                         </div>
@@ -423,7 +459,8 @@ class HomeController
                                             <svg height='40' width='150' xmlns='http://www.w3.org/2000/svg'>
                                             <rect id='shape-upload' height='40' width='150' />
                                             <div id='text-upload'>
-                                                <a href='?objet=home&amp;action=deletePdf&amp;pdf=".$pdf->getName()."'>Supprimer</a>
+                                                <a href='?objet=home&amp;action=deletePdf&amp;pdf=".$pdf->getName()."'>
+                                                Supprimer</a>
                                             </div>
                                             </svg>
                                         </div>
@@ -443,7 +480,8 @@ class HomeController
     /**
      * Affichage de la page technique du projet
      */
-    public function technique() {
+    public function technique()
+    {
         $title = "Page technique";
         $content = "<div class='contenu_technique'>
                         <h2>Page technique du projet</h2>
@@ -452,37 +490,40 @@ class HomeController
                         <h3>Détails techniques de l'implémentation</h3>
                         <h4>Fonctionnement du site web</h4>
                             <p><h5>Partie publique : </h5>
-                                Le site possède deux onglets \"Accueil\" et \"Page technique\" lorsqu'un utilisateur n'est pas connecté
-                                ou ne possède pas de compte. Nous avons une première page \"Accueil\" qui, à partir d'un menu
-                                déroulant affiche la capture de la première page des différents PDF. Quand l'utilisateur clique 
-                                sur l'un des PDF, il est renvoyé sur une nouvelle page qui affiche ses informations en faisant 
-                                une extraction des métadonnées qu'il contient. Cette page de détails est composée d'un aperçu de
-                                la première page du PDF ainsi qu'une autre partie où l'on voit toutes les informations qui lui
-                                correspondent. Il a également la possibilité d'acheter un pdf en inscrivant son email et en cliquant 
-                                sur le bouton acheter. L'utilisateur est envoyé sur une nouvelle page qui affiche l'adresse mail, 
-                                le montant et le moyen de paiement que l'on veut choisir. Une fois le paiement effectué, un mail
-                                est envoyé à l'adresse indiquée et un lien est disponible pour le téléchargement.<br><br>
+                                Le site possède deux onglets \"Accueil\" et \"Page technique\" lorsqu'un utilisateur 
+                                n'est pas connecté ou ne possède pas de compte. Nous avons une première page \"Accueil\"
+                                qui, à partir d'un menu déroulant affiche la capture de la première page des différents 
+                                PDF. Quand l'utilisateur clique  sur l'un des PDF, il est renvoyé sur une nouvelle page 
+                                qui affiche ses informations en faisant  une extraction des métadonnées qu'il contient. 
+                                Cette page de détails est composée d'un aperçu de la première page du PDF ainsi qu'une 
+                                autre partie où l'on voit toutes les informations qui lui correspondent. Il a également 
+                                la possibilité d'acheter un pdf en inscrivant son email et en cliquant sur le bouton 
+                                acheter. L'utilisateur est envoyé sur une nouvelle page qui affiche l'adresse mail, le 
+                                montant et le moyen de paiement que l'on veut choisir. Une fois le paiement effectué, 
+                                un mail est envoyé à l'adresse indiquée et un lien est disponible pour le 
+                                téléchargement.<br><br>
                                 
                                 <h5>Partie à accès restreint :</h5> 
-                                Une fois l'utilisateur connecté, deux nouveaux onglets \"Liste PDF\" et \"Upload PDF\" sont ajoutés 
-                                dans la barre de navigation. La page \"Liste PDF\" contient tous les fichiers qui ont été ajoutés
-                                par l'utilisateur, il est possible de supprimer un PDF ou modifier ses métadonnées ou voir ses
-                                détails lorsqu'il clique sur l'image. Quand l'utilisateur veut modifier un PDF, il arrive sur
-                                un formulaire qui contient toutes les métadonnées, s'il veut modifier des données, il écrit dans
-                                les cases correspondantes et valide. Il pourra voir ce qu'il a modifié dans la page des détails
-                                du PDF. La page \"Upload PDF\" permet de télécharger un ou plusieurs PDF sur le site, une barre
-                                de progression affiche l'état du téléchargement quand il clique sur le bouton \"upload\". Si 
-                                l'utilisateur ajoute plusieurs fichiers, il sera directement redirigé vers la liste des PDF                               
-                                sinon il sera envoyé sur le formulaire des métadonnées du pdf, il pourra choisir de les modifier
-                                maintenant ou plus tard sur la page \"Liste PDF\".</p>
+                                Une fois l'utilisateur connecté, deux nouveaux onglets \"Liste PDF\" et \"Upload PDF\" 
+                                sont ajoutés  dans la barre de navigation. La page \"Liste PDF\" contient tous les 
+                                fichiers qui ont été ajoutés par l'utilisateur, il est possible de supprimer un PDF ou 
+                                modifier ses métadonnées ou voir ses détails lorsqu'il clique sur l'image. Quand 
+                                l'utilisateur veut modifier un PDF, il arrive sur un formulaire qui contient toutes les 
+                                métadonnées, s'il veut modifier des données, il écrit dans les cases correspondantes et 
+                                valide. Il pourra voir ce qu'il a modifié dans la page des détails du PDF. La page *
+                                \"Upload PDF\" permet de télécharger un ou plusieurs PDF sur le site, une barre de 
+                                progression affiche l'état du téléchargement quand il clique sur le bouton \"upload\". 
+                                Si l'utilisateur ajoute plusieurs fichiers, il sera directement redirigé vers la liste 
+                                des PDF sinon il sera envoyé sur le formulaire des métadonnées du pdf, il pourra choisir
+                                 de les modifier maintenant ou plus tard sur la page \"Liste PDF\".</p>
                         <h4>Détails authentification</h4>    
-                            <p>Le site possède une partie accessible par authentification, il est possible de s'y connecter
-                            avec les deux comptes suivants : <br>
+                            <p>Le site possède une partie accessible par authentification, il est possible de s'y 
+                            connecter avec les deux comptes suivants : <br>
                             - Le compte de Mr Lecarpentier, <b>login : jml</b> et <b>mdp : toto</b> <br>
                             - Le compte de Mr Niveau, <b>login : alex</b> et <b>mdp : toto</b></p>             
                         <h4>Détails paiement</h4>    
-                            <p>Afin d'effectuer un paiement pour acheter un PDF, il faut utiliser la carte n° 4974934125497800 et le 
-                            cryptogramme 600 et renseigner une date d'expiration.</p>
+                            <p>Afin d'effectuer un paiement pour acheter un PDF, il faut utiliser la carte 
+                            n° 4974934125497800 et le cryptogramme 600 et renseigner une date d'expiration.</p>
                     </div>";
 
         $this->view->setPart('title', $title);
@@ -492,7 +533,8 @@ class HomeController
     /**
      * Affichage de la page pour upload un ou plusieurs pdf
      */
-    public function upload() {
+    public function upload()
+    {
         $title = "Upload fichier";
         $content = "<div class='upload_style'>
                             <p>
@@ -524,13 +566,14 @@ class HomeController
     /**
      * Affichage des métadonnées à modifier dans un formulaire
      */
-    public function fileUpload() {
+    public function fileUpload()
+    {
         $title = "Upload fichier";
         $dossier = 'src/pdf/pdf-upload/';
 
         $pdf = $this->request->getGetParam('pdf');
 
-        if(isset($pdf)) {
+        if (isset($pdf)) {
             $newPdf = str_replace(".pdf", ".pdf/", $pdf);
             $arrayPdfImg = explode("/", $newPdf);
 
@@ -539,29 +582,34 @@ class HomeController
                 shell_exec("convert " . $dossier . $arrayPdfImg[$i] . "[0] src/img/img-upload/" . $imgPdfUpload);
             }
 
-            if(count($arrayPdfImg) - 1 == 1) {
+            if (count($arrayPdfImg) - 1 == 1) {
                 $data = shell_exec("exiftool -json " . $dossier . $pdf);
                 $metadata = json_decode($data, true);
 
                 $fileMeta = file_put_contents('src/CatalogueApp/Controller/meta.txt', $data);
 
-                if (isset($metadata[0]['Description']))
+                if (isset($metadata[0]['Description'])) {
                     $desc = $metadata[0]['Description'];
-                else
+                } else {
                     $desc = $metadata[0]['Subject'];
+                }
 
                 if (isset($metadata[0]['Author']) && $metadata[0]['Author'] != "") {
                     $author = $metadata[0]['Author'];
-                } else if (isset($metadata[0]['Creator'])) {
+                } elseif (isset($metadata[0]['Creator'])) {
                     $author = $metadata[0]["Creator"];
                 }
 
 
-                $content = '<form class="ctn_upload" method="post" action="?objet=home&amp;action=newMeta" enctype="multipart/form-data">
-                        <h2>Informations du PDF</h2>';
-                $content .= '<h4>Nom document : </h4><textarea name="FileName" rows="1" cols="33">' . $metadata[0]["FileName"] . '</textarea>';
-                $content .= '<h4>Titre : </h4><textarea name="Title" rows="1" cols="33">' . $metadata[0]["Title"] . '</textarea>';
-                $content .= '<h4>Description : </h4><textarea name="Description" rows="12" cols="80">' . $desc . '</textarea>';
+                $content = '<form class="ctn_upload" method="post" action="?objet=home&amp;action=newMeta" 
+                            enctype="multipart/form-data">
+                <h2>Informations du PDF</h2>';
+                $content .= '<h4>Nom document : </h4><textarea name="FileName" rows="1" cols="33">
+                            ' . $metadata[0]["FileName"] . '</textarea>';
+                $content .= '<h4>Titre : </h4><textarea name="Title" rows="1" cols="33">
+                            ' . $metadata[0]["Title"] . '</textarea>';
+                $content .= '<h4>Description : </h4><textarea name="Description" rows="12" cols="80">
+                            ' . $desc . '</textarea>';
                 $content .= '<h4>Auteur : </h4><textarea name="Author" rows="1" cols="33">' . $author . '</textarea>';
 
                 $content .= "<br><br>
@@ -579,8 +627,7 @@ class HomeController
 
                 $this->view->setPart('title', $title);
                 $this->view->setPart('content', $content);
-            }
-            else {
+            } else {
                 $this->show();
             }
         }
@@ -589,8 +636,9 @@ class HomeController
     /**
      * Mise à jour des métadonnées modifiées dans un fichier meta.txt
      */
-    public function newMeta() {
-        if(isset($_POST['FileName']) && $_POST['Title'] && $_POST['Description'] && $_POST['Author']) {
+    public function newMeta()
+    {
+        if (isset($_POST['FileName']) && $_POST['Title'] && $_POST['Description'] && $_POST['Author']) {
             $filename = $_POST['FileName'];
             $title = $_POST['Title'];
             $description = $_POST['Description'];
@@ -610,9 +658,9 @@ class HomeController
                     $metadata[0]['Title'] = $title;
                 }
                 if ($value != $description) {
-                    if($key == 'Description') {
+                    if ($key == 'Description') {
                         $metadata[0]['Description'] = $description;
-                    } elseif($key == 'Subject') {
+                    } elseif ($key == 'Subject') {
                         $metadata[0]['Subject'] = $description;
                     }
                 }
@@ -626,8 +674,9 @@ class HomeController
             shell_exec("exiftool -json=" . $path . " " . $pdf);
             fclose($metatxt);
 
-            if (file_exists("src/pdf/pdf-upload/" . $filename . "_original"))
+            if (file_exists("src/pdf/pdf-upload/" . $filename . "_original")) {
                 unlink("src/pdf/pdf-upload/" . $filename . "_original");
+            }
             $this->show();
         }
     }
@@ -635,13 +684,15 @@ class HomeController
     /**
      * Méthode pour supprimer un pdf
      */
-    public function deletePdf() {
+    public function deletePdf()
+    {
         $pdf = $this->request->getGetParam('pdf');
         $dossierPDF = 'src/pdf/pdf-upload/';
         $imgPdf = "src/img/img-upload/".preg_replace("/.pdf/i", ".jpeg", $pdf);
 
-        if(file_exists($dossierPDF.$pdf) && file_exists($imgPdf))
+        if (file_exists($dossierPDF.$pdf) && file_exists($imgPdf)) {
             unlink($dossierPDF.$pdf);
+        }
             unlink($imgPdf);
         $this->show();
     }
@@ -651,8 +702,8 @@ class HomeController
      */
     public function reponseAccepte()
     {
-        $fichier_exec = "/users/22000212/www-dev/devoir-idc2020/ProjetWeb/src/Sherlocks/bin/static/response";
-        $pathfile = "pathfile=/users/22000212/www-dev/devoir-idc2020/ProjetWeb/src/Sherlocks/param_demo/pathfile";
+        $fichier_exec = "/users/22012123/www-dev/devoir-idc2020/ProjetWeb/src/Sherlocks/bin/static/response";
+        $pathfile = "pathfile=/users/22012123/www-dev/devoir-idc2020/ProjetWeb/src/Sherlocks/param_demo/pathfile";
 
         $message_data = "message=" . $_POST['DATA'];
         $exec = exec($fichier_exec . " " . $message_data . " " . $pathfile);
@@ -677,7 +728,8 @@ class HomeController
     /**
      * Déconnecter l'utilisateur et le renvoyer sur la page d'accueil
      */
-    public function deco() {
+    public function deco()
+    {
         $this->auth->deconnecter();
         $this->response->addHeader('Location: ?objet=home&amp;action=makeHomePage&amp;');
     }

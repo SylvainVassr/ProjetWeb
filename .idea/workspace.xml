@@ -22,7 +22,10 @@
     <list default="true" id="5d77a55a-ed9f-4098-9747-9849512c074f" name="Default Changelist" comment="Ajout de la javadoc et quelques corrections de bugs">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CatalogueApp/Controller/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/CatalogueApp/Controller/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CatalogueApp/Controller/PaiementController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/CatalogueApp/Controller/PaiementController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CatalogueApp/Model/Email.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/CatalogueApp/Model/Email.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Sherlocks/param_demo/parmcom.014295303911111" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sherlocks/param_demo/parmcom.014295303911111" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Sherlocks/param_demo/pathfile" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sherlocks/param_demo/pathfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/js/upload.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/upload.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -39,6 +42,13 @@
       <list>
         <option value="JavaScript File" />
       </list>
+    </option>
+  </component>
+  <component name="Git.Pull.Settings">
+    <option name="OPTIONS">
+      <set>
+        <option value="REBASE" />
+      </set>
     </option>
   </component>
   <component name="Git.Settings">

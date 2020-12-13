@@ -30,8 +30,19 @@ class Pdf
      * @param $dateAccess
      * @param $type
      */
-    public function __construct($id, $path, $title, $author, $description, $date, $name, $pageCount, $size, $dateAccess, $type)
-    {
+    public function __construct(
+        $id,
+        $path,
+        $title,
+        $author,
+        $description,
+        $date,
+        $name,
+        $pageCount,
+        $size,
+        $dateAccess,
+        $type
+    ) {
         $this->id = $id;
         $this->path = $path;
         $this->title = $title;
@@ -112,7 +123,8 @@ class Pdf
      * Récupère le nombre de page du pdf
      * @return mixed
      */
-    public function getPageCount() {
+    public function getPageCount()
+    {
         return $this->pageCount;
     }
 
@@ -120,7 +132,8 @@ class Pdf
      * Récupère la taille du pdf
      * @return mixed
      */
-    public function getSize() {
+    public function getSize()
+    {
         return $this->size;
     }
 
@@ -128,7 +141,8 @@ class Pdf
      * Récupère la date d'accès du pdf
      * @return mixed
      */
-    public function getDateAccess() {
+    public function getDateAccess()
+    {
         return $this->dateAccess;
     }
 
@@ -136,7 +150,8 @@ class Pdf
      * Récupère le type du pdf
      * @return mixed
      */
-    public function getType() {
+    public function getType()
+    {
         return $this->type;
     }
 }
