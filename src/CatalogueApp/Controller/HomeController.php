@@ -263,20 +263,30 @@ class HomeController
 
             if (isset($metadata[0]['Description'])) {
                 $desc = $metadata[0]['Description'];
-            } else {
+            } elseif(isset($metadata[0]['Subject'])) {
                 $desc = $metadata[0]['Subject'];
+            } else {
+                $desc = null;
             }
 
             if (isset($metadata[0]['Author']) && $metadata[0]['Author'] != "") {
                 $author = $metadata[0]['Author'];
             } elseif (isset($metadata[0]['Creator'])) {
                 $author = $metadata[0]["Creator"];
+            } else {
+                $author = null;
+            }
+
+            if(isset($metadata[0]['Title'])) {
+                $title = $metadata[0]['Title'];
+            } else {
+                $title = null;
             }
 
             array_push($array, (new Pdf(
                 $i-2,
                 $metadata[0]['SourceFile'],
-                $metadata[0]['Title'],
+                $title,
                 $author,
                 $desc,
                 $metadata[0]['CreateDate'],
@@ -319,20 +329,30 @@ class HomeController
 
         if (isset($metadata[0]['Description'])) {
             $desc = $metadata[0]['Description'];
-        } else {
+        } elseif(isset($metadata[0]['Subject'])) {
             $desc = $metadata[0]['Subject'];
+        } else {
+            $desc = null;
         }
 
         if (isset($metadata[0]['Author']) && $metadata[0]['Author'] != "") {
             $author = $metadata[0]['Author'];
         } elseif (isset($metadata[0]['Creator'])) {
             $author = $metadata[0]["Creator"];
+        } else {
+            $author = null;
+        }
+
+        if(isset($metadata[0]['Title'])) {
+            $title = $metadata[0]['Title'];
+        } else {
+            $title = null;
         }
 
             $pdf = new Pdf(
                 $this->request->getGetParam("id"),
                 $metadata[0]['SourceFile'],
-                $metadata[0]['Title'],
+                $title,
                 $author,
                 $desc,
                 $metadata[0]['CreateDate'],
@@ -380,7 +400,7 @@ class HomeController
         $content .= "<p><u>Date de création</u> :  ". $pdf->getDate()."</p>";
         $content .= "<p><u>Date d'accès</u> :  ". $pdf->getDateAccess()."</p>";
         $content .= "<p><u>Type de fichier</u> :  ".$pdf->getType()."</p>";
-        $content .= "<p><u>Prix du pdf</u> :  15€</p>";
+        $content .= "<p><u>Prix du pdf</u> :  14.90€</p>";
 
         $content .= "<form class='formAchat' action='?objet=paiement&amp;action=infosPaiement' method='POST'>";
         $content .= "<input type='hidden' name='prix' value='14,90'>";
@@ -590,14 +610,24 @@ class HomeController
 
                 if (isset($metadata[0]['Description'])) {
                     $desc = $metadata[0]['Description'];
-                } else {
+                } elseif(isset($metadata[0]['Subject'])) {
                     $desc = $metadata[0]['Subject'];
+                } else {
+                    $desc = null;
                 }
 
                 if (isset($metadata[0]['Author']) && $metadata[0]['Author'] != "") {
                     $author = $metadata[0]['Author'];
                 } elseif (isset($metadata[0]['Creator'])) {
                     $author = $metadata[0]["Creator"];
+                } else {
+                    $author = null;
+                }
+
+                if(isset($metadata[0]['Title'])) {
+                    $title = $metadata[0]['Title'];
+                } else {
+                    $title = null;
                 }
 
 
@@ -607,7 +637,7 @@ class HomeController
                 $content .= '<h4>Nom document : </h4>
                              <textarea name="FileName" rows="1" cols="33">' . $metadata[0]["FileName"] . '</textarea>';
                 $content .= '<h4>Titre : </h4>
-                             <textarea name="Title" rows="1" cols="33">' . $metadata[0]["Title"] . '</textarea>';
+                             <textarea name="Title" rows="1" cols="33">' . $title . '</textarea>';
                 $content .= '<h4>Description : </h4>
                              <textarea name="Description" rows="12" cols="80">' . $desc . '</textarea>';
                 $content .= '<h4>Auteur : </h4><textarea name="Author" rows="1" cols="33">' . $author . '</textarea>';
@@ -677,8 +707,8 @@ class HomeController
             if (file_exists("src/pdf/pdf-upload/" . $filename . "_original")) {
                 unlink("src/pdf/pdf-upload/" . $filename . "_original");
             }
-            $this->show();
         }
+        $this->show();
     }
 
     /**
