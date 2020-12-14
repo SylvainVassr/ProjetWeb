@@ -263,7 +263,7 @@ class HomeController
 
             if (isset($metadata[0]['Description'])) {
                 $desc = $metadata[0]['Description'];
-            } elseif(isset($metadata[0]['Subject'])) {
+            } elseif (isset($metadata[0]['Subject'])) {
                 $desc = $metadata[0]['Subject'];
             } else {
                 $desc = null;
@@ -277,7 +277,7 @@ class HomeController
                 $author = null;
             }
 
-            if(isset($metadata[0]['Title'])) {
+            if (isset($metadata[0]['Title'])) {
                 $title = $metadata[0]['Title'];
             } else {
                 $title = null;
@@ -329,7 +329,7 @@ class HomeController
 
         if (isset($metadata[0]['Description'])) {
             $desc = $metadata[0]['Description'];
-        } elseif(isset($metadata[0]['Subject'])) {
+        } elseif (isset($metadata[0]['Subject'])) {
             $desc = $metadata[0]['Subject'];
         } else {
             $desc = null;
@@ -343,7 +343,7 @@ class HomeController
             $author = null;
         }
 
-        if(isset($metadata[0]['Title'])) {
+        if (isset($metadata[0]['Title'])) {
             $title = $metadata[0]['Title'];
         } else {
             $title = null;
@@ -610,7 +610,7 @@ class HomeController
 
                 if (isset($metadata[0]['Description'])) {
                     $desc = $metadata[0]['Description'];
-                } elseif(isset($metadata[0]['Subject'])) {
+                } elseif (isset($metadata[0]['Subject'])) {
                     $desc = $metadata[0]['Subject'];
                 } else {
                     $desc = null;
@@ -624,7 +624,7 @@ class HomeController
                     $author = null;
                 }
 
-                if(isset($metadata[0]['Title'])) {
+                if (isset($metadata[0]['Title'])) {
                     $title = $metadata[0]['Title'];
                 } else {
                     $title = null;
