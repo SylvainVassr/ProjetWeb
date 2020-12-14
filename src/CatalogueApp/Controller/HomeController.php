@@ -80,7 +80,7 @@ class HomeController
                     </div>";
 
         $img = $this->getImage('badMeta');
-        $rand = rand(0, count($img) - 2);
+        $rand = rand(0, count($img)-3);
         $content .= "<div class='grid-container'>";
         for ($i = $rand; $i <= $rand+2; $i++) {
             $imgBadMeta = "src/img/bad-meta/".preg_replace("/.pdf/i", ".jpeg", $img[$i]->getName());
